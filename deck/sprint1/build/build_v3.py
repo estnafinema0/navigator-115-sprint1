@@ -21,7 +21,7 @@ REPO = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 SHOTS = os.path.join(REPO, "design", "shots")
 TEMPLATE, OUT = sys.argv[1], sys.argv[2]
 STAND = "d5d6vupgj94sc8tf29t2.s183zexc.apigw.yandexcloud.net"
-REPO_NAME = "github.com/estnafinema0/navigator-115"
+REPO_NAME = "github.com/estnafinema0/navigator-115-sprint1"
 
 lib.use_template_logo(TEMPLATE)
 prs = Presentation(TEMPLATE)
