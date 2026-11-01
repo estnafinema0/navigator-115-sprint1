@@ -1,0 +1,115 @@
+{
+ "id": "C11",
+ "text_sha256": "a489ee79cf5391248518072595a13a7628a1fabbd7698e6c436a2de73d849b04",
+ "cache_key": "989d909763a9d48ab1bf3c62",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 22.22,
+  "eval_count": 222,
+  "prompt_eval_count": 1007
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "остатки денег на счете отсутствуют либо незначительны по сравнению с объемами операций, обычно проводимыми клиентом по счету"
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "остатки денег на счете отсутствуют либо незначительны по сравнению с объемами операций, обычно проводимыми клиентом по счету",
+    "evidence": [
+     {
+      "quote": "остатки денег на счете отсутствуют либо незначительны по сравнению с объемами операций, обычно проводимыми клиентом по счету"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "unknown",
+   "confidence": 0.0,
+   "evidence": []
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 0,
+  "recomputed": []
+ }
+}

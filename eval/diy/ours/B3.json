@@ -1,0 +1,254 @@
+{
+ "id": "B3",
+ "text_sha256": "e88a118d2f6a1f7c4106655f188e0aeb345c4f9ec3b6b2de01aa9501b71d0eb8",
+ "cache_key": "eee711920ceea24a9b584442",
+ "llm_source": "eval/cache/eee711920ceea24a9b584442.json",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 36.93,
+  "eval_count": 366,
+  "prompt_eval_count": 1046
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "Ответьте на запрос, чтобы снять ограничения по счёту"
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "operation_refusal",
+    "evidence": [
+     {
+      "quote": "До окончания проверки вы не сможете совершать платежи на основании пункта 9.2.24."
+     }
+    ]
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "пояснения к ним",
+    "evidence": [
+     {
+      "quote": "пояснения к ним"
+     }
+    ]
+   },
+   {
+    "type": "source_of_funds",
+    "raw": "фото или сканы вот этих документов",
+    "evidence": [
+     {
+      "quote": "фото или сканы вот этих документов"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": true,
+   "text": "Пришлите нам, пожалуйста, фото или сканы вот этих документов или пояснения к ним",
+   "evidence": [
+    {
+     "quote": "Пришлите нам, пожалуйста, фото или сканы вот этих документов или пояснения к ним"
+    }
+   ]
+  },
+  "consequences": [
+   {
+    "type": "contract_termination",
+    "raw": "о возможности дальнейшего сотрудничества с вашей компанией мы сообщим вам",
+    "evidence": [
+     {
+      "quote": "о возможности дальнейшего сотрудничества с вашей компанией мы сообщим вам"
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "none",
+   "routes": [
+    {
+     "type": "bank_review",
+     "evidence": []
+    },
+    {
+     "type": "court",
+     "evidence": []
+    }
+   ],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "remote_access_restriction",
+   "confidence": 0.6,
+   "evidence": [
+    {
+     "quote": "не сможете совершать платежи",
+     "start": 83,
+     "end": 111
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "operation_refusal",
+    "evidence": [
+     {
+      "quote": "До окончания проверки вы не сможете совершать платежи на основании пункта 9.2.24.",
+      "start": 58,
+      "end": 139
+     }
+    ]
+   },
+   {
+    "type": "operations_limit",
+    "evidence": [
+     {
+      "quote": "не сможете совершать платежи",
+      "start": 83,
+      "end": 111
+     }
+    ],
+    "confidence": 0.7
+   },
+   {
+    "type": "document_request",
+    "evidence": [
+     {
+      "quote": "Ответьте на запрос",
+      "start": 1,
+      "end": 19
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "пояснения к ним",
+    "evidence": [
+     {
+      "quote": "пояснения к ним",
+      "start": 209,
+      "end": 224
+     }
+    ]
+   },
+   {
+    "type": "photos_premises",
+    "raw": "фото или сканы вот этих документов",
+    "evidence": [
+     {
+      "quote": "фото или сканы вот этих документов",
+      "start": 170,
+      "end": 204
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": true,
+   "text": "Пришлите нам, пожалуйста, фото или сканы вот этих документов или пояснения к ним",
+   "evidence": [
+    {
+     "quote": "Пришлите нам, пожалуйста, фото или сканы вот этих документов или пояснения к ним",
+     "start": 144,
+     "end": 224
+    }
+   ]
+  },
+  "consequences": [
+   {
+    "type": "contract_termination",
+    "raw": "о возможности дальнейшего сотрудничества с вашей компанией мы сообщим вам",
+    "evidence": [
+     {
+      "quote": "о возможности дальнейшего сотрудничества с вашей компанией мы сообщим вам",
+      "start": 267,
+      "end": 340
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "contract_only",
+   "items": [
+    {
+     "kind": "contract",
+     "law": null,
+     "article": null,
+     "part": null,
+     "point": null,
+     "subpoint": null,
+     "contract_clause": "п. 9.2.24",
+     "canonical": "договор: п. 9.2.24",
+     "evidence": [
+      {
+       "quote": "на основании пункта 9.2.24",
+       "start": 112,
+       "end": 138
+      }
+     ]
+    }
+   ]
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 9,
+  "recomputed": []
+ }
+}

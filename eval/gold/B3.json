@@ -1,0 +1,132 @@
+{
+  "doc_id": "B3",
+  "corpus_ref": "data/real/corpus.jsonl#B3",
+  "text_sha256": "e88a118d2f6a1f7c4106655f188e0aeb345c4f9ec3b6b2de01aa9501b71d0eb8",
+  "text_type": "verbatim",
+  "annotator": "agent_draft_2026-10-20",
+  "status": "draft_needs_human_review",
+  "notes": [
+    "Расхождение с корпусом: кодировщик 1 поставил E3 (причина) = «общая»; в этом фрагменте причины нет, здесь reason = none. Разрешить при двойной разметке.",
+    "Сценарий remote_access_restriction: ограничение платежей по пункту правил банка до окончания проверки (не отказ в операции по п. 11).",
+    "Последствие «о возможности дальнейшего сотрудничества… мы сообщим» размечено как угроза расторжения (contract_termination)."
+  ],
+  "extraction": {
+    "schema_version": "0.1.0",
+    "scenario": {
+      "value": "remote_access_restriction",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "quote": "До окончания проверки вы не сможете совершать платежи на основании пункта 9.2.24.",
+          "start": 58,
+          "end": 139
+        }
+      ]
+    },
+    "measures": [
+      {
+        "type": "operations_limit",
+        "evidence": [
+          {
+            "quote": "вы не сможете совершать платежи",
+            "start": 80,
+            "end": 111
+          }
+        ]
+      },
+      {
+        "type": "document_request",
+        "evidence": [
+          {
+            "quote": "Пришлите нам, пожалуйста, фото или сканы вот этих документов или пояснения к ним",
+            "start": 144,
+            "end": 224
+          }
+        ]
+      }
+    ],
+    "legal_basis": {
+      "level": "contract_only",
+      "items": [
+        {
+          "kind": "contract",
+          "law": null,
+          "article": null,
+          "part": null,
+          "point": null,
+          "subpoint": null,
+          "contract_clause": "п. 9.2.24",
+          "canonical": "договор: п. 9.2.24",
+          "evidence": [
+            {
+              "quote": "на основании пункта 9.2.24",
+              "start": 112,
+              "end": 138
+            }
+          ]
+        }
+      ]
+    },
+    "reason": {
+      "level": "none",
+      "text": null,
+      "evidence": []
+    },
+    "requested_items": [
+      {
+        "type": "other",
+        "raw": "документы из перечня банка или пояснения к ним (перечень во фрагменте не приведён)",
+        "period": null,
+        "format": "фото или сканы",
+        "evidence": [
+          {
+            "quote": "фото или сканы вот этих документов или пояснения к ним",
+            "start": 170,
+            "end": 224
+          }
+        ]
+      }
+    ],
+    "period": null,
+    "deadlines": [],
+    "response_channels": [],
+    "next_steps": {
+      "stated": true,
+      "text": "ответить на запрос: прислать документы или пояснения",
+      "evidence": [
+        {
+          "quote": "Ответьте на запрос, чтобы снять ограничения по счёту",
+          "start": 1,
+          "end": 53
+        }
+      ]
+    },
+    "consequences": [
+      {
+        "type": "contract_termination",
+        "raw": "банк сообщит о возможности дальнейшего сотрудничества",
+        "evidence": [
+          {
+            "quote": "Если вы не отправите нам документы – о возможности дальнейшего сотрудничества с вашей компанией мы сообщим вам",
+            "start": 230,
+            "end": 340
+          }
+        ]
+      }
+    ],
+    "appeal": {
+      "level": "none",
+      "routes": [],
+      "explicit_denial": null
+    },
+    "operations": [],
+    "request_meta": {
+      "bank_name": null,
+      "date": null,
+      "number": null
+    },
+    "questions_to_user": [
+      "Во фрагменте нет самого перечня документов (он идёт после двоеточия). Вставьте, пожалуйста, полный текст запроса."
+    ]
+  }
+}

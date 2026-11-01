@@ -1,0 +1,151 @@
+{
+ "id": "C4",
+ "text_sha256": "fa9a8ff40f2679756e80cfc26a74449d16719d4fa36c4535ed6ba92b22c26232",
+ "cache_key": "27986068726b9582fba8a1f6",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 23.62,
+  "eval_count": 229,
+  "prompt_eval_count": 1014
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "«Согласно п. 14 ст. 7 Закона клиенты обязаны предоставлять… информацию о своих выгодоприобретателях и бенефициарных владельцах… Банк просит Вас не позднее 10 рабочих дней… предоставить следующие сведения…»"
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "beneficiary_info",
+    "raw": "информация о выгодоприобретателях и бенефициарных владельцах",
+    "evidence": [
+     {
+      "quote": "информация о своих выгодоприобретателях и бенефициарных владельцах"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "«Согласно п. 14 ст. 7 Закона клиенты обязаны предоставлять… информацию о своих выгодоприобретателях и бенефициарных владельцах… Банк просит Вас не позднее 10 рабочих дней… предоставить следующие сведения…»",
+     "start": 0,
+     "end": 205
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "beneficiary_info",
+    "raw": "информация о выгодоприобретателях и бенефициарных владельцах",
+    "evidence": [
+     {
+      "quote": "информацию о своих выгодоприобретателях и бенефициарных владельцах",
+      "start": 60,
+      "end": 126
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [
+   {
+    "applies_to": "client_response",
+    "kind": "relative",
+    "date": null,
+    "inclusive": null,
+    "amount": 10,
+    "unit": "working_days",
+    "anchor": null,
+    "raw": "не позднее 10 рабочих дней",
+    "evidence": [
+     {
+      "quote": "не позднее 10 рабочих дней",
+      "start": 144,
+      "end": 170
+     }
+    ]
+   }
+  ],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 3,
+  "recomputed": []
+ }
+}

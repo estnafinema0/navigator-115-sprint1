@@ -1,0 +1,179 @@
+{
+ "id": "B13",
+ "text_sha256": "e4c8334f6ea95f0dd9fdaa5095405c74874ad3b84086ed287fdbf90bc6ef8ce4",
+ "cache_key": "4abde06f4c7ba927777942e5",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "error": "ReadTimeout('timed out')"
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "unknown",
+   "confidence": 0.0,
+   "evidence": []
+  },
+  "measures": [],
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "contract_termination",
+   "confidence": 0.6,
+   "evidence": [
+    {
+     "quote": "расторжении договора",
+     "start": 169,
+     "end": 189
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "contract_termination",
+    "evidence": [
+     {
+      "quote": "расторжении договора",
+      "start": 169,
+      "end": 189
+     }
+    ],
+    "confidence": 0.7
+   },
+   {
+    "type": "operations_limit",
+    "evidence": [
+     {
+      "quote": "Счет заблокирован",
+      "start": 1,
+      "end": 18
+     }
+    ],
+    "confidence": 0.7
+   },
+   {
+    "type": "document_request",
+    "evidence": [
+     {
+      "quote": "Просим предоставить",
+      "start": 209,
+      "end": 228
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "legal_basis": {
+   "level": "law_only",
+   "items": [
+    {
+     "kind": "law",
+     "law": "115-ФЗ",
+     "article": null,
+     "part": null,
+     "point": null,
+     "subpoint": null,
+     "contract_clause": null,
+     "canonical": "115-ФЗ",
+     "evidence": [
+      {
+       "quote": "Федеральный закон № 115-ФЗ",
+       "start": 31,
+       "end": 57
+      }
+     ]
+    }
+   ]
+  },
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "period": null,
+  "deadlines": [
+   {
+    "applies_to": "bank_review",
+    "kind": "relative",
+    "date": null,
+    "inclusive": null,
+    "amount": 3,
+    "unit": "working_days",
+    "anchor": null,
+    "raw": "до 3 рабочих дней",
+    "evidence": [
+     {
+      "quote": "до 3 рабочих дней",
+      "start": 126,
+      "end": 143
+     }
+    ]
+   }
+  ],
+  "response_channels": [],
+  "next_steps": {
+   "stated": true,
+   "text": "Просим предоставить реквизиты в другом банке через 7 дней, после закрытия бизнес карты",
+   "evidence": [
+    {
+     "quote": "Просим предоставить реквизиты в другом банке через 7 дней, после закрытия бизнес карты",
+     "start": 209,
+     "end": 295
+    }
+   ]
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 7,
+  "recomputed": []
+ }
+}

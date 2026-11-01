@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Навигатор-115: табель сроков</title>
+<meta name="description" content="Направление B «Табель сроков»: рабочие дни и законные сроки как главная система экрана.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Commissioner:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#razbor">Перейти к разбору письма</a>
+
+<header class="masthead">
+  <a class="wordmark" href="#top">Навигатор&#8209;115</a>
+  <nav aria-label="Разделы страницы">
+    <a href="#razbor">Разбор письма</a>
+    <a href="#granica">Границы сервиса</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-text">
+      <h1 id="h1">Запросы банков по 115&#8209;ФЗ у ваших клиентов: что просят и когда истекает срок, по производственному календарю.</h1>
+      <p class="lead">Вставьте текст запроса или уведомления любого банка. Получите таблицу полей с цитатами из письма и таймеры по закону: у каждого срока норма и дата, а выходные и праздники учтены.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#razbor">Разобрать письмо банка</a>
+        <button type="button" class="btn btn-quiet" id="hero-example">Открыть пример: отказ в операции по п.&nbsp;11</button>
+      </div>
+      <p class="evidence">Срок назван в 22&nbsp;% из 45 публичных уведомлений и запросов банков; что делать для снятия меры, сказано в 36&nbsp;%.<sup><a href="#fn1" id="fnref1" aria-label="Сноска 1: источник цифр">1</a></sup></p>
+    </div>
+    <div class="tabel" role="list" aria-label="Сроки по закону, в рабочих днях">
+      <div class="tabel-cell" role="listitem"><span class="num">5</span><span class="unit">раб. дней</span><span class="what">банк сообщает дату и причины отказа</span><span class="norm">п. 13.1&#8209;1 ст. 7 115&#8209;ФЗ</span></div>
+      <div class="tabel-cell" role="listitem"><span class="num">7</span><span class="unit">раб. дней</span><span class="what">банк рассматривает документы после отказа</span><span class="norm">п. 13.4 ст. 7 115&#8209;ФЗ</span></div>
+      <div class="tabel-cell" role="listitem"><span class="num">15</span><span class="unit">раб. дней</span><span class="what">Банк России пересматривает ЗСК или базу 161&#8209;ФЗ</span><span class="norm">п. 1.1 ст. 7.8; Указание 6748&#8209;У</span></div>
+      <div class="tabel-cell" role="listitem"><span class="num">20</span><span class="unit">раб. дней</span><span class="what">МВК рассматривает заявление, плюс 3 дня на сообщение</span><span class="norm">пп. 13.5, 13.6 ст. 7; Методичка ЦБ, с. 21</span></div>
+    </div>
+  </section>
+
+  <section id="razbor" class="razbor" aria-labelledby="h2">
+    <div class="razbor-head">
+      <h2 id="h2">Разбор запроса</h2>
+      <fieldset class="states">
+        <legend>Состояние экрана (переключатель для ревью)</legend>
+        <label><input type="radio" name="state" value="empty" checked> Пусто</label>
+        <label><input type="radio" name="state" value="loading"> Загрузка</label>
+        <label><input type="radio" name="state" value="error"> Ошибка</label>
+        <label><input type="radio" name="state" value="result"> Результат</label>
+      </fieldset>
+    </div>
+
+    <div class="state" data-state="empty">
+      <form class="paste" id="paste-form" novalidate>
+        <label for="letter-input" class="field-label">Текст запроса или уведомления банка</label>
+        <p class="hint" id="letter-hint">SMS, сообщение из чата банка или письмо. ИНН, номера счетов и ФИО для разбора не нужны: удалите их, если они есть.</p>
+        <textarea id="letter-input" name="letter" rows="8" aria-describedby="letter-hint letter-error" placeholder="Вставьте текст сюда"></textarea>
+        <p class="error-text" id="letter-error" role="alert" hidden>Вставьте текст письма, чтобы его разобрать.</p>
+        <div class="cta-row">
+          <button type="submit" class="btn btn-primary">Разобрать</button>
+          <button type="button" class="btn btn-quiet" id="fill-example">Вставить пример из корпуса</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="state" data-state="loading" hidden>
+      <p class="loading-text" role="status">Читаем письмо банка: ищем меру, норму, что делать и срок. Затем считаем рабочие дни.</p>
+      <div class="progress" aria-hidden="true"><span class="progress-bar"></span></div>
+    </div>
+
+    <div class="state" data-state="error" hidden>
+      <div class="error-box" role="alert">
+        <p class="error-title">Не удалось разобрать текст</p>
+        <p>В тексте не нашлось ни меры, ни запроса документов: возможно, это не уведомление банка или скопирована только часть сообщения. Проверьте текст и попробуйте снова.</p>
+        <div class="cta-row">
+          <button type="button" class="btn btn-primary" id="retry">Повторить разбор</button>
+          <button type="button" class="btn btn-quiet" id="back-to-text">Вернуться к тексту</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="state" data-state="result" hidden>
+      <p class="source-line">Пример из корпуса Pulsar (пример 1): отказ в операции по п.&nbsp;11 ст.&nbsp;7 115&#8209;ФЗ, два SMS, Сбер, март 2024. ПДн и сумма удалены, многоточия: пропуски в источнике. Источник: <a href="https://www.banki.ru/services/responses/bank/response/11411562/" rel="noopener">banki.ru</a>.</p>
+
+      <div class="date-row">
+        <label for="submit-date">Дата подачи документов на реабилитацию</label>
+        <input type="date" id="submit-date" value="2026-10-21" min="2026-01-01" max="2026-12-31">
+        <p class="date-note">Срок банка считаем со следующего рабочего дня, по производственному календарю 2026 года (выходные и праздники не считаются). Расчёт ориентировочный: сверьте с текстом нормы.</p>
+      </div>
+
+      <section class="board" aria-labelledby="h-board">
+        <div class="board-head">
+          <h3 id="h-board">Табель сроков</h3>
+          <p class="board-summary" id="board-summary" aria-live="polite"></p>
+        </div>
+        <ol class="strip" id="strip" aria-label="Календарь рабочих дней"></ol>
+        <ul class="legend" aria-label="Обозначения">
+          <li><span class="sw sw-submit"></span>подача документов</li>
+          <li><span class="sw sw-deadline"></span>7&#8209;й рабочий день: срок банка</li>
+          <li><span class="sw sw-escalate"></span>8&#8209;й рабочий день: напоминание и жалоба в ЦБ</li>
+          <li><span class="sw sw-off"></span>выходной или праздник</li>
+        </ul>
+      </section>
+
+      <p class="help-line">Нажмите на строку таблицы или на выделенный фрагмент SMS: они связаны. Esc снимает выделение.</p>
+
+      <div class="desk">
+        <table class="fields" aria-label="Поля карточки">
+          <thead><tr><th scope="col">Поле</th><th scope="col">Значение</th><th scope="col">Цитата</th><th scope="col">В письме</th></tr></thead>
+          <tbody>
+            <tr data-f="measure" tabindex="0"><th scope="row">Мера</th><td>Отказ в операции от 25.03.2024. Дополнительно заблокированы Сбербанк Онлайн и карты.</td><td class="q">1, 2</td><td>указано</td></tr>
+            <tr data-f="norm" tabindex="0"><th scope="row">Норма</th><td>п.&nbsp;11 ст.&nbsp;7 115&#8209;ФЗ</td><td class="q">3</td><td>указано</td></tr>
+            <tr data-f="reason" tabindex="0"><th scope="row">Причина</th><td>Подозрение в легализации доходов. Формулировка общая, признак не назван.</td><td class="q">4</td><td>указано, общая</td></tr>
+            <tr data-f="todo" tabindex="0"><th scope="row">Что делать</th><td>Заявление на реабилитацию в офисе с документами и пояснениями по операции (шаблон Банка России №&nbsp;4).</td><td class="q">5</td><td>указано</td></tr>
+            <tr data-f="channel" tabindex="0"><th scope="row">Канал</th><td>Офис банка, с документом, удостоверяющим личность.</td><td class="q">6</td><td>указано</td></tr>
+            <tr data-f="deadline" class="row-gap"><th scope="row">Срок</th><td>В SMS не указан. По закону банк рассматривает документы до 7 рабочих дней (п.&nbsp;13.4 ст.&nbsp;7): дата в табеле выше.</td><td class="q">нет</td><td>не указано банком</td></tr>
+            <tr data-f="appeal" class="row-gap"><th scope="row">Обжалование вне банка</th><td>В SMS не указано. По закону: МВК при Банке России (п.&nbsp;13.5 ст.&nbsp;7), после реабилитации в банке.</td><td class="q">нет</td><td>не указано банком</td></tr>
+          </tbody>
+        </table>
+
+        <article class="sheet" aria-labelledby="sheet-title">
+          <h3 id="sheet-title" class="sheet-title">Два SMS банка</h3>
+          <p>«…по причине сомнительного характера операций <mark tabindex="0" role="button" aria-pressed="false" data-f="measure">действие услуги Сбербанк Онлайн/банковских карт заблокировано<sup>2</sup></mark>. Для получения денежных средств… <mark tabindex="0" role="button" aria-pressed="false" data-f="channel">обращаться в офис банка с документом, удостоверяющим личность<sup>6</sup></mark>».</p>
+          <p>«…<mark tabindex="0" role="button" aria-pressed="false" data-f="reason">по причине подозрения в легализации (отмывании) доходов, полученных преступным путем<sup>4</sup></mark>, <mark tabindex="0" role="button" aria-pressed="false" data-f="measure">Вам отказано в совершении операции на …RUB от 25.03.2024<sup>1</sup></mark> <mark tabindex="0" role="button" aria-pressed="false" data-f="norm">на основании п.11 ст.7 №&nbsp;115&#8209;ФЗ<sup>3</sup></mark>. Если Вы не согласны с отказом, <mark tabindex="0" role="button" aria-pressed="false" data-f="todo">оформите в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями<sup>5</sup></mark>.»</p>
+        </article>
+      </div>
+
+      <section class="route" aria-labelledby="h-route">
+        <h3 id="h-route">Маршрут и его сроки</h3>
+        <ol class="steps">
+          <li><span class="step-num">7</span><span class="step-unit">раб. дней</span><p><strong>Реабилитация в банке.</strong> Документы и пояснения по операции, шаблон Банка России №&nbsp;4. Банк отвечает до 7 рабочих дней, п.&nbsp;13.4 ст.&nbsp;7.</p></li>
+          <li><span class="step-num">8</span><span class="step-unit">&#8209;й день</span><p><strong>Если банк молчит.</strong> Напоминание банку о сроке п.&nbsp;13.4 и жалоба в интернет&#8209;приёмную Банка России (шаблоны Навигатора, не ЦБ).</p></li>
+          <li><span class="step-num">20<span class="plus">+3</span></span><span class="step-unit">раб. дней</span><p><strong>Если отказ остаётся в силе: МВК допустима.</strong> Отказ в операции по п.&nbsp;11 входит в 4 вида решений, которые рассматривает МВК (Методичка ЦБ, с. 18). Заявление по шаблону Банка России №&nbsp;5; 20 рабочих дней и 3 на сообщение решения.</p></li>
+          <li><span class="step-num">4</span><span class="step-unit">суд</span><p><strong>После МВК.</strong> Общий срок исковой давности. Экспорт дела юристу; сами суд не ведём.</p></li>
+        </ol>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="copy-result">Скопировать разбор и сроки</button>
+        <a class="btn btn-quiet" href="https://www.cbr.ru/StaticHtml/File/155903/templates.zip" rel="noopener">Шаблоны заявлений Банка России (zip)</a>
+        <button type="button" class="btn btn-quiet" id="another">Разобрать другое письмо</button>
+        <p class="copy-feedback" role="status" aria-live="polite"></p>
+      </div>
+      <p class="next-step">Следующий шаг, чек&#8209;лист пакета по пунктам запроса: в разработке, спринт 1.</p>
+    </div>
+  </section>
+
+  <section id="granica" class="granica" aria-labelledby="h-granica">
+    <h2 id="h-granica">Границы сервиса</h2>
+    <p>Навигатор работает по открытым нормам и шаблонам Банка России и проверяет только текст, который вы вставили. Сроки считаются по производственному календарю и помечены нормой; это ориентир, а не юридическая консультация и не гарантия результата. Подсказок, как обойти проверку, сервис не даёт.</p>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <p>Pulsar, команда конкурса «Академия Финтеха 2026». Направление дизайна B «Табель сроков», черновик для выбора капитаном.</p>
+  <p>Источники норм: <a href="https://www.cbr.ru/StaticHtml/File/155903/mrp.pdf" rel="noopener">Методичка Банка России «Что нужно знать предпринимателю об ограничениях операций по счету» (PDF)</a>, письма Банка России <a href="https://www.cbr.ru/Crosscut/LawActs/File/10079" rel="noopener">ИН&#8209;01&#8209;59/98</a> и <a href="https://cbr.ru/Crosscut/LawActs/File/12160" rel="noopener">ИН&#8209;03&#8209;59/11</a>. Производственный календарь 2026 года: в прототипе зашит список праздников, перед релизом сверить с постановлением Правительства.</p>
+  <p id="fn1" class="footnote"><sup>1</sup> Корпус Pulsar: предварительная выборка 45 публичных текстов уведомлений и запросов банков (отзывы, форумы, публикации юристов, 2007 по 2026), один кодировщик, не аудит банков. Файл research/corpus-requests.md, 10.2026. <a href="#fnref1" aria-label="Вернуться к тексту">↩</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

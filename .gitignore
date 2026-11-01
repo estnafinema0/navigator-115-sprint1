@@ -1,0 +1,27 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.env
+data/real/raw/
+*.mp4
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+# ПДн и сырьё респондентов не коммитим
+data/real/private/
+interviews/log/
+*.wav
+*.m4a
+*.mp3
+eval/cache/
+# Страницы коммерческих правовых баз и агрегаторов храним только локально (ст. 1334 ГК РФ);
+# текст официального документа из них лежит рядом в .txt
+kb/sources/copies/*.html
+.claude/
+# Чужой текст (промпт из гайда Клерка) храним только локально
+eval/diy/*.local.txt
+
+# сборка функции Yandex Cloud
+infra/yc-function/dist/

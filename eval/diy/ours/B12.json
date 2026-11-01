@@ -1,0 +1,180 @@
+{
+ "id": "B12",
+ "text_sha256": "17a4a2d6492d8ad3a19988efa1ae14a12baff4321e48d99f71f3b79f17543056",
+ "cache_key": "84e7b96c62cc9b427027eebf",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "error": "ReadTimeout('timed out')"
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "unknown",
+   "confidence": 0.0,
+   "evidence": []
+  },
+  "measures": [],
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "remote_access_restriction",
+   "confidence": 0.6,
+   "evidence": [
+    {
+     "quote": "Операции приостановлены",
+     "start": 7,
+     "end": 30
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "operations_limit",
+    "evidence": [
+     {
+      "quote": "Операции приостановлены",
+      "start": 7,
+      "end": 30
+     }
+    ],
+    "confidence": 0.7
+   },
+   {
+    "type": "document_request",
+    "evidence": [
+     {
+      "quote": "Пришлите документы, подтверждающие операции за последние 15 дней",
+      "start": 140,
+      "end": 204
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "reason": {
+   "level": "general",
+   "text": "подозрительные операции",
+   "evidence": [
+    {
+     "quote": "подозрительные операции",
+     "start": 84,
+     "end": 107
+    }
+   ]
+  },
+  "requested_items": [
+   {
+    "type": "operation_supporting_docs",
+    "raw": "документы, подтверждающие операции",
+    "period": null,
+    "format": null,
+    "evidence": [
+     {
+      "quote": "документы, подтверждающие операции",
+      "start": 149,
+      "end": 183
+     }
+    ],
+    "confidence": 0.6
+   }
+  ],
+  "period": {
+   "from": null,
+   "to": null,
+   "relative": {
+    "amount": 15,
+    "unit": "days"
+   },
+   "raw": "за последние 15 дней",
+   "evidence": [
+    {
+     "quote": "за последние 15 дней",
+     "start": 184,
+     "end": 204
+    }
+   ]
+  },
+  "deadlines": [],
+  "response_channels": [
+   {
+    "type": "chat",
+    "raw": "в чате",
+    "evidence": [
+     {
+      "quote": "в чате",
+      "start": 58,
+      "end": 64
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": true,
+   "text": "Пришлите документы, подтверждающие операции за последние 15 дней",
+   "evidence": [
+    {
+     "quote": "Пришлите документы, подтверждающие операции за последние 15 дней",
+     "start": 140,
+     "end": 204
+    }
+   ]
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 8,
+  "recomputed": []
+ }
+}

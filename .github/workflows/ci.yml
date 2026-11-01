@@ -1,0 +1,42 @@
+name: ci
+on:
+  push:
+    branches: [main, "sprint*/**"]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -q --upgrade pip
+          .venv/bin/pip install -q -e ".[dev]"
+      - name: Lint, tests, gold
+        run: make check
+      - name: Corpus reproducible
+        run: |
+          make corpus synth
+          git diff --exit-code data/real/corpus.jsonl data/synthetic/
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build (typecheck + static export)
+        working-directory: web
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: |
+          npm ci
+          npm run build
+      - name: No em dash in UI copy (DESIGN.md)
+        run: "! grep -rn '—' web/app web/components web/lib"

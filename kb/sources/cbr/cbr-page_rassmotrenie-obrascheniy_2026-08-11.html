@@ -1,0 +1,1391 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="zoom:lang" content="ru" />
+    <meta name="zoom:last-modified" content="Tue, 11 Aug 2026 11:29:28 GMT" />
+<title>Рассмотрение обращений финансовыми организациями | Банк России</title>
+
+
+
+    <meta property="og:image" content="/common/images/share-1.jpg" />
+
+    
+
+
+            <link rel="stylesheet" type="text/css" href="/common/libs/jquery-ui/jquery-ui.min.css?v=v478607061" media="all">
+
+            <!--[if IE 9]><link rel="stylesheet" type="text/css" href="/common/style/main-ie9.css?v=v1337212920" media="all"><![endif]-->
+
+            <!--[if gt IE 9]><!--><link rel="stylesheet" type="text/css" href="/common/style/main.min.css?v=v1337212920" media="all"><!--<![endif]-->
+
+
+        <script type="text/javascript" src="/common/libs/jquery-3.7.1.min.js?v=v735956814"></script>
+
+
+
+        <script type="text/javascript" src="/common/libs/jquery-ui/jquery-ui.min.js?v=v478607061"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery.inputmask.min.js?v=v478607061"></script>
+
+
+        <script type="text/javascript" src="/common/scripts/vendor.js?v=v4270970564"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery.floatThead.min.js?v=v478607061"></script>
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="/common/libs/popper.js?v=v478607061"></script>
+
+        <script type="text/javascript" src="/common/libs/tippy.js?v=v478607061"></script>
+
+        <script type="text/javascript" src="/common/scripts/main.min.js?v=v1337212920"></script>
+
+
+        <script type="text/javascript" src="/common/libs/localization-ru.js?v=v712023859"></script>
+        <script type="text/javascript" src="/js/jquery.ui.autocomplete-ru.js?v=v1043438991"></script>
+
+        <script type="text/javascript" src="/js/jquery.cookie.min.js?v=v4260771145"></script>
+
+        <script type="text/javascript" src="/js/site.js?v=v2848633841"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            var $menu = $('[data-menu]'),
+                $menuItemBtn = $menu.find('[data-menu-item-btn]'),
+                $menuShow = $('[data-menu-show]'),
+                $menuClose = $('[data-menu-close]');
+            var config = $menu.data('config');
+
+            $menuShow.on('click.cms_loadwholesite mouseenter.cms_loadwholesite', function (event) {
+                loadWholeSite();
+            });
+
+            var xhr = null;
+            function loadWholeSite() {
+                if (xhr === null) {
+                    $('.menu_wrap .networks-circle').html($('.networks-circle.footer_networks').html());
+                    $('.menu_wrap .header_search').html($('.header .offsetMenu .header_search').html());
+
+                    $('[data-cms-wholesite-placeholder]').addClass('with-centered-loader').empty();
+                    xhr = $.ajax(config.url, {
+                        dataType: "html",
+                        method: "get",
+                        success: function (html) {
+                            $('[data-cms-wholesite-placeholder]').replaceWith(html);
+
+                            $menu.find('.menu_tab[data-tabs-tab]').each(function () {
+                                var tab = $(this).data('tabs-tab');
+                                $(this).toggle($menu.find('[data-tabs-content="' + tab + '"]').length != 0);
+                            });
+
+                            $menu.trigger('new-html');
+
+                            for (var i in config.catalogPath) {
+                                $menu.find('li[data-catalog-id="' + config.catalogPath[i] + '"]')
+                                    .addClass("_active");
+                                $menu.find('li[data-catalog-id="' + config.catalogPath[i] + '"]')
+                                    .closest('[data-tabs-content]')
+                                    .trigger('open-anchor');
+                            }
+
+                            $menuShow.off('click.cms_loadwholesite mouseenter.cms_loadwholesite');
+                        },
+                        error: function () {
+                            $('[data-cms-wholesite-placeholder]').removeClass('with-centered-loader')
+                                .append('<div class="menu_content offset-md-1">' +
+                                    '<span class="group-error field-validation-error">Не удалось загрузить карту сайта. <a href="#">Попробуйте еще раз.</a></span>' +
+                                    '</div>')
+                                .find('a')
+                                .on('click', function () { loadWholeSite(); });
+                        },
+                        complete: function () {
+                            xhr = null;
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+
+
+<script>
+    if (window.localStorage) {
+        if (localStorage.getItem('vision-impaired'))
+            document.getElementsByTagName('html')[0].className += ' vision-impaired';
+    }
+</script>
+<script>
+    document.documentElement.style.setProperty('--scrollbar-width', '17px');
+    setTimeout(function () {
+        
+        var div = document.createElement('div');
+
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+
+        
+        div.style.visibility = 'hidden';
+
+        document.body.appendChild(div);
+        var scrollWidth = Math.max(div.offsetWidth - div.clientWidth, 0.15); 
+        document.body.removeChild(div);
+        
+        document.documentElement.style.setProperty('--scrollbar-width', scrollWidth + 'px');
+    }, 0);
+</script>
+
+
+
+
+    
+</head>
+<body class="page-v3 page-v3-inside">
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(5774506, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/5774506" style="position:absolute; left:-9999px;" alt="" /></div></noscript>    
+<!-- /Yandex.Metrika counter -->
+        
+    
+
+    <div class="header-print">
+    <div class="offsetMenu">
+        <div class="header-print_inner">
+            <img class="header-print_logo" alt="cbr" src="/common/images/logo.svg">
+            <ul class="header-print_contacts">
+<li>107016, Москва, ул. Неглинная, д.&nbsp;12, к. В, Банк России</li>
+<li><nobr class="phone">8 800 300-30-00</nobr></li>
+<li>www.cbr.ru</li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+    <header class="header" id="header">
+        <div class="top-line" data-top-line="">
+            <div class="header_burger-big"></div>
+            <div class="offsetMenu">
+                <div class="col-md-23 header_margin-left">
+                    <div class="top-line_inner header_inner">
+                        
+
+<div class="row">
+    <div class="col-xl-4 col-md-6">
+        <div class="header_left pr-0">
+                <div class="header_menu" data-menu-show=""></div>
+            <a class="header_logo" href="/"></a>
+                <a class="header_search_btn d-flex d-md-none" href="#" data-search-form-show="" aria-label="Поиск по сайту"><div class="header_search_icon"></div></a>
+            <a class="d-flex d-md-none" href="#" data-tooltip="" data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide"><div class="header_visual-impaired_item"></div></a>
+        </div>
+    </div>
+    <div class="col-xl-17 col-md-13 offset-md-1 header_block">
+        <div class="d-none d-md-block">
+            <div class="header_right">
+                <div class="networks header_link header_networks"><a class="header_appeal-link" href="/contactBR/" data-tooltip="" data-tooltip-content="Обратиться в Банк России" data-tooltip-class="mobile-hide"></a></div>
+                <div class="networks header_networks header_visual-impaired header_visual-impaired_inner"><a href="#" data-tooltip="" data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide" aria-label="Версия для слабовидящих"><div class="header_visual-impaired_item"></div></a></div>
+                <div class="header_lang header_lang_inner header_networks">
+    <a href="/Localization/SwitchLanguage?url=%2Fprotection_rights%2Frassmotrenie-obrascheniy-potrebiteley-finansovykh-uslug%2F&amp;from=ru-RU&amp;to=en-CB"><!--noindex-->EN<!--/noindex--></a>
+</div>
+                    <div class="header_networks header_search header_search_inner">
+                        <a class="header_search_btn" href="#" data-search-form-show="" aria-label="Поиск по сайту"><div class="header_search_icon"></div><span aria-hidden="true">Поиск по сайту</span></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offsetMenu">
+            <div class="col-md-23 offset-md-1 header_margin-left">
+                <div class="header_inner">
+                    
+<div class="row">
+    <div class="col-xl-5 col-md-6">
+        <div class="header_left pr-0">
+            <div class="header_menu" data-menu-show=""></div>
+            <a class="header_logo" href="/"></a>
+            <a class="header_search_btn d-flex d-md-none" href="#" data-search-form-show="" aria-label="Поиск по сайту">
+                <div class="header_search_icon"></div>
+            </a>
+            <a class="d-flex d-md-none" href="#" data-tooltip data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide">
+                <div class="header_visual-impaired_item"></div>
+            </a>
+        </div>
+    </div>
+    <div class="col-xl-17 col-md-13 offset-md-1 header_block justify-content-end">
+        <div class="d-none d-md-block">
+            <div class="header_right">
+                <div class="networks header_link header_networks"><a class="header_appeal-link" href="/contactBR/" data-tooltip="" data-tooltip-content="Обратиться в Банк России" data-tooltip-class="mobile-hide"></a></div>
+                <div class="networks header_networks header_visual-impaired header_visual-impaired_inner">
+                    <a href="#" data-tooltip data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide" aria-label="Версия для слабовидящих">
+                        <div class="header_visual-impaired_item"></div>
+                    </a>
+                </div>
+                <div class="header_lang header_lang_inner header_networks">
+    <a href="/Localization/SwitchLanguage?url=%2Fprotection_rights%2Frassmotrenie-obrascheniy-potrebiteley-finansovykh-uslug%2F&amp;from=ru-RU&amp;to=en-CB"><!--noindex-->EN<!--/noindex--></a>
+</div>
+                <div class="header_networks header_search header_search_inner">
+                    <a class="header_search_btn" href="#" data-search-form-show="" aria-label="Поиск по сайту">
+                        <div class="header_search_icon"></div><span aria-hidden="true">Поиск по сайту</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <form action="/search/" method="get" class="search-form" data-search-form=""
+      data-api-url="/Content/SearchSuggest/Suggest"
+      data-api-top-url="">
+    <div class="offsetMenu">
+        <div class="col-md-23 offset-md-1">
+            <div class="search-form_inner">
+                <div class="search-form_title">Что вы хотите найти?<img class="search-form_title-close" src="/common/images/icons/menu-close-dark-grey.svg"></div>
+                <div class="search-form_content">
+                    <div class="search-form_block">
+                        <div class="search-form_icon"></div>
+                        <div class="search-form_field">
+                            <input name="text" type="text" autocomplete="off" placeholder="Начните писать" data-search-form-input="" />
+                        </div>
+                    </div>
+                    <div class="search-form_clear" data-search-form-clear-btn=""><img src="/common/images/icons/menu-close-gray.svg"></div>
+                    <div class="search-form_btn">
+                        <button class="b-btn _blue" data-search-form-btn="">Искать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<div class="menu_wrap" data-menu="" data-config="{&quot;catalogPath&quot;:[30447,15734],&quot;url&quot;:&quot;/Catalog/SiteMap/GetWholeSiteHtml?blockId=59191&quot;}">
+    <div class="offsetMenu">
+        <div class="header_menu _close menu_close d-none d-md-block" data-menu-close=""></div>
+        <div class="header_inner top-line_inner d-block d-md-none">
+            <div class="row">
+                <div class="col-xl-5 col-md-9">
+                    <div class="header_left pr-0">
+                        <div class="header_menu _close" role="button" tabindex="0" aria-label="Закрыть меню" data-menu-close=""></div>
+                        <a class="header_logo" href="/"></a>
+                        <a class="header_search_btn" href="#" data-search-form-show="data-search-form-show" aria-label="Поиск по сайту"><div class="header_search_icon"></div></a>
+                        <a href="#" data-tooltip="data-tooltip" data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide"><div class="header_visual-impaired_item"></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu row" data-tabs="data-tabs">
+            <div class="menu_quick col-md-7">
+                <div role="tablist" class="menu_quick_tabs">
+    <a role="tab" id="menu_tab_Activity" aria-controls="menu_content_Activity" aria-selected="true" class="menu_tab _active" href="#" data-tabs-tab="Activity">Деятельность</a>
+    <a role="tab" id="menu_tab_FinancialMarkets" aria-controls="menu_content_FinancialMarkets" aria-selected="false" class="menu_tab" href="#" data-tabs-tab="FinancialMarkets">Финансовые рынки</a>
+    <a role="tab" id="menu_tab_Documents" aria-controls="menu_content_Documents" aria-selected="false" class="menu_tab" href="#" data-tabs-tab="Documents">Документы и данные</a>
+    <a role="tab" id="menu_tab_AboutBank" aria-controls="menu_content_AboutBank" aria-selected="false" class="menu_tab" href="#" data-tabs-tab="AboutBank">О Банке России</a>
+    <a role="tab" id="menu_tab_Services" aria-controls="menu_content_Services" aria-selected="false" class="menu_tab" href="#" data-tabs-tab="Services">Сервисы</a>
+</div>
+<div class="menu_quick_links">
+    <div class="inner_links"><a href="/support_measures/" title="Меры зашиты финансового рынка" style="color:red">Меры защиты финансового рынка</a>
+  </div>
+<div class="phones"><a class="menu_phone_val" href="tel:+74993003000">
+<div class="plus">+</div>7 499 300-30-00</a><a class="menu_phone_val" href="tel:88003003000">8 800 300-30-00</a><a class="menu_phone_val" href="tel:300">300</a><span>Бесплатно для звонков с мобильных телефонов</span></div>
+<div class="inner_links">
+  <a href="/news/" title="Новости">Новости</a>
+  <a href="/rbr/" title="Решения Банка России">Решения Банка России</a>
+  <a href="/contacts/" title="Контактная информация">Контактная информация</a>
+  <a href="/sitemap" title="Карта сайта">Карта сайта</a>
+  <a href="/about/" title="О сайте">О сайте</a>
+  </div>
+<div class="networks-circle">
+  <a class="networks-circle_item _vk" href="https://vk.com/cbr_official" title="ВКонтакте"></a>
+  <a class="networks-circle_item _yt" href="https://www.youtube.com/user/BankofRussia" title="Youtube"></a>
+  <a class="networks-circle_item _tg" href="https://telegram.me/centralbank_russia" title="Telegram"></a>
+  <a class="networks-circle_item _ydzen" href="https://zen.yandex.ru/id/622372d6a565892091994ea9" title="Яндекс Дзен"></a>
+  <a class="networks-circle_item _ok" href="https://ok.ru/group/68858679787580" title="Одноклассники"></a>
+  <a class="networks-circle_item _rt" href="https://rutube.ru/channel/23873201/" title="RUTUBE"></a>
+  <a class="networks-circle_item _max" href="https://max.ru/cbr_official" title="Макс"></a>
+</div>
+</div>
+            </div>
+            <div class="d-md-none link-above">
+                <div class="header_right">
+                    <div class="header_link"><a href="/contactBR/">Обратиться в&nbsp;Банк России</a></div>
+                    <div class="header_lang">
+            <div class="header_lang_item _active"><span><!--noindex-->RU<!--/noindex--></span></div>
+            <div class="header_lang_item"><a href="/Localization/SwitchLanguage?url=%2Fprotection_rights%2Frassmotrenie-obrascheniy-potrebiteley-finansovykh-uslug%2F&amp;from=ru-RU&amp;to=en-CB"><!--noindex-->EN<!--/noindex--></a></div>
+</div>
+                </div>
+<div class="header_right"><div class="header_link"><a href="/about_br/">О Банке России</a></div></div>
+<div class="header_right"><div class="header_link"><a href="/finorg/">Проверить участника финансового рынка</a></div></div>
+<div class="header_right"><div class="header_link"><a href="/beware/">Осторожно: мошенники!</a></div></div>            </div>
+            <div class="menu_content_container col-md" data-cms-wholesite-placeholder="">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <main id="content">
+        <div class="offsetMenu ">
+            <div class="container-fluid">
+                <div class="col-md-23 offset-md-1">
+                    <div class="breadcrumbs">
+    <div class="breadcrumbs_item"><a class="breadcrumbs_home" href="/"></a></div>
+        <div class="breadcrumbs_item">
+            <a href="/protection_rights/"><!--noindex-->Защита прав потребителей финансовых услуг<!--/noindex--></a>
+        </div>
+    </div>
+
+                    <!--index-->
+<h1><span class="referenceable">Рассмотрение обращений финансовыми организациями</span>
+</h1>
+                                        
+
+
+
+
+
+
+                    <style type='text/css'>
+/*<![CDATA[*/
+.comment_mod {
+font-weight:bold;
+margin:50px 0;
+
+}
+.comment_mod td {
+width:30%;
+}
+.mod_td  {
+ text-align: center;
+ 
+}
+td>img {
+width:150px;
+}
+/*]]*/
+</style><div class="lead-text"><p>Банк России оценивает удовлетворенность заявителей ответами финансовых организаций, а&nbsp;также проводит с&nbsp;ними работу, направленную на&nbsp;повышение качества таких ответов.</p></div>                                            <div class="landing-text">
+                            <style type='text/css'>
+/*<![CDATA[*/
+td span {
+padding-left:0;
+}
+.center {
+text-align: center; 
+display: block;
+padding-left:0;
+}
+/*]]*/
+</style><p>Для&nbsp;этого регулятор опрашивает заявителей, насколько они&nbsp;довольны ответами, полученными от&nbsp;финансовых организаций, a&nbsp;затем анализирует оцененные ответы на&nbsp;предмет их&nbsp;клиентоориентированности, социализации (понятности) и&nbsp;обсуждает их&nbsp;с&nbsp;организациями.</p>
+<p>При&nbsp;этом Банк России ориентируется на&nbsp;собственные правила и&nbsp;критерии клиентоориентированности и&nbsp;социализации, которые применяет при&nbsp;рассмотрении обращений.</p>
+<p>Клиентоориентированность &ndash; это&nbsp;подход, при&nbsp;котором финансовая организация стремится решить проблему человека, изложенную в&nbsp;обращении, с&nbsp;максимальной пользой для&nbsp;него.</p>
+<p>Социализация ответов на&nbsp;обращения &ndash; это&nbsp;методика подготовки максимально понятного ответа на&nbsp;обращение конкретного заявителя. При&nbsp;социализации ответов необходимо придерживаться следующих правил: соблюдать структуру и&nbsp;визуальное оформление текста, проявлять эмпатию и&nbsp;адресность, использовать понятные язык и&nbsp;стиль общения.</p>
+<p></p>
+                        </div>
+                                        <div class="title-container"><div class="block-title"><h2><span class="referenceable" id="a_185092">Обзоры практик рассмотрения обращений. Рекомендации</span></h2></div>
+
+
+<div class="dropdown">
+<a aria-controls="DropDown_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block195150/zone" id="a_195150" role="button" tabindex="0">Эмпатия и адресность</a>
+
+    <div id="DropDown_content" role="region" aria-labelledby="a_195150" class="dropdown_content">
+<div class="landing-text"><p>Эмпатия в&nbsp;коммуникации с&nbsp;потребителями финансовых услуг &ndash; это&nbsp;не&nbsp;просто проявление вежливости. Это&nbsp;эффективный инструмент, который помогает снизить уровень стресса клиента, предотвратить развитие конфликта, укрепить лояльность и&nbsp;повысить доверие к&nbsp;финансовому рынку в&nbsp;целом. Когда вопросы касаются денег, безопасности и&nbsp;сложных жизненных ситуаций, тон&nbsp;ответа имеет важное значение.</p>
+<p>Адресный и&nbsp;клиентоориентированный подход помогает финансовой организации выстраивать долгосрочные отношения с&nbsp;клиентами. Таким образом она&nbsp;подтверждает искреннюю заинтересованность в&nbsp;решении возникающих вопросов и&nbsp;укреплении доверия потребителей.</p><style type='text/css'>
+/*<![CDATA[*/
+.table-head {
+    text-align: center;
+     text-transform: uppercase;
+    font-size: 2rem !important;
+    
+}
+.table-head--wrong {
+ color: red;
+}
+.table-head--right {
+ color: green;
+}
+/*]]*/
+</style>
+
+
+<div class="dropdown">
+<a aria-controls="DropDown7_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block195153/zone" id="a_195153" role="button" tabindex="0">1.	Структура ответа: от человека к человеку</a>
+
+    <div id="DropDown7_content" role="region" aria-labelledby="a_195153" class="dropdown_content">
+<ul>
+<li>Всегда обращайтесь к&nbsp;заявителю по&nbsp;<strong>имени</strong>. Это&nbsp;первый шаг&nbsp;к&nbsp;установлению контакта.</li>
+<li>Покажите, что&nbsp;вы&nbsp;<strong>услышали человека </strong>и&nbsp;поняли его&nbsp;запрос.</li>
+<li><strong>Объясните</strong>, почему возникла проблема. Ответ не&nbsp;может представлять собой только набор фактов: <em>карту разблокировали, комиссию отменили, ограничения снять не&nbsp;можем, нет&nbsp;оснований для&nbsp;пересмотра размера страховой выплаты</em>.</li>
+</ul><table class="data">
+<tbody>
+<tr>
+<td colspan="2">
+<p><strong>Ситуация: заявитель сообщает, что&nbsp;банк не&nbsp;исполняет заявку на&nbsp;досрочное погашение кредита.</strong></p>
+</td>
+</tr>
+<tr>
+<th class="table-head table-head--wrong" style="width:50%">X</th>
+<th class="table-head table-head--right">V</th>
+</tr>
+<tr>
+<td>
+<p>Банк в&nbsp;ответ на&nbsp;Ваше обращение сообщает, что&nbsp;по&nbsp;результатам проверки принято положительное решение о&nbsp;погашении кредитных обязательств по&nbsp;договору заявителя.</p>
+</td>
+<td>Уважаемая ИО!<br /><br />Мы&nbsp;рассмотрели Ваше обращение по&nbsp;вопросу досрочного погашения задолженности.<br /><br />Рады сообщить, что&nbsp;на&nbsp;(дата) Договор и&nbsp;счет *** закрыты.<br /><br />Ваше заявление&nbsp;от&nbsp;(дата) на&nbsp;досрочное погашение задолженности Банк не&nbsp;исполнил в&nbsp;связи с&nbsp;наличием ареста на&nbsp;Ваших счетах.<br /><br />Банк не&nbsp;вправе снять арест до&nbsp;получения постановления судебного пристава-исполнителя о&nbsp;снятии ареста с&nbsp;денежных средств.<br />Средства в&nbsp;счет погашения задолженности были зачислены (дата) после получения постановления о&nbsp;снятии ареста.<br /><br />Надеемся, что&nbsp;помогли разобраться в&nbsp;сложившейся ситуации.</td>
+</tr>
+</tbody>
+</table><table class="data">
+<tbody>
+<tr>
+<td colspan="2">
+<p><strong>Ситуация: заявитель сообщил, что&nbsp;несвоевременно получил направление на&nbsp;ремонт.</strong></p>
+</td>
+</tr>
+<tr>
+<th class="table-head table-head--wrong" style="width: 50%;">x</th>
+<th class="table-head table-head--right">v</th>
+</tr>
+<tr>
+<td>
+<p>Страховое общество провело проверку в&nbsp;связи с&nbsp;поступившим обращением.</p>
+<br />По&nbsp;результатам проведенной проверки установлено, что&nbsp;между Обществом и&nbsp;ФИО&nbsp;заключен договор страхования <em>(...)</em> <br />Сообщаем, что&nbsp;направление на&nbsp;ремонт было направлено на&nbsp;адреса, указанные в&nbsp;Вашем заявлении. <br />Выплата неустойки будет произведена на&nbsp;Ваш&nbsp;счет по&nbsp;окончании мероприятий по&nbsp;установлению итогового размера страхового возмещения. <br />Также сообщаем, что&nbsp;Общество действует в&nbsp;полном соответствии со&nbsp;страховым законодательством Российской Федерации.</td>
+<td>
+<p>Уважаемый ИО!</p>
+<br />Мы&nbsp;рассмотрели Ваше обращение. Вы&nbsp;сообщаете, что&nbsp;Вам&nbsp;не&nbsp;было выплачено страховое возмещение по&nbsp;договору ОСАГО. Также Вы&nbsp;не&nbsp;получили направление на&nbsp;ремонт в&nbsp;сроки, установленные Законом об&nbsp;ОСАГО<sup>1</sup>. <br /><br />Сообщаем, что&nbsp;<em>(дата)</em> мы&nbsp;отправили направление на&nbsp;ремонт на&nbsp;электронный и&nbsp;почтовый адреса, которые&nbsp;Вы&nbsp;<span data-footnote="Указать адреса. Направление на ремонт можно приложить к самому ответу." class="footnote">указали</span> в&nbsp;заявлении о&nbsp;страховом возмещении. <br /><br />Отмечаем, что&nbsp;срок выдачи направления на&nbsp;ремонт увеличен в&nbsp;связи&nbsp;с (...). <br /><br />Также поясняем, что&nbsp;выплатим неустойку<sup>2</sup>, когда будет определен итоговый размер страхового возмещения по&nbsp;выданному направлению. <br /><br />Надеемся, что&nbsp;наши разъяснения помогут&nbsp;Вам&nbsp;разобраться в&nbsp;возникших вопросах.<br /><br /><div>&nbsp;
+<hr align="left" size="1" width="33%"></div><sup>1</sup>&nbsp;Федеральный закон от&nbsp;25.04.2002 &#8470;&nbsp;<nobr>40-ФЗ</nobr> &laquo;Об&nbsp;обязательном страховании гражданской ответственности владельцев транспортных средств&raquo; (далее &ndash; Закон об&nbsp;ОСАГО).<br /><sup>2</sup>&nbsp;Пункт 21&nbsp;статьи 12&nbsp;Закона об&nbsp;ОСАГО.</td>
+</tr>
+</tbody>
+</table>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown8_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block195157/zone" id="a_195157" role="button" tabindex="0">2.	Честность и прозрачность</a>
+
+    <div id="DropDown8_content" role="region" aria-labelledby="a_195157" class="dropdown_content">
+<p>Человек должен понимать, что&nbsp;его&nbsp;вопрос решается и&nbsp;когда он&nbsp;сможет получить результат.</p>
+<ul>
+<li>Если произошла ошибка со&nbsp;стороны финансовой организации, <strong>признайте</strong>&nbsp;ее.</li>
+<li>Если проблема сложная и&nbsp;требуется время для&nbsp;ее&nbsp;решения, напишите об&nbsp;этом и&nbsp;назовите <strong>реалистичные сроки</strong>.</li>
+</ul><table class="data">
+<tbody>
+<tr>
+<td colspan="2">
+<p><strong>Ситуация: из-за технической ошибки банкомата денежные средства не&nbsp;были зачислены на&nbsp;счет.</strong></p>
+</td>
+</tr>
+<tr>
+<th class="table-head table-head--wrong" style="width:50%">X</th>
+<th class="table-head table-head--right">V</th>
+</tr>
+<tr>
+<td>
+<p>Банк рассмотрел Ваше обращение.<br /><br />Денежные средства зачислены на&nbsp;Ваш&nbsp;счет в&nbsp;размере (*** руб.).&nbsp;<br /><br />Ознакомиться с&nbsp;выпиской можно в&nbsp;приложении и&nbsp;офисах Банка.</p>
+</td>
+<td>Вы&nbsp;сообщаете, что&nbsp;внесли в&nbsp;банкомат денежные средства, но&nbsp;на&nbsp;счет они&nbsp;не&nbsp;поступили.<br /><br />Мы&nbsp;провели проверку по&nbsp;Вашему вопросу. К&nbsp;сожалению, из-за технического сбоя деньги не&nbsp;были зачислены на&nbsp;счет сразу&nbsp;же.&nbsp;<br /><br />Внесенная Вами сумма (*** руб.) поступила на&nbsp;счет (дата). Вы&nbsp;можете получить выписку в&nbsp;приложении или&nbsp;офисе Банка.<br /><br />Приносим извинения за&nbsp;сложившуюся ситуацию.</td>
+</tr>
+</tbody>
+</table><table class="data">
+<tbody>
+<tr>
+<td colspan="2">
+<p><strong>Ситуация: заявитель не&nbsp;согласен с&nbsp;расчетом стоимости восстановительного ремонта.</strong></p>
+</td>
+</tr>
+<tr>
+<th class="table-head table-head--wrong">x</th>
+<th class="table-head table-head--right">v</th>
+</tr>
+<tr>
+<td>В&nbsp;ответ на&nbsp;Ваше обращение сообщаем, что&nbsp;инициировали мероприятия по&nbsp;зачислению на&nbsp;Ваш&nbsp;счет денежных средств в&nbsp;счет доплаты по&nbsp;страховому возмещению и&nbsp;выплаты неустойки.</td>
+<td>Вы&nbsp;сообщаете, что&nbsp;не&nbsp;согласны со&nbsp;стоимостью восстановительного ремонта Вашего автомобиля.<br /><br />Мы&nbsp;провели проверку и&nbsp;установили, что&nbsp;из-за экспертной ошибки стоимость ремонта была рассчитана неверно.<br /><br />В&nbsp;связи с&nbsp;этим стоимость ремонта пересчитана &ndash; копия экспертного заключения приложена к&nbsp;ответу. &nbsp;<br /><br />Сообщаем, что&nbsp;до&nbsp;(дата) произведем:<br />&ndash;&nbsp;доплату страхового возмещения (*** руб.);<br />&ndash;&nbsp;выплату неустойки (сумма будет рассчитана по&nbsp;формуле, определенной пунктом 21&nbsp;статьи 12&nbsp;Закона об&nbsp;ОСАГО<sup>1</sup>). (В&nbsp;приложение можно добавить подробную информацию о&nbsp;расчетах).<br /><br />ИО, приносим извинения за&nbsp;сложившуюся ситуацию. Надеемся, что&nbsp;данный инцидент не&nbsp;станет препятствием для&nbsp;нашего дальнейшего сотрудничества.<br /><br /><div>&nbsp;
+<hr align="left" size="1" width="33%"></div><sup>1</sup>&nbsp;Федеральный закон от&nbsp;25.04.2002 &#8470;&nbsp;<nobr>40-ФЗ</nobr> &laquo;Об&nbsp;обязательном страховании гражданской ответственности владельцев транспортных средств&raquo;.</td>
+</tr>
+</tbody>
+</table>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown9_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block195161/zone" id="a_195161" role="button" tabindex="0">3.	Адресность</a>
+
+    <div id="DropDown9_content" role="region" aria-labelledby="a_195161" class="dropdown_content">
+<p>Часто ответ представляет собой фрагмент текста договора (закона, условий и&nbsp;т.&nbsp;д.) &ndash; обезличенный текст, который адресован всем клиентам.</p>
+<ul>
+<li>Давайте <strong>адресный ответ</strong> &ndash; по&nbsp;каждой конкретной ситуации.
+<p>При&nbsp;выборе формулировок учитывайте:</p>
+</li>
+<ul>
+<li>профиль заявителя (пол, возраст, уровень образования, финансовой грамотности, социальный статус и&nbsp;т.д.);</li>
+<li>контекст обращения, общую тональность и&nbsp;способ изложения доводов;</li>
+<li>результат рассмотрения обращения (разрешена ситуация или&nbsp;нет).</li>
+</ul>
+<li>Некоторые организации добавляют к&nbsp;ответам копии документов, снимки экрана и&nbsp;т.д. &ndash; заявителям, особенно старшего возраста, легче понять, о&nbsp;чем&nbsp;идет речь в&nbsp;ответе.</li>
+<li>Если повторно запрашиваете документы, объясните <strong>причину</strong>. Уточните, почему не&nbsp;подходят&nbsp;те, которые заявитель уже&nbsp;предоставил.
+<p>Укажите <strong>конкретные</strong> документы (сведения), которых не&nbsp;хватает для&nbsp;рассмотрения вопроса. Не&nbsp;нужно снова направлять человеку шаблонный список, чтобы он&nbsp;сам&nbsp;в&nbsp;нем&nbsp;разбирался или&nbsp;возвращался к&nbsp;вам&nbsp;с&nbsp;уточняющими вопросами.</p>
+</li>
+<li>Избегайте сложной финансовой и&nbsp;юридической терминологии, длинных предложений. Объясняйте ситуацию <strong>простым </strong>и<strong>&nbsp;понятным языком</strong>.</li>
+</ul><table class="data">
+<tbody>
+<tr>
+<th class="table-head table-head--wrong" width="50%">X</th>
+<th class="table-head table-head--right">V</th>
+</tr>
+<tr>
+<td>
+<p>Ввиду возникновения у&nbsp;Банка подозрений о&nbsp;том, что&nbsp;операции по&nbsp;Счету осуществляются в&nbsp;целях легализации (отмывания) доходов, полученных преступным путем, или&nbsp;финансирования терроризма, 13.09.2025 Банк воспользовался правом, установленным пунктом 11&nbsp;статьи 7&nbsp;Федерального закона &#8470;&nbsp;<nobr>115-ФЗ,</nobr> и&nbsp;принял решение об&nbsp;отказе в&nbsp;совершении операции перевода денежных средств со&nbsp;Счета, о&nbsp;чем&nbsp;Вы&nbsp;были проинформированы посредством соответствующего уведомления Банка (далее &ndash; Уведомление), направленного на&nbsp;адрес Вашей электронной почты, указанный в&nbsp;учетных системах Банка.</p>
+</td>
+<td>
+<p>Сообщаем&nbsp;Вам, что&nbsp;в&nbsp;соответствии с&nbsp;пунктом 11&nbsp;статьи 7&nbsp;Закона &#8470;&nbsp;<nobr>115-ФЗ<sup>1</sup></nobr> <em>(дата)</em> мы&nbsp;приняли решение об&nbsp;отказе в&nbsp;совершении операции по&nbsp;Вашему счету ***:</p>
+<ul>
+<li><em>(дата, &#8470; п/п, получатель/плательщик, назначение платежа, сумма операции).</em></li>
+</ul>
+<p>Мы&nbsp;сообщили&nbsp;Вам&nbsp;об&nbsp;этом <em>(дата)</em> по&nbsp;адресу электронной почты (...).</p>
+<p>Чтобы Банк рассмотрел вопрос о&nbsp;пересмотре решения, Вам&nbsp;нужно направить нам&nbsp;заявление о&nbsp;пересмотре решения об&nbsp;отказе в&nbsp;совершении операции.</p>
+<p>Также Вы&nbsp;можете представить следующие документы/сведения:</p>
+<ul>
+<li><em>(указать конкретные документы&nbsp;/ сведения, необходимые Банку для&nbsp;рассмотрения вопроса о&nbsp;пересмотре принятого решения об&nbsp;отказе, с&nbsp;указанием видов документов, контрагентов и&nbsp;точно определенных периодов).</em></li>
+</ul>
+<p>Не&nbsp;позднее&nbsp;7&nbsp;(семи) рабочих дней со&nbsp;дня&nbsp;приема заявления мы&nbsp;сообщим&nbsp;Вам&nbsp;о&nbsp;пересмотре решения об&nbsp;отказе или&nbsp;о&nbsp;невозможности пересмотра такого решения.</p>
+<p>Также Вы&nbsp;можете предоставить документы&nbsp;и&nbsp;(или) сведения:</p>
+<ul>
+<li>посетив подразделение Банка;</li>
+<li>по&nbsp;почте;</li>
+<li>в&nbsp;электронном виде, в&nbsp;том&nbsp;числе по&nbsp;системе дистанционного банковского обслуживания (при&nbsp;наличии).</li>
+</ul>
+<br /><div>&nbsp;
+<hr align="left" size="1" width="33%"></div><sup>1</sup>&nbsp;Федеральный закон от&nbsp;07.08.2001 &#8470;&nbsp;<nobr>115-ФЗ</nobr> &laquo;О&nbsp;противодействии легализации (отмыванию) доходов, полученных преступным путем, и&nbsp;финансированию терроризма&raquo;.</td>
+</tr>
+</tbody>
+</table><table class="data">
+<tbody>
+<tr>
+<td colspan="2">
+<p><strong>Ситуация: заявитель сообщает, что&nbsp;не&nbsp;отказывался от&nbsp;договора.</strong></p>
+</td>
+</tr>
+<tr>
+<th class="table-head table-head--wrong" width="50%">x</th>
+<th class="table-head table-head--right">v</th>
+</tr>
+<tr>
+<td>По&nbsp;полученной информации, отключение от&nbsp;договора брокерского обслуживания Клиентом было осуществлено через простую электронную подпись при&nbsp;обращении через&nbsp;чат. Данное обстоятельство предусмотрено и&nbsp;указано в&nbsp;п.&nbsp;7&nbsp;заявления на&nbsp;присоединение к&nbsp;договору.</td>
+<td>Вы&nbsp;обратились &nbsp;в&nbsp;чат&nbsp;и&nbsp;подтвердили отключение от&nbsp;договора брокерского обслуживания, введя <span data-footnote="Указать номер телефона." class="footnote">код&nbsp;из&nbsp;СМС</span>&nbsp;(простую электронную подпись)<sup>1</sup>.<br /><br /><div>&nbsp;
+<hr align="left" size="1" width="33%"></div><sup>1</sup>&nbsp;Этот способ отказа от&nbsp;договора указан в&nbsp;пункте 7&nbsp;заявления на&nbsp;присоединение к&nbsp;договору брокерского обслуживания.</td>
+</tr>
+</tbody>
+</table><table class="data">
+<tbody>
+<tr>
+<td colspan="2">
+<p><strong>Ситуация: заявитель спрашивает, можно&nbsp;ли&nbsp;расторгнуть договор ОСАГО при&nbsp;продаже машины и&nbsp;вернуть часть страховой премии.</strong></p>
+</td>
+</tr>
+<tr>
+<th class="table-head table-head--wrong" width="50%">x</th>
+<th class="table-head table-head--right">v</th>
+</tr>
+<tr>
+<td>В&nbsp;соответствии с&nbsp;п.&nbsp;4&nbsp;ст.&nbsp;10&nbsp;Федерального закона &#8470;&nbsp;<nobr>40-ФЗ</nobr> об&nbsp;ОСАГО и&nbsp;п.&nbsp;6.4 Правил ОСАГО, утвержденных Положением ЦБ&nbsp;РФ &#8470;&nbsp;<nobr>837-П</nobr> от&nbsp;19&nbsp;сентября 2014&nbsp;г.&nbsp;при&nbsp;досрочном прекращении действия договоров обязательного страхования в&nbsp;случаях, для&nbsp;которых предусмотрен возврат части страховой премии, страховщик возвращает страхователю часть страховой премии в&nbsp;размере ее&nbsp;доли, предназначенной для&nbsp;осуществления страхового возмещения и&nbsp;приходящейся на&nbsp;неистекший срок действия договора обязательного страхования или&nbsp;неистекший срок сезонного и&nbsp;иного временного использования транспортного средства (период использования транспортного средства).</td>
+<td>Если Вы&nbsp;продали автомобиль и&nbsp;хотите досрочно расторгнуть договор ОСАГО, Вам&nbsp;нужно подать заявление о&nbsp;расторжении<sup>1</sup>. Обратите внимание: подать заявление может страхователь (человек, оформивший полис) или&nbsp;его&nbsp;правомочный представитель.<br /><br />Для&nbsp;подачи заявления понадобятся:<br /><br />
+<ul>
+<li>полис ОСАГО;</li>
+<li>паспорт страхователя;</li>
+<li>договор купли-продажи автомобиля;</li>
+<li>банковские реквизиты.</li>
+</ul>
+Подать заявление можно одним из&nbsp;способов:<br /><br />
+<ul>
+<li>в&nbsp;офисе страховой компании;</li>
+<li>через личный кабинет на&nbsp;сайте&nbsp;/ в&nbsp;приложении.&nbsp;</li>
+</ul>
+&nbsp;<br /><br />После его&nbsp;рассмотрения мы&nbsp;вернем&nbsp;Вам&nbsp;часть страховой премии за&nbsp;неиспользованный период действия договора<sup>2</sup>.<br /><br />&nbsp;<br /><br />Если у&nbsp;Вас&nbsp;возникнут вопросы, мы&nbsp;всегда готовы помочь &ndash; свяжитесь с&nbsp;нами по&nbsp;телефону (...) или&nbsp;напишите в&nbsp;чат&nbsp;приложения.&nbsp;<br /><br />&nbsp;<br /><br />К&nbsp;ответу также можно добавить скриншоты экрана приложения/сайта с&nbsp;последовательными шагами для&nbsp;расторжения договора через личный кабинет.<br /><br /><div>&nbsp;
+<hr align="left" size="1" width="33%"></div><sup>1</sup>&nbsp;Бланк /образец заявления можно скачать на&nbsp;сайте (...), а&nbsp;также получить в&nbsp;офисе страховой компании.&nbsp;<br /><sup>2&nbsp;</sup>Пункт 4&nbsp;статьи 10&nbsp;Федерального закона от&nbsp;25.04.2002 &#8470;&nbsp;<nobr>40-ФЗ</nobr> &laquo;Об&nbsp;обязательном страховании гражданской ответственности владельцев транспортных средств&raquo;, пункт 6.4 Положения Банка России от&nbsp;01.04.2024 &#8470;&nbsp;<nobr>837-П</nobr> &laquo;О&nbsp;правилах обязательного страхования гражданской ответственности владельцев транспортных средств&raquo;.</td>
+</tr>
+</tbody>
+</table>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown10_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block195166/zone" id="a_195166" role="button" tabindex="0">4.	Тон ответа</a>
+
+    <div id="DropDown10_content" role="region" aria-labelledby="a_195166" class="dropdown_content">
+<table class="data">
+<tbody>
+<tr>
+<th class="table-head table-head--wrong" width="5%">X</th>
+<td style="font-size: calc(10px + 10 * ((100vw - 320px) / 1043));">Не&nbsp;выражайте сочувствие для&nbsp;галочки. Не&nbsp;связывайте сожаление с&nbsp;невозможностью помочь и&nbsp;бездействием. Избегайте подобных конструкций: союз &laquo;но&raquo; перечеркивает&nbsp;все, что&nbsp;было сказано до&nbsp;него.</td>
+</tr>
+<tr>
+<td colspan="2">
+<p>ИО, мы&nbsp;заинтересованы в&nbsp;решении спорных ситуаций с&nbsp;клиентами, но&nbsp;обязаны учитывать нормы закона.</p>
+</td>
+</tr>
+</tbody>
+</table><table class="data">
+<tbody>
+<tr>
+<th class="table-head table-head--wrong" width="5%">X</th>
+<td style="font-size: calc(10px + 10 * ((100vw - 320px) / 1043));">Не&nbsp;стремитесь усилить ответ за&nbsp;счет нескольких эмпатичных фраз &ndash; это&nbsp;делает ответ неестественным и&nbsp;шаблонным. Достаточно один раз&nbsp;показать, что&nbsp;вы&nbsp;понимаете ситуацию клиента, а&nbsp;затем перейти к&nbsp;решению вопроса.</td>
+</tr>
+<tr>
+<td colspan="2">
+<p>Мы&nbsp;внимательно рассмотрели Вашу ситуацию и&nbsp;понимаем, как&nbsp;важно для&nbsp;Вас&nbsp;разрешение вопроса о&nbsp;получении денежных средств со&nbsp;счета. Мы&nbsp;прекрасно понимаем Ваше беспокойство &ndash; блокировка карты всегда вызывает неудобства, особенно если&nbsp;Вы&nbsp;запланировали пользование услугами в&nbsp;срочном порядке. Мы&nbsp;искренне сожалеем, что&nbsp;Вам&nbsp;пришлось столкнуться с&nbsp;подобной ситуацией.</p>
+</td>
+</tr>
+</tbody>
+</table>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown11_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block195172/zone" id="a_195172" role="button" tabindex="0">5.	Рекомендации (когда решение вопроса вне компетенции организации)</a>
+
+    <div id="DropDown11_content" role="region" aria-labelledby="a_195172" class="dropdown_content">
+<ul>
+<li>Если рекомендуете обратиться в&nbsp;другую структуру, объясните <strong>причины и&nbsp;как&nbsp;это&nbsp;поможет</strong> человеку. Тогда это&nbsp;будет выглядеть как&nbsp;помощь, а&nbsp;не&nbsp;как&nbsp;попытка избавиться от&nbsp;заявителя.</li>
+<li>Если направляете человека в&nbsp;другие организации, особенно региональные, облегчите его&nbsp;путь, <strong>предложив готовую информацию</strong> (телефон, почтовый адрес, ссылку на&nbsp;сайт).</li>
+</ul><table class="data">
+<tbody>
+<tr>
+<td colspan="2">
+<p>Учитывая, что&nbsp;Ваша ситуация связана с&nbsp;исполнением постановления судебного пристава, рекомендуем обратиться в&nbsp;Федеральную службу судебных приставов (ФССП России)<sup>1</sup>.</p>
+<div>&nbsp;
+<hr align="left" size="1" width="33%"></div>
+<p><sup>1</sup>&nbsp;Официальный сайт ФССП России &ndash; <a href="https://fssp.gov.ru/" target="_blank" rel="noopener">fssp.gov.ru</a>.<br /><br /><br /></p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<p>ИО, мы&nbsp;с&nbsp;пониманием относимся к&nbsp;ситуации, изложенной в&nbsp;обращении. Между тем&nbsp;рассмотрение противоправных действий третьих лиц&nbsp;находится в&nbsp;компетенции правоохранительных органов.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<p>Ваш&nbsp;вопрос относится к&nbsp;компетенции Министерства внутренних дел&nbsp;Российской Федерации. Согласно информации, изложенной в&nbsp;Вашем обращении, Ваше дело находилось на&nbsp;рассмотрении в&nbsp;ведомстве. Рекомендуем Вам&nbsp;продолжить взаимодействие с&nbsp;правоохранительными органами.<br /><br /></p>
+</td>
+</tr>
+</tbody>
+</table>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown12_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block195179/zone" id="a_195179" role="button" tabindex="0">6.	Эмоциональная поддержка</a>
+
+    <div id="DropDown12_content" role="region" aria-labelledby="a_195179" class="dropdown_content">
+<p>Эмпатия &ndash; это&nbsp;не&nbsp;только формальное извинение или&nbsp;сочувствие. Это&nbsp;такой ответ, который автор сам&nbsp;хотел&nbsp;бы получить в&nbsp;аналогичной ситуации. Он&nbsp;отвечает на&nbsp;все&nbsp;вопросы, помогает разобраться в&nbsp;обстоятельствах и&nbsp;подсказывает дальнейшие действия.</p>
+<ul>
+<li>Слова поддержки сами по&nbsp;себе не&nbsp;помогают &ndash; клиенту важно понимать, что&nbsp;организация сделала все&nbsp;возможное для&nbsp;решения его&nbsp;вопроса. Если проявляете эмпатию, подкрепляйте ее&nbsp;действием и&nbsp;<strong>активной позицией</strong>. При&nbsp;необходимости дайте рекомендации для&nbsp;дальнейших действий: куда обратиться, какие документы подготовить и&nbsp;т.д.
+<p>За&nbsp;таким ответом виден живой человек, который стремится помочь, а&nbsp;не&nbsp;следует шаблону. Таким письмам больше доверяют, и, соответственно, возрастает доверие к&nbsp;самой организации.</p>
+</li>
+<li>Выражайте <strong>поддержку</strong><span style="font-size: calc(6.93193px + 0.958773vw);"> сдержанно и&nbsp;только&nbsp;там, где&nbsp;она&nbsp;действительно уместна. Цель &ndash; показать клиенту, что&nbsp;его&nbsp;услышали, а&nbsp;не&nbsp;усилить эмоциональную окраску ответа.</span></li>
+</ul><div class="title-container"><div class="block-title"><h5><span class="referenceable" id="a_195186">Примеры фраз</span></h5></div><table class="data">
+<tbody>
+<tr>
+<td rowspan="2">
+<p><strong>Понимание сложности ситуации</strong></p>
+</td>
+<td rowspan="2">
+<p>Понимаем Ваше беспокойство, вызванное сложившейся ситуацией.</p>
+<p>Мы&nbsp;понимаем сложность вашей ситуации, поэтому сами направили запрос (...)</p>
+</td>
+</tr>
+<tr></tr>
+<tr>
+<td>
+<p><strong>Проблему решили</strong></p>
+</td>
+<td>
+<p>Рады сообщить, что&nbsp;вопрос решен положительно: Банк предоставил&nbsp;Вам&nbsp;кредитные каникулы.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Сожаление, сочувствие</strong></p>
+</td>
+<td>
+<p>Сожалеем, что&nbsp;Вам&nbsp;пришлось столкнуться со&nbsp;сложностями при&nbsp;оформлении кредитных каникул. Надеемся, что&nbsp;наши разъяснения помогут&nbsp;Вам&nbsp;разобраться в&nbsp;сложившейся ситуации.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Рекомендации на&nbsp;будущее</strong></p>
+</td>
+<td>
+<p>В&nbsp;дальнейшем при&nbsp;заключении любых договоров внимательно изучайте все&nbsp;их&nbsp;условия. Это&nbsp;позволит избежать спорных ситуаций.</p>
+<p>Не&nbsp;торопитесь и&nbsp;уделите время изучению деталей. Если какие-либо условия договора&nbsp;Вам&nbsp;непонятны, просите разъяснения у&nbsp;сотрудников, уточняйте интересующие&nbsp;Вас&nbsp;вопросы.</p>
+</td>
+</tr>
+</tbody>
+</table></div>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown13_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block195188/zone" id="a_195188" role="button" tabindex="0">7.	Примерный чек-лист для проверки ответа</a>
+
+    <div id="DropDown13_content" role="region" aria-labelledby="a_195188" class="dropdown_content">
+<ol>
+<li>Обращение к&nbsp;заявителю по&nbsp;имени.</li>
+<li>Уместная эмпатия, понимание ситуации.</li>
+<li>Признание ошибки (если организация ее&nbsp;допустила).</li>
+<li>Полные ответы на&nbsp;все&nbsp;вопросы заявителя.</li>
+<li>Указано, что&nbsp;организация уже&nbsp;сделала для&nbsp;решения проблемы.</li>
+<li>Обозначены конкретные сроки.</li>
+<li>Предложены рекомендации по&nbsp;дальнейшим действиям (при&nbsp;необходимости).</li>
+<li>Текст написан понятно и&nbsp;доступно для&nbsp;непрофессионала.</li>
+<li>Тон&nbsp;ответа уважительный, доброжелательный, без&nbsp;поучающих или&nbsp;обвинительных формулировок.</li>
+</ol>    </div>
+</div>
+</div>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown2_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block193906/zone" id="a_193906" role="button" tabindex="0">Информирование при ограничениях по <span data-footnote="Федеральный закон от 07.08.2001 № 115-ФЗ &laquo;О противодействии легализации (отмыванию) доходов, полученных преступным путем, и финансированию терроризма&raquo;." class="footnote">№ 115-ФЗ</span> и <span data-footnote="Федеральный закон от 27.06.2011 № 161-ФЗ &laquo;О национальной платежной системе&raquo;." class="footnote">№ 161-ФЗ</span></a>
+
+    <div id="DropDown2_content" role="region" aria-labelledby="a_193906" class="dropdown_content">
+<div class="landing-text"><p>Клиенты кредитных организаций обращаются в&nbsp;Банк России с&nbsp;жалобами из-за получения от&nbsp;кредитной организации неинформативных шаблонных ответов на&nbsp;свои обращения, связанные с&nbsp;ограничениями по&nbsp;линии противодействия легализации преступных доходов или&nbsp;борьбы с&nbsp;мошенничеством.</p>
+<p>В&nbsp;ряде случаев такие ответы не&nbsp;содержат правовых обоснований введенных&nbsp;мер. В&nbsp;них&nbsp;не&nbsp;указано, какие операции остались доступными, нет&nbsp;четкой пошаговой инструкции &ndash; что&nbsp;делать, чтобы снять ограничения, и&nbsp;как&nbsp;обжаловать решение банка.</p>
+<p>Цель настоящих рекомендаций &ndash; повысить качество информирования клиентов еще&nbsp;до&nbsp;момента подачи ими&nbsp;жалоб.</p>
+<p>Нам&nbsp;важно, чтобы банки в&nbsp;инициативном порядке, не&nbsp;дожидаясь обращения, сообщали клиенту максимум полезной информации о&nbsp;введенных ограничениях, а&nbsp;также оставляли возможность связи через личный кабинет на&nbsp;сайте и&nbsp;мобильное приложение для&nbsp;скорейшего урегулирования возникающих сложностей.</p>
+<p>Рекомендации сформированы на&nbsp;основе лучших практик финансовых организаций. Они&nbsp;направлены на&nbsp;формирование единых подходов к&nbsp;информированию заявителей, обеспечение прозрачности клиентского сервиса, а&nbsp;также повышение уровня удовлетворенности граждан.</p><style type='text/css'>
+/*<![CDATA[*/
+.table-grid__td {
+  vertical-align: top;
+}
+
+.card {
+            border-radius: 16px;
+            padding: 16px 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease;
+			margin-top:30px;
+}
+.card:hover {
+            transform: scale(1.01);
+        }
+		
+		
+		
+ .push-card {
+            background: #2d2d44;
+            border: 1px solid #3e3e5e;
+        }		
+		.push-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+		.push-time {
+            font-size: 12px;
+            color: #8e8ea0;
+            margin-left: auto;
+        }
+ .push-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .push-body {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #c8c8d4;
+        }
+		
+/*]]*/
+</style><table class="table-grid">
+<tbody>
+<tr class="tr">
+<td class="table-grid__td table-grid__td_big"><strong>Рекомендация</strong></td>
+<td class="table-grid__td table-grid__td_big"><strong>Пример</strong></td>
+</tr>
+<tr class="tr">
+<td class="table-grid__td">1. В&nbsp;инициативном порядке, не&nbsp;дожидаясь обращения, сразу сообщите клиенту: <br />&ndash; о&nbsp;факте введения ограничений (приостановлении/отказе в&nbsp;совершении операций, приостановлении использования электронных средств платежа); <br />&ndash; причины введения ограничений (приостановления/отказа в&nbsp;совершении операций, приостановления использования электронных средств платежа); <br />&ndash; правовые основания (закон, в&nbsp;соответствии с&nbsp;которым введены ограничения). <br />Используйте несколько каналов связи с&nbsp;клиентом (СМС, push, приложение).</td>
+<td class="table-grid__td"><strong>Примеры корректных СМС/push банков об&nbsp;ограничениях:</strong>
+<div class="card push-card">
+<div class="push-header"><span class="push-time">сейчас</span></div>
+<div class="push-title">🔔 Новое уведомление</div>
+<div class="push-body">Ограничили доступ к&nbsp;счету в&nbsp;рамках <nobr>115-ФЗ</nobr> от&nbsp;07.08.2001. Подробнее https://...</div>
+</div>
+<div class="card push-card">
+<div class="push-header"><span class="push-time">сейчас</span></div>
+<div class="push-title">🔔 Новое уведомление</div>
+<div class="push-body">Приостановили использование карты, электронного кошелька, онлайн-банкинга. Ваши данные есть в&nbsp;базе Банка России о&nbsp;мошеннических операциях <nobr>(161-ФЗ).</nobr> Что&nbsp;это&nbsp;означает http//...</div>
+</div>
+<br />
+<p><em>Рекомендуем добавлять активные ссылки на&nbsp;лендинг&nbsp;/ вкладку&nbsp;/ всплывающее окно с&nbsp;небольшим текстом о&nbsp;законе, написанным простым и&nbsp;доступным языком.</em></p>
+<p><strong>Примеры корректного текста</strong></p>
+<p><span data-footnote="Этот закон регулирует работу платежной системы и помогает защитить деньги от мошенников. Если перевод денег совершается без согласия владельца или в результате его обмана, информация о таком переводе поступает в базу данных Банка России о мошеннических операциях**.
+					&lt;br&gt;
+					Ваши реквизиты есть в Базе данных Банка России. Поэтому мы приостановили использование электронного средства платежа (платежной карты, онлайн-банкинга) в рамках Закона № 161-ФЗ. Вы не можете расплачиваться картой, а также переводить деньги и пользоваться онлайн-банкингом.  &lt;br&gt;&lt;br&gt; * Федеральный закон от 27.06.2011 № 161-ФЗ &laquo;О национальной платежной системе&raquo; (далее &ndash; Закон № 161-ФЗ).
+					&lt;br&gt; ** База данных &laquo;О случаях и попытках осуществления переводов денежных средств без добровольного согласия клиента&raquo;." class="footnote">Что&nbsp;такое Закон <nobr>161-ФЗ*?</nobr></span></p>
+<p><span data-footnote="Вы можете пользоваться денежными средствами и совершать банковские операции в отделении банка (если нет других причин для ограничений) с паспортом или другим документом, удостоверяющим личность. " class="footnote">Что&nbsp;доступно?</span></p>
+<p><span data-footnote="Вы можете подать заявление об исключении сведений о Вас из базы данных Банка России:
+					&lt;br&gt;&ndash; через банк;
+					&lt;br&gt;&ndash; через &lt;a href='http://www.cbr.ru/Reception/Message/Register?messageType=Complaint&amp;step=typology2&amp;theme.RubricCode=161fz' target='_blank' style='text-decoration:underline;'&gt;Интернет-приемную Банка России.&lt;/a&gt; 
+					Банк России в течение 15 рабочих дней рассмотрит заявление и примет решение о целесообразности исключения реквизитов из базы данных. Если Банк России откажется исключать сведения о Вас из базы данных, Вы можете обжаловать это решение через суд*. 
+					&lt;br&gt;&lt;br&gt; * Ч. 11.10 ст. 9 Закона № 161-ФЗ." class="footnote">Как&nbsp;снять ограничения?</span></p>
+</td>
+</tr>
+<tr>
+<td class="table-grid__td">2. Объясните, что&nbsp;именно <strong>ограничено </strong>и&nbsp;какие операции <strong>доступны</strong>.</td>
+<td class="table-grid__td"><strong>Возможное сообщение в&nbsp;данном случае:</strong> <br />Ограничена только возможность использования онлайн-банкинга. Снять или&nbsp;перевести деньги можно в&nbsp;офисе банка. Приходите с&nbsp;паспортом и&nbsp;оформите распоряжение в&nbsp;бумажном виде.</td>
+</tr>
+<tr class="tr">
+<td class="table-grid__td">3. Оставьте доступной коммуникацию через <strong>приложение</strong>, в&nbsp;том&nbsp;числе возможность направить запрошенные документы.</td>
+<td class="table-grid__td"><strong>Вариант сообщения для&nbsp;клиента:</strong> <br />Если у&nbsp;Вас&nbsp;остались вопросы, Вы&nbsp;можете задать их&nbsp;в&nbsp;чате приложения&nbsp;и&nbsp;(или) интернет-банка. Там&nbsp;же&nbsp;Вы&nbsp;можете направить документы для&nbsp;снятия ограничений.</td>
+</tr>
+<tr class="tr">
+<td class="table-grid__td">4. Разъясните<span>&nbsp;</span><strong>порядок действий</strong><span>&nbsp;</span>для&nbsp;урегулирования ситуации. <br />Если банк отказывает в&nbsp;снятии ограничений, разъясните,<span>&nbsp;</span><strong>как&nbsp;можно обжаловать отказ.</strong></td>
+<td class="table-grid__td">
+<p class="clear-both"><strong>Возможные варианты сообщений:</strong></p>
+<strong><nobr>115-ФЗ</nobr> (ограничение дистанционного банковского обслуживания, ДБО)</strong> <br />Чтобы разблокировать&nbsp;ДБО&nbsp;и&nbsp;карту, пришлите, пожалуйста, на&nbsp;<span data-footnote="Перечень запрашиваемых сведений и документов остается на усмотрение банка." class="footnote">pochta@***ru</span>:
+<ul>
+<li>письменные пояснения экономического смысла операций за&nbsp;период (...);</li>
+<li>данные об&nbsp;источниках происхождения зачисленных средств;</li>
+<li>справку о&nbsp;доходах по&nbsp;форме <nobr>2-НДФЛ.</nobr></li>
+</ul>
+<strong><nobr>115-ФЗ</nobr> (отказ в&nbsp;проведении операции)</strong> <br />Чтобы обжаловать отказ в&nbsp;проведении операции на&nbsp;основании пункта 11&nbsp;статьи 7&nbsp;Закона &#8470;&nbsp;<nobr>115-ФЗ,</nobr> пришлите, пожалуйста, на&nbsp;<span data-footnote="Перечень запрашиваемых сведений и документов остается на усмотрение банка." class="footnote">pochta@***ru</span>:
+<ul>
+<li>письменные пояснения экономического смысла операций за&nbsp;период (...);</li>
+<li>данные об&nbsp;источниках происхождения зачисленных средств;</li>
+<li>справку о&nbsp;доходах по&nbsp;форме <nobr>2-НДФЛ.</nobr></li>
+</ul>
+<strong><nobr>115-ФЗ</nobr> (отказ в&nbsp;пересмотре отказа в&nbsp;проведении операции)</strong> <br />Если Вы&nbsp;не&nbsp;согласны с&nbsp;решением Банка, Вы&nbsp;можете обратиться в&nbsp;межведомственную комиссию (МВК) через <a href="/Reception/Theme/115fz" target="_blank" rel="noopener">Интернет-приемную Банка России</a>. МВК&nbsp;рассмотрит Ваше обращение в&nbsp;течение 20&nbsp;рабочих дней. <br />Полный список необходимых документов указан в&nbsp;<a href="/ref/analytics/na_vr/file/5158" target="_blank" rel="noopener">Положении Банка России &#8470;&nbsp;<nobr>842-П</nobr> от&nbsp;23.09.2024</a> (приложение 1). <br /><nobr> 
+<br /><strong>161-ФЗ</strong> <br />Вы можете</nobr> подать заявление об&nbsp;исключении сведений о&nbsp;Вас&nbsp;из&nbsp;базы данных Банка России о&nbsp;случаях и&nbsp;попытках совершения операций без&nbsp;добровольного согласия клиента:
+<ul>
+<li>&nbsp;через банк;</li>
+<li>&nbsp;через <a href="/Reception/Message/Register?messageType=Complaint&amp;step=typology2&amp;theme.RubricCode=161fz" target="_blank" rel="noopener">Интернет-приемную Банка России</a>.</li>
+</ul>
+На&nbsp;сайте регулятора есть <a href="/contactBR/161-FZ/" style="font-size: calc(5.54554px + 0.767018vw); letter-spacing: 0px;" target="_blank" rel="noopener">подробная информация</a> <span style="font-size: calc(5.54554px + 0.767018vw); letter-spacing: 0px;">о&nbsp;том, как&nbsp;это&nbsp;сделать. 
+<br /><br /></span><nobr><strong>161-ФЗ</strong> <br />Банк</nobr> не&nbsp;может снять ограничения самостоятельно. <br />Решение о&nbsp;целесообразности исключения реквизитов из&nbsp;базы данных принимает Банк России. Если Банк России откажется исключать сведения о&nbsp;Вас&nbsp;из&nbsp;базы данных, Вы&nbsp;можете обжаловать это&nbsp;решение через&nbsp;суд.</td>
+</tr>
+<tr class="tr">
+<td class="table-grid__td">5. Если просите прислать документы по&nbsp;почте, <strong>сразу сообщите</strong> адрес и&nbsp;дайте список документов (или&nbsp;ссылку на&nbsp;него). <br />Не&nbsp;заставляйте человека искать нужную информацию где-то на&nbsp;сайте или&nbsp;в&nbsp;договоре.</td>
+<td class="table-grid__td"><strong>Так&nbsp;не&nbsp;нужно:</strong> <br />Вы&nbsp;можете прислать документы по&nbsp;почте. Контакты Банка и&nbsp;список необходимых документов доступны на&nbsp;сайте www.***.ru.<br /><br /><strong>Лучше так:</strong> <br />Пришлите, пожалуйста, на&nbsp;pochta@***.ru следующие документы: (...).<br />Также Вы&nbsp;можете направить нам&nbsp;документы &laquo;Почтой России&raquo;. Адрес: (...)</td>
+</tr>
+<tr class="tr">
+<td class="table-grid__td">6. Сообщайте заявителю о&nbsp;<strong>процессе и&nbsp;результате</strong> рассмотрения его&nbsp;обращения. Укажите причину отказа в&nbsp;снятии ограничений, если это&nbsp;возможно.</td>
+<td class="table-grid__td"><strong>Примеры корректных сообщений банков о&nbsp;снятии ограничений:</strong>
+<div class="card push-card">
+<div class="push-header"><span class="push-time">сейчас</span></div>
+<div class="push-title">🔔 Новое уведомление</div>
+<div class="push-body">Ограничения не&nbsp;сняты. Какие операции доступны сейчас: https://...</div>
+</div>
+<div class="card push-card">
+<div class="push-header"><span class="push-time">сейчас</span></div>
+<div class="push-title">🔔 Новое уведомление</div>
+<div class="push-body">Доступ к&nbsp;счету восстановлен</div>
+</div>
+<div class="card push-card">
+<div class="push-header"><span class="push-time">сейчас</span></div>
+<div class="push-title">🔔 Новое уведомление</div>
+<div class="push-body">Ваше обращение находится на&nbsp;рассмотрении. Уточнить его&nbsp;статус, дополнить или&nbsp;отозвать его&nbsp;можно в&nbsp;приложении</div>
+</div>
+<div class="card push-card">
+<div class="push-header"><span class="push-time">сейчас</span></div>
+<div class="push-title">🔔 Новое уведомление</div>
+<div class="push-body">Уважаемый клиент! В&nbsp;рамках Вашего обращения мы&nbsp;направили запрос в&nbsp;Банк России. Номер запроса ***. Срок обработки запроса Банком России до&nbsp;15&nbsp;рабочих дней</div>
+</div>
+<div class="card push-card">
+<div class="push-header"><span class="push-time">сейчас</span></div>
+<div class="push-title">🔔 Новое уведомление</div>
+<div class="push-body">Доступ к&nbsp;личному кабинету разблокирован</div>
+</div>
+<div class="card push-card">
+<div class="push-header"><span class="push-time">сейчас</span></div>
+<div class="push-title">🔔 Новое уведомление</div>
+<div class="push-body">Мы&nbsp;получили ваши документы. Ответим в&nbsp;СМС/приложении не&nbsp;позднее ***. Номер обращения &ndash; ***. Если у&nbsp;Вас&nbsp;остались вопросы, можете задать их&nbsp;в&nbsp;чате приложения или&nbsp;позвонив по&nbsp;телефону ***</div>
+</div>
+</td>
+</tr>
+<tr class="tr">
+<td colspan="2" class="table-grid__td">7. Старайтесь решить вопрос в&nbsp;режиме онлайн, не&nbsp;требуя визита заявителя в&nbsp;отделение банка*. <br /><span class="comment">* За&nbsp;исключением случаев, когда в&nbsp;соответствии с&nbsp;законом требуется личное присутствие клиента банка.</span></td>
+</tr>
+<tr class="tr">
+<td colspan="2" class="table-grid__td">8. Если необходимо личное посещение банка, обратите внимание на&nbsp;профиль заявителя &ndash; где&nbsp;он&nbsp;живет, сколько ему&nbsp;лет, не&nbsp;будет&nbsp;ли&nbsp;ему&nbsp;сложно приехать в&nbsp;офис и&nbsp;т.д. Не&nbsp;заставляйте человека ехать через всю&nbsp;страну, чтобы представить документы*. <br /><span class="comment">* За&nbsp;исключением случаев, когда в&nbsp;соответствии с&nbsp;законом требуется личное присутствие клиента банка.</span></td>
+</tr>
+<tr class="tr">
+<td colspan="2" class="table-grid__td">9. По&nbsp;возможности напоминайте заявителям о&nbsp;<strong>правилах безопасности</strong>, которые рекомендуется соблюдать при&nbsp;использовании карты и&nbsp;ее&nbsp;реквизитов, дистанционного банковского обслуживания.<br />
+<p>При&nbsp;организации профилактической работы с&nbsp;клиентами рекомендуем учитывать положения <a href="/crosscut/lawacts/file/7697">Методических рекомендаций &#8470;&nbsp;<nobr>3-МР</nobr> от&nbsp;28.02.2024.</a></p>
+<p>Также рекомендуем создать информационный блок по&nbsp;информационной безопасности &ndash; доступный как&nbsp;по&nbsp;ссылке в&nbsp;ответе, так&nbsp;и&nbsp;в&nbsp;личном кабинете. Это&nbsp;могут быть страница сайта, вкладка&nbsp;/ всплывающий экран, раздел приложения &ndash; с&nbsp;правилами использования карты, актуальной информацией о&nbsp;мошенниках и&nbsp;т.д.</p>
+<p>Информация должна <strong>легко и&nbsp;быстро считываться и&nbsp;запоминаться</strong> &ndash; простой язык, минимум текста, возможно инфографика.</p>
+</td>
+</tr>
+</tbody>
+</table></div>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown3_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block185380/zone" id="a_185380" role="button" tabindex="0">Простота изложения текста</a>
+
+    <div id="DropDown3_content" role="region" aria-labelledby="a_185380" class="dropdown_content">
+<div class="landing-text"><p>Ответы финансовых организаций часто содержат сложные синтаксические конструкции, дополнительные обороты, перегружены цитатами из&nbsp;законов или&nbsp;условий договора, справочной информацией.</p>
+<p>При&nbsp;этом содержание нормативных документов бывает непонятно человеку, не&nbsp;знакомому с&nbsp;юридической терминологией. Такой текст нужно перечитывать несколько&nbsp;раз, обращаясь за&nbsp;разъяснениями к&nbsp;сторонним источникам.</p>
+<p>Дополнительные сведения (полные названия нормативно-правовых актов, адреса, телефоны и&nbsp;другие) не&nbsp;несут смысловой нагрузки, но&nbsp;отвлекают внимание от&nbsp;основного текста.</p>
+<p>Такая перегруженность текста может привести к&nbsp;<strong>смысловым ошибкам</strong> или&nbsp;<strong>неверному пониманию </strong>ответа.</p><table class="comment comment_mod">
+<tbody>
+<tr>
+<td>Банк сообщает, что&nbsp;согласно&nbsp;п.&nbsp;3.3 &laquo;Условий страхования к&nbsp;Договору коллективного страхования держателей банковских карт&raquo; (далее &ndash; Условия страхования) клиент может в&nbsp;любой момент отказаться от&nbsp;подключения Программы страхования, обратившись в&nbsp;офис Банка, и&nbsp;подать заявление об&nbsp;отказе от&nbsp;подключения Программы страхования на&nbsp;бумажном носителе либо в&nbsp;форме электронного документа, подписываемого простой электронной подписью с&nbsp;использованием закрытого интернет-ресурса.</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185383/right.svg" /></td>
+<td>Вы&nbsp;можете в&nbsp;любой момент отказаться от&nbsp;программы <span data-footnote="Пункт 3.3 Условий страхования к Договору коллективного страхования держателей банковских карт (далее &ndash; Условия страхования)." class="footnote">страхования</span>. Заявление об&nbsp;отказе&nbsp;Вы можете подать: <br />&ndash;&nbsp;в&nbsp;офисе Банка; <br />&ndash;&nbsp;через мобильное приложение и&nbsp;интернет-банк.</td>
+</tr>
+</tbody>
+</table><table class="comment comment_mod">
+<tbody>
+<tr>
+<td>В&nbsp;силу&nbsp;ст.&nbsp;4, 5&nbsp;Федерального закона от&nbsp;07.08.2001 &#8470;&nbsp;<nobr>115-ФЗ</nobr> &laquo;О&nbsp;противодействии легализации (отмыванию) доходов, полученных преступным путем, и&nbsp;финансированию терроризма&raquo; на&nbsp;Банк, как&nbsp;организацию, осуществляющую операции с&nbsp;денежными средствами, возложены обязанности по&nbsp;принятию&nbsp;мер, направленных на&nbsp;противодействие легализации (отмыванию) доходов, полученных преступным путем, и&nbsp;финансированию терроризма.</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185384/right.svg" /></td>
+<td>Банк обязан принимать меры, направленные на&nbsp;противодействие легализации (отмыванию) доходов, полученных преступным путем, и&nbsp;финансированию <span data-footnote="Статьи 4 и 5 Федерального закона от 07.08.2001 № 115-ФЗ &laquo;О противодействии легализации (отмыванию) доходов, полученных преступным путем, и финансированию терроризма&raquo;." class="footnote">терроризма</span>.</td>
+</tr>
+</tbody>
+</table><table class="comment comment_mod">
+<tbody>
+<tr>
+<td>19.06.2025&nbsp;в Страховую компанию от&nbsp;Вас поступило заявление о&nbsp;наступлении страхового события, согласно которому при&nbsp;закрытии багажника разбилось стекло двери багажника с&nbsp;приложением документов: договора страхования &#8470; ..., свидетельство о&nbsp;регистрации&nbsp;ТС, паспорт, в&nbsp;которых был&nbsp;указан&nbsp;Ваш адрес регистрации: Москва (...)</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185385/right.svg" /></td>
+<td>Страховая компания 19.06.2025 получила Ваше заявление о&nbsp;наступлении страхового случая: при&nbsp;закрытии багажника разбилось стекло двери багажника. 
+К&nbsp;заявлению&nbsp;Вы приложили документы: 
+<br>-	договор страхования &#8470; ...; 
+<br>-	свидетельство о&nbsp;регистрации ТС; 
+<br>-	паспорт. 
+<br>В&nbsp;документах указан&nbsp;Ваш адрес регистрации: Москва (...) 
+</td>
+</tr>
+</tbody>
+</table><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Рекомендации:</div>
+</div>
+</div><ol>
+<li>Заменяйте цитаты из&nbsp;официальных документов: объясните суть простыми словами и&nbsp;добавьте сноску, в&nbsp;которой укажите название документа.</li>
+<li>Не&nbsp;старайтесь передать максимальный объем информации в&nbsp;одном предложении &ndash; разделите ее&nbsp;на&nbsp;<strong>смысловые блоки</strong>.</li>
+<li>Если есть<strong> перечисление </strong>&ndash; используйте списки (список документов, действий, условий и&nbsp;так&nbsp;далее).</li>
+<li>Переносите в&nbsp;сноски справочную информацию &ndash; полные названия нормативно-правовых актов, условий договора, адреса, телефоны, расшифровку аббревиатур, дополнительные данные и&nbsp;так&nbsp;далее.</li>
+<li>Не&nbsp;рекомендуем убирать в&nbsp;сноски объемный текст (например, цитата из&nbsp;закона, фрагмент тарифов, пункт договора). Такую дополнительную информацию можно перенести в&nbsp;приложение и&nbsp;сообщить об&nbsp;этом в&nbsp;самом ответе (например<em>, &laquo;Подробную информацию&nbsp;о (...) см.&nbsp;в&nbsp;приложении к&nbsp;ответу&raquo;</em>).</li>
+</ol></div>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown4_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block185388/zone" id="a_185388" role="button" tabindex="0">Понятный язык </a>
+
+    <div id="DropDown4_content" role="region" aria-labelledby="a_185388" class="dropdown_content">
+<div class="landing-text">Зачастую финансовые организации отвечают заявителям на&nbsp;бюрократическом языке: избыточно или&nbsp;неуместно употребляют канцеляризмы, формальные обороты, профессиональные термины, пассивный залог и&nbsp;непрямой порядок слов. &nbsp;В&nbsp;результате чего сложно понять суть ответа. &nbsp;<table class="comment comment_mod">
+<tbody>
+<tr>
+<td>При&nbsp;оформлении льготного платежа 
+по&nbsp;Договору с&nbsp;Вами была совершена коммуникация посредством телефонной связи, в&nbsp;ходе которой производилось консультирование и&nbsp;была предоставлена вся&nbsp;необходимая информация относительно предоставления льготного платежа по&nbsp;Договору.
+</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185391/right.svg" /></td>
+<td>При&nbsp;оформлении льготного платежа сотрудник Банка связался с&nbsp;Вами по&nbsp;телефону и&nbsp;сообщил подробные условия предоставления льготного платежа.</td>
+</tr>
+</tbody>
+</table><table class="comment comment_mod">
+<tbody>
+<tr>
+<td>Осуществить операцию по&nbsp;переводу денежных средств в&nbsp;сумме *** рублей
+</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185392/right.svg" /></td>
+<td>Перевести *** рублей.</td>
+</tr>
+</tbody>
+</table><table class="comment comment_mod">
+<tbody>
+<tr>
+<td>Вам&nbsp;надлежало произвести оплату страховых взносов 
+не&nbsp;позднее 15.03.2025.
+
+</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185393/right.svg" /></td>
+<td>Вы&nbsp;должны были оплатить страховые взносы 
+не&nbsp;позднее 15.03.2025.
+</td>
+</tr>
+</tbody>
+</table><table class="comment comment_mod">
+<tbody>
+<tr>
+<td>Брокерские отчеты Вами получены в&nbsp;личном кабинете инвестора.
+
+</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185394/right.svg" /></td>
+<td>Вы&nbsp;получили брокерские отчеты в&nbsp;личном кабинете инвестора.
+</td>
+</tr>
+</tbody>
+</table><table class="comment comment_mod">
+<tbody>
+<tr>
+<td>В&nbsp;данной ситуации объективно не&nbsp;усматриваются основания для&nbsp;возврата страховой премии.
+
+</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185395/right.svg" /></td>
+<td>В&nbsp;данной ситуации нет&nbsp;оснований для&nbsp;возврата страховой премии.
+</td>
+</tr>
+</tbody>
+</table><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Рекомендации:</div>
+</div>
+</div><ol>
+<li>Минимизируйте использование <strong>канцеляризмов</strong>.</li>
+<li>Там, где&nbsp;возможно, используйте <strong>активный залог </strong>&ndash; он&nbsp;позволяет избегать лишних слов и&nbsp;ошибок, используется в&nbsp;речи чаще всего <em>(рекомендуется &ndash; банк рекомендует).</em> Пассивный залог снимает ответственность и&nbsp;увеличивает дистанцию между организацией и&nbsp;заявителем, снижает искренность ответа.<strong> </strong></li>
+<li>Заменяйте <strong>отглагольные</strong> существительные глаголами <em>(осуществить перевод &ndash; перевести).</em></li>
+<li>По&nbsp;возможности используйте прямой порядок слов: подлежащее, сказуемое, далее &ndash; дополнения, обстоятельства и&nbsp;так&nbsp;далее.</li>
+<li>Подбирайте корректные синонимы юридическим или&nbsp;профессиональным <strong>терминам</strong> (если это&nbsp;невозможно &ndash; дайте пояснение в&nbsp;скобках).</li>
+<li>Добавляйте расшифровку <strong>аббревиатур</strong> (технические термины, названия ведомств и&nbsp;так&nbsp;далее) &ndash; не&nbsp;все&nbsp;знают их&nbsp;правильное значение.</li>
+</ol></div>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown5_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block185093/zone" id="a_185093" role="button" tabindex="0">Клиентоориентированность</a>
+
+    <div id="DropDown5_content" role="region" aria-labelledby="a_185093" class="dropdown_content">
+<div class="landing-text"><p>Некоторые финансовые организации достаточно формально относятся к&nbsp;рассмотрению обращений граждан. Они&nbsp;не&nbsp;проявляют активную позицию при&nbsp;урегулировании вопроса, направляя заявителям юридически корректные, но&nbsp;обезличенные шаблонные ответы.</p>
+<p>При&nbsp;этом заявитель ждет личный ответ по&nbsp;своей ситуации, надеется на&nbsp;разрешение проблемы. В&nbsp;ответе человек должен получить нужную ему&nbsp;информацию, правильно ее&nbsp;понять. Если финансовая организация не&nbsp;может урегулировать ситуацию, то&nbsp;клиентоориентированным решением также будут рекомендации, как&nbsp;заявителю поступить, чтобы решить вопрос.</p><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Пример:</div>
+</div>
+</div><p class="clear-both">Заявитель сообщил, что&nbsp;не&nbsp;получил страховую выплату по&nbsp;договору ОСАГО по&nbsp;заявлению, в&nbsp;котором он&nbsp;просил перечислить денежные средства на&nbsp;банковский счет.</p>
+<p>Страховщик направил страховую выплату почтовым переводом, поскольку заявитель не&nbsp;указал в&nbsp;заявлении банковские реквизиты. &nbsp;</p>
+<p>При&nbsp;этом страховщик направил выплату по&nbsp;адресу регистрации заявителя. Однако заявитель проживает в&nbsp;другом регионе и&nbsp;всю&nbsp;корреспонденцию направлял страховщику с&nbsp;адреса, отличного от&nbsp;адреса регистрации.</p><table class="comment comment_mod">
+<tbody>
+<tr>
+<td>Страховщик шаблонно ответил, что&nbsp;направил страховую выплату почтовым переводом по&nbsp;адресу регистрации заявителя. 
+
+<br>В&nbsp;результате заявителю затруднительно получить выплату в&nbsp;другом регионе.
+</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185099/right.svg" /></td>
+<td>Проявить активную позицию при&nbsp;решении вопроса. 
+<br>Чтобы ускорить получение выплаты, можно было связаться с&nbsp;человеком и&nbsp;уточнить у&nbsp;него банковские реквизиты или&nbsp;корректный адрес для&nbsp;почтового перевода. 
+</td>
+</tr>
+</tbody>
+</table><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Рекомендации:</div>
+</div>
+</div><ol class="clear-both">
+<li>Применять <strong>индивидуальный</strong> подход &ndash; давать адресный ответ (учитывать возраст, социальный статус, контекст ситуации и&nbsp;так&nbsp;далее. Ответ должен быть понятен заявителю).</li>
+<li>Проявлять <strong>эмпатию</strong> &ndash; человек должен видеть, что&nbsp;его&nbsp;ситуацию рассматривают, что&nbsp;ему&nbsp;искренне стараются помочь (проявление сочувствия, признание ошибки и&nbsp;так&nbsp;далее).</li>
+<li><strong>Оценивать</strong> ситуацию заявителя &ndash; некоторые проблемы не&nbsp;требуют больших усилий для&nbsp;их&nbsp;разрешения (недостаточное информирование, небольшая сумма, ошибка сотрудника, сбой в&nbsp;системе и&nbsp;так&nbsp;далее).</li>
+<li>Проявлять <strong>активную</strong> позицию &ndash; разрешить ситуацию или&nbsp;доступно объяснить, как&nbsp;человек может самостоятельно ее&nbsp;разрешить.</li>
+</ol></div>    </div>
+</div>
+
+
+
+<div class="dropdown">
+<a aria-controls="DropDown6_content" aria-expanded="false" class="dropdown_title referenceable" data-zone-code="/block185102/zone" id="a_185102" role="button" tabindex="0">Социализация</a>
+
+    <div id="DropDown6_content" role="region" aria-labelledby="a_185102" class="dropdown_content">
+<div class="landing-text"><div class="block-title"><h4><span class="referenceable" id="a_185103">1.	Структура ответа</span></h4></div><p>Многие финансовые организации начинают ответ с&nbsp;информации о&nbsp;нормативном регулировании их&nbsp;деятельности, перечисления заключенных договоров и&nbsp;так&nbsp;далее.</p>
+<p>При&nbsp;этом самое главное для&nbsp;заявителя (то&nbsp;есть решение его&nbsp;проблемы) указано в&nbsp;конце ответа &ndash; после объемного сложного текста.</p>
+<p>Таким образом, человек <strong>не&nbsp;сразу узнает ответ</strong> на&nbsp;свой вопрос &ndash; получил&nbsp;ли он&nbsp;кредитные каникулы или&nbsp;ему&nbsp;отказали, вернули денежные средства &nbsp;или&nbsp;нет. Чтобы найти ответ, ему&nbsp;нужно прочитать несколько страниц сложного текста.</p><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Пример:</div>
+</div>
+</div><div class="clear-both">
+<table class="comment comment_mod">
+<tbody>
+<tr>
+<td><span>В&nbsp;ответ на&nbsp;Ваше обращение от&nbsp;01.09.2025 &#8470; ***12, поступившее из&nbsp;Банка России, сообщаем следующее.</span> <br /><span>Банк выпустил на&nbsp;Ваше имя&nbsp;банковскую карту &#8470; ***12&nbsp;(далее &ndash; Карта), эмитированную в&nbsp;рамках тарифа за&nbsp;осуществление расчетов по&nbsp;операциям с&nbsp;использованием банковских карт с&nbsp;условиями кредитования счета. Для&nbsp;расчетов с&nbsp;использованием Карты был&nbsp;открыт счет &#8470; ***16&nbsp;(далее &ndash; Счет) и&nbsp;установлен по&nbsp;Счету лимит кредитования в&nbsp;размере *** рублей. Таким образом, между Вами и&nbsp;Банком в&nbsp;порядке статьи 421&nbsp;Гражданского кодекса Российской Федерации был&nbsp;заключен договор &#8470; ***89&nbsp;(далее &ndash; Договор). <br /><span>По&nbsp;Вашему обращению от *** в&nbsp;Банк удержанная сумма страховых премий в&nbsp;общем размере *** рублей была возвращена на&nbsp;Счет. После возврата сумма была направлена на&nbsp;погашение задолженности по&nbsp;Договору в&nbsp;эту&nbsp;же&nbsp;дату.</span> </span></td>
+<td class="mod_td"><img src="	/StaticHtml/File/185107/right.svg" /></td>
+<td><span>И.О., Банк рассмотрел Ваше обращение от&nbsp;01.09.2025 &#8470; ***12, поступившее из&nbsp;Банка России.</span> <br /><span>Вы&nbsp;обратились по&nbsp;вопросу возврата комиссии по&nbsp;услуге страхования. </span> <br /><span>Сообщаем, что&nbsp;Банк (дата) вернул на&nbsp;Ваш&nbsp;счет *** рублей </span>и&nbsp;направил их&nbsp;на&nbsp;погашение задолженности по&nbsp;договору<sup>1</sup>.<hr />
+<p class="comment"><sup>1</sup>&nbsp;Договор от *** &#8470; ***.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Рекомендации:</div>
+</div>
+</div><ol class="clear-both">
+<li>Акцент в&nbsp;<strong>начале</strong> <strong>ответа</strong> на&nbsp;самых важных деталях: <strong>суть обращения </strong>и<strong>&nbsp;решение</strong>. Человек должен сразу получить ответ на&nbsp;свой вопрос. Если ему&nbsp;понадобится дополнительная информация, он&nbsp;продолжит читать ответ. Не&nbsp;следует начинать ответ с&nbsp;рассказа о&nbsp;событиях, перечисления фактов, условий договора, тарифов, а&nbsp;решение указывать в&nbsp;конце.</li>
+<li>Рекомендуемая структура ответа:</li>
+</ol>
+<table class="data">
+<tbody>
+<tr>
+<th><strong>Введение</strong></th>
+<td>Банк рассмотрел Ваше обращение &#8470; (...).</td>
+</tr>
+<tr>
+<th><strong>Суть обращения</strong></th>
+<td>Вы&nbsp;сообщаете, что&nbsp;у&nbsp;Вас&nbsp;оформлены кредитные каникулы, однако система требует оплатить проценты. Вы&nbsp;с&nbsp;этим не&nbsp;согласны и&nbsp;просите разобраться в&nbsp;ситуации.</td>
+</tr>
+<tr>
+<th><strong>Краткий ответ (решение)</strong></th>
+<td>Сообщаем, что&nbsp;Банк провел проверку по&nbsp;Вашему вопросу. Проценты начислены корректно (ошибочно).</td>
+</tr>
+<tr>
+<th><strong>Разъяснения, рекомендации</strong></th>
+<td>Согласно условиям договора, (...)</td>
+</tr>
+<tr>
+<th><strong>Заключение</strong></th>
+<td>И.О., надеемся, что&nbsp;наш&nbsp;ответ поможет&nbsp;Вам&nbsp;разобраться в&nbsp;сложившейся ситуации. <em>(Приносим извинения за&nbsp;сложившуюся ситуацию. Благодарим, что&nbsp;сообщили о&nbsp;возникшей проблеме.)</em></td>
+</tr>
+<tr>
+<th><strong><em>Приложение (при&nbsp;необходимости)</em></strong></th>
+<td><em>Дополнительная информация: <br />&ndash; тарифы, условия договора и&nbsp;так&nbsp;далее; <br />&ndash;&nbsp;документы по&nbsp;ситуации (выписки, справки, платежные поручения); <br />&ndash;&nbsp;справочная информация по&nbsp;обращению (куда можно обратиться дополнительно, список необходимых документов); <br />&ndash;&nbsp;выдержки из&nbsp;законов, указаний и&nbsp;других нормативных актов.</em></td>
+</tr>
+</tbody>
+</table>
+<p>Отмечаем, что<strong>&nbsp;некоторые финансовые организации начинают ответ именно с&nbsp;сути вопроса и&nbsp;ответа на&nbsp;него</strong>.</p></div><div class="landing-text"><div class="block-title"><h4><span class="referenceable" id="a_185110">2.	Объем ответа</span></h4></div><p>Некоторые ответы финансовых организаций занимают 5&ndash;6&nbsp;страниц. Получив такой ответ, человек уже&nbsp;не&nbsp;вчитывается в&nbsp;текст, пролистывает его &ndash; и&nbsp;пропускает (или&nbsp;не&nbsp;понимает) ответ на&nbsp;свой вопрос.</p>
+<p>Сверхкраткий ответ (2&ndash;3&nbsp;строки) &ndash; это&nbsp;тоже не&nbsp;очень удачный вариант. Он&nbsp;напоминает автоматическое сообщение чат-бота. При&nbsp;этом из&nbsp;ответа человек должен узнать не&nbsp;только решение проблемы, но&nbsp;и&nbsp;причину ее&nbsp;возникновения.</p><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Пример:</div>
+</div>
+</div><div class="clear-both">
+<table class="comment comment_mod">
+<tbody>
+<tr>
+<td><span class="center">Уважаемый И.О.!</span> <br /><span>Банк сообщает, что&nbsp;Ваш&nbsp;вопрос рассмотрен в&nbsp;рамках Вашего обращения. </span> <br /><span>Денежные средства 11.03.2025 зачислены на&nbsp;Ваш&nbsp;счет в&nbsp;размере *** рублей.</span></td>
+<td class="mod_td"><img src="	/StaticHtml/File/185113/right.svg" /></td>
+<td><span class="center">Уважаемый И.О.!</span> <br /><span>Банк рассмотрел Ваше обращение.</span> <br /><span>Вы&nbsp;сообщаете, что&nbsp;внесли *** рублей через банкомат. Банкомат принял деньги, но&nbsp;отклонил операцию.</span> <br /><span>Сообщаем, что *** рублей зачислены на&nbsp;Ваш счет. С&nbsp;выпиской по&nbsp;счету&nbsp;Вы можете ознакомиться в&nbsp;приложении Банка.</span> <br /><span>Банк провел проверку и&nbsp;установил, что&nbsp;из-за технического сбоя средства вовремя не&nbsp;были зачислены на&nbsp;Ваш&nbsp;счет. </span> <br /><span>И.О., приносим извинения за&nbsp;данную ситуацию.</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Рекомендации:</div>
+</div>
+</div><ol class="clear-both">
+<li>Ответ должен быть не&nbsp;больше <strong>двух</strong> <strong>страниц</strong>.</li>
+<li>Оставьте самое важное &ndash; <strong>ответ</strong> и&nbsp;<strong>аргументацию</strong>. Объясните заявителю, что&nbsp;произошло. Признайте ошибку, если она&nbsp;была. Проявите сочувствие, если требует ситуация. Человек должен понять, почему появилась проблема и&nbsp;он&nbsp;был&nbsp;вынужден отправить жалобу.</li>
+<li>Дополнительную информацию по&nbsp;ситуации перенесите в&nbsp;<strong>приложение</strong>.</li>
+</ol></div><div class="landing-text"><div class="block-title"><h4><span class="referenceable" id="a_185116">3.	Визуальное восприятие ответа</span></h4></div><p>Ответы некоторых финансовых организаций представляют собой сплошной текст, без&nbsp;абзацев и&nbsp;красной строки. Шрифт некомфортен для&nbsp;визуального восприятия.</p>
+<p>В&nbsp;ответах, направленных по&nbsp;электронной почте, нет&nbsp;логотипов организаций, и&nbsp;такие письма можно принять за&nbsp;спам.</p><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Пример:</div>
+</div>
+</div><div class="clear-both">
+<table class="comment comment_mod">
+<tbody>
+<tr>
+<td style="font-weight: 100;">СООБЩАЕМ ВАМ, ЧТО&nbsp;ВАШЕ ОБРАЩЕНИЕ, ПОСТУПИВШЕЕ ИЗ&nbsp;БАНКА РОССИИ, РАССМОТРЕНО. НЕКОРРЕКТНО СПИСАННАЯ КОМИССИЯ ВОЗВРАЩЕНА ВАМ&nbsp;НА&nbsp;БРОКЕРСКИЙ СЧЕТ.</td>
+<td class="mod_td"><img src="	/StaticHtml/File/185119/right.svg" /></td>
+<td><span>Сообщаем&nbsp;Вам, что&nbsp;АО&nbsp;&laquo;Брокер&raquo; рассмотрело Ваше обращение, поступившее из&nbsp;Банка России. </span> <br /><span>Мы&nbsp;вернули на&nbsp;Ваш&nbsp;брокерский счет некорректно списанную комиссию.</span> <br /><span>И.О., приносим свои извинения. Надеемся, что&nbsp;данный инцидент не&nbsp;станет препятствием для&nbsp;нашего дальнейшего сотрудничества. </span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="incut incut_border">
+<div class="incut_element">
+<div class="title_20">Рекомендации:</div>
+</div>
+</div><ol class="clear-both">
+<li>Направлять ответ на&nbsp;фирменном бланке или&nbsp;размещать <strong>логотип</strong> организации на&nbsp;странице с&nbsp;ответом.</li>
+<li>Использовать в&nbsp;ответах комфортный для&nbsp;восприятия <strong>шрифт</strong>.</li>
+<li>Делить текст на&nbsp;смысловые <strong>блоки</strong>.</li>
+<li>Начинать абзацы с&nbsp;<strong>красной строки</strong>.</li>
+</ol>
+<p>Правильное графическое оформление и&nbsp;удобная компоновка текста позволяют его&nbsp;структурировать, а&nbsp;значит, сделать более легким для&nbsp;восприятия.</p>
+<p>Также многие организации в&nbsp;своих ответах используют <strong>таблицы</strong> и&nbsp;<strong>списки</strong>, чтобы предоставить объемные данные. Главные детали выделяют&nbsp;&ndash; например, <strong>полужирным</strong>.<strong> </strong>Такой формат текста<strong> </strong>позволяет читателю быстро увидеть важную для&nbsp;него информацию, особенно если он&nbsp;направил много вопросов по&nbsp;своей ситуации.</p></div>    </div>
+</div>
+</div>
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/explan/442-fz/" id="a_185217link" target="_blank">                        <span class="document-regular_name_visible">Разъяснения об изменении порядка рассмотрения финансовыми организациями обращений граждан (Федеральный закон от 04.08.2023 № 442-ФЗ)</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="responsible-unit">
+<div class="responsible-unit_text">Ответственное структурное подразделение: Департамент поведенческого надзора
+</div>
+</div>
+                    
+                    <!--/index-->
+
+    <div class="page-info">
+        <!--noindex-->
+        
+
+
+<div class="page-info_helpful"
+     data-page-feedback=""
+     data-feedback-url="/Content/PageInfo/RegisterFeedback">
+    <!--noindex-->
+    <div class="helpful" data-helpful="">
+        Страница была полезной?
+        <div class="helpful_btns">
+            <button class="helpful_btn _yes" data-helpful-btn="yes"><i class="helpful_icon"></i><span>Да</span></button>
+            <button class="helpful_btn _no" data-helpful-btn="no"><i class="helpful_icon"></i><span>Нет</span></button>
+        </div>
+    </div>
+    <!--/noindex-->
+</div>
+
+            <div class="page-info_last-update">Последнее обновление страницы: 11.08.2026</div>
+        <!--/noindex-->
+    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer" id="footer">
+    <div class="offsetMenu footer_margin-left">
+        <div class="footer_main">
+            <div class="col-md-23 col-xl-22 offset-md-1 offset-xl-2 footer-size">
+                <div class="footer_top">
+                    <a class="footer_logo" href="/"></a>
+                    <div class="footer_up gotoUp">
+                        <div class="footer_up_title">Наверх</div>
+                        <div class="footer_up_icon"></div>
+                    </div>
+                </div>
+                
+<div class="footer_contacts">
+<div class="footer_address">107016, Москва, ул. Неглинная, д.&nbsp;12, к. В, Банк
+России</div>
+<div class="footer_phones">
+<div class="footer_phone"><a class="footer_phone_val" href="tel:300">300</a><span>(круглосуточно, бесплатно для&nbsp;звонков с&nbsp;мобильных телефонов)</span></div>
+<div class="footer_phone"><a class="footer_phone_val" href="tel:88003003000">8&nbsp;800 300-30-00</a><span>(круглосуточно, бесплатно для&nbsp;звонков из&nbsp;регионов России)</span></div>
+<div class="footer_phone"><a class="footer_phone_val" href="tel:+74993003000">+7&nbsp;499 300-30-00</a><span>(круглосуточно, в&nbsp;соответствии с&nbsp;тарифами вашего оператора)</span></div>
+
+</div>
+</div>
+<div class="footer_main_block">
+<div class="footer_left-menu">
+<div class="footer_left-menu_item"><a href="/lk_uio/">Личный кабинет участника информационного обмена</a></div>
+<div class="footer_left-menu_item"><a href="/about_br/irp/">Отношения с&nbsp;инвесторами</a></div>
+<div class="footer_left-menu_item"><a href="/rbr/list_inside/">Перечень инсайдерской информации Банка России</a></div>
+<div class="footer_left-menu_item"><a href="/analytics/na_vr/">Официальное опубликование нормативных актов Банка России</a></div>
+<div class="footer_left-menu_item"><a href="/project_na/">Проекты нормативных актов Банка России</a></div>
+<div class="footer_left-menu_item"><a href="/other/holidays/">Перечень нерабочих праздничных дней и&nbsp;перенесенных выходных дней</a></div>
+</div>
+<div class="networks-circle footer_networks">
+<a class="networks-circle_item _vk" href="https://vk.com/cbr_official"></a>
+<a class="networks-circle_item _yt" href="https://www.youtube.com/user/BankofRussia"></a>
+<a class="networks-circle_item _tg" href="https://telegram.me/centralbank_russia" title="Telegram"></a>
+<a class="networks-circle_item _ydzen" href="https://dzen.ru/cbr" title="Яндекс Дзен"></a>
+<a class="networks-circle_item _ok" href="https://ok.ru/group/68858679787580" title="Одноклассники"></a>
+<a class="networks-circle_item _rt" href="https://rutube.ru/channel/23873201/" title="RUTUBE"></a>
+<a class="networks-circle_item _max" href="https://max.ru/cbr_official" title="Макс"></a>
+</div>
+</div>
+<div class="footer_menu">
+<div class="footer_menu_items">
+<div class="footer_menu_item"><a href="/about/">О&nbsp;сайте</a></div>
+<div class="footer_menu_item"><a href="/contacts/">Контакты</a></div>
+<div class="footer_menu_item"><a href="/about_br/anticor/">Противодействие коррупции</a></div>
+<div class="footer_menu_item"><a href="/development/">Технические ресурсы</a></div>
+</div>
+<a class="footer_menu_item _visually-impaired" href="#" title="Версия для слабовидящих">
+	<div class="footer_visually-impaired-icon"></div>
+	<div><span class="visually-impaired-on">Версия для&nbsp;слабовидящих</span><span class="visually-impaired-off">Обычная версия</span></div>
+</a>
+</div>
+
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="col-md-23 col-xl-23 offset-md-1 offset-xl-2 row footer_bottom-container">
+                <div class="footer_bottom_text col-md-11 col-xl-11">&#169; Банк России, 2000–2026.</div>
+<div class="footer_bottom_aic col-md-12 col-xl-11">Дизайн сайта — <a href="https://aic.ru" target="_blank"><img src="/common/images/icons/aic-logo.svg" /></a></div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+
+        <div class="popup-cookies" data-popup-cookies>
+            <div class="popup-cookies_title">
+                На сайте Банка России используются файлы cookie
+            </div>
+            <div class="popup-cookies_subtitle">
+                Оставаясь на <a href="/">www.cbr.ru</a>, вы принимаете
+                <a href='/user_agreement/'>пользовательское соглашение</a>
+            </div>
+            <button class="btn _medium _blue " data-popup-cookies-btn>
+                Подтвердить
+            </button>
+        </div>
+
+    
+<!--[if IE 9]><script>$('body').addClass('ie9')</script><![endif]-->
+<script src="/Modules/Content/Scripts/PageInfo.js?v=v3116962712" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            Content_PageInfo.init($('[data-page-feedback]'));
+        });
+    </script>
+
+
+
+</body>
+</html>

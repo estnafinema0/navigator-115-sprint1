@@ -1,0 +1,342 @@
+/* Навигатор-115. Источник: design/DESIGN.md (направление C «Маршрутный лист», утверждено капитаном 26.10.2026, G9).
+   Токены из раздела 2 DESIGN.md. Один основной цвет (щит) + один акцент (сигнальный оранжевый). */
+
+:root {
+  --ground: #eef0ec;
+  --paper: #ffffff;
+  --sign: #0e5c3a;
+  --sign-dark: #0a4a2e;
+  --ink: #141a16;
+  --ink-2: #44504a;
+  --signal: #f58a1f;
+  --signal-hover: #e07a10;
+  --signal-text: #9e4400;
+  --signal-soft: #fde1c2;
+  --sign-soft: #d6e6dc;
+  --line: #cdd3ce;
+  --control-edge: #6b7670;
+  --display: "Jost", "Futura", "Century Gothic", Arial, sans-serif;
+  --text: "Golos Text", Arial, Helvetica, sans-serif;
+  --r: 6px;
+  --gap-xl: 56px;
+  --gap-l: 32px;
+  --gap-m: 20px;
+}
+@media (max-width: 640px) {
+  :root { --gap-xl: 40px; --gap-l: 28px; --gap-m: 16px; }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--text); font-size: 1.02rem; line-height: 1.5; }
+
+a { color: var(--sign); text-underline-offset: 0.15em; }
+a:hover { color: var(--sign-dark); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.sign :focus-visible { outline-color: var(--signal); }
+.sign-here :focus-visible { outline-color: var(--ink); }
+
+h1, h2, h3, h4, .rt, .here-title, .stop-name { font-family: var(--display); font-weight: 600; line-height: 1.15; }
+.ic { width: 1.4em; height: 1.4em; flex: none; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.skip { position: absolute; left: 16px; top: -60px; background: var(--ink); color: var(--paper); padding: 10px 14px; text-decoration: none; z-index: 10; }
+.skip:focus-visible { top: 12px; }
+
+/* Шапка */
+.masthead { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 16px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.wordmark { font-family: var(--display); font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none; padding: 8px 0; }
+.masthead nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.masthead nav a { color: var(--ink); text-decoration: none; padding: 10px; min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; font-weight: 500; }
+.masthead nav a:hover, .masthead nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; }
+@media (max-width: 560px) { .masthead { flex-wrap: wrap; padding-bottom: 6px; } .masthead nav { flex-basis: 100%; margin-left: -10px; } }
+
+main { padding: 0 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; }
+.section { max-width: 1180px; margin: 0 auto; padding: var(--gap-l) 0; border-top: 1px solid var(--line); }
+.section h2 { font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.2rem); margin: 0 0 12px; }
+.section > p { max-width: 70ch; }
+
+/* Щит */
+.sign { background: var(--sign); color: var(--paper); border-radius: var(--r); }
+/* Ссылки на щите белые; кнопки держат свой цвет (оранжевая кнопка с белым текстом давала 2,46:1, аудит 27.10) */
+.sign a:not(.btn) { color: var(--paper); }
+
+/* Лендинг: первый экран */
+.hero { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 1180px; margin: 0 auto; padding: 28px 0 var(--gap-xl); }
+.sign-hero { padding: clamp(24px, 3vw, 44px); }
+.sign-hero h1 { font-size: clamp(1.85rem, 1.2rem + 2.8vw, 3.2rem); margin: 0 0 16px; max-width: 20ch; text-wrap: balance; }
+.lead { font-size: clamp(1.02rem, 1rem + 0.3vw, 1.2rem); max-width: 52ch; margin: 0 0 24px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; }
+.hero-side { padding: 8px 4px 0; }
+.evidence { color: var(--ink-2); font-size: 0.95rem; margin: 0 0 22px; max-width: 60ch; }
+.evidence sup a, .big-figure sup a { display: inline-block; min-width: 24px; min-height: 24px; text-align: center; line-height: 24px; text-decoration: none; }
+.side-title { font-size: 1.3rem; margin: 0 0 4px; }
+.side-src { color: var(--ink-2); font-size: 0.92rem; margin: 0 0 12px; }
+@media (min-width: 900px) { .hero { grid-template-columns: minmax(0, 7fr) minmax(300px, 4fr); gap: 40px; padding-top: 40px; align-items: start; } }
+
+/* Столбик указателей: да / нет */
+.post { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.post li { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: var(--r); background: var(--paper); border: 1px solid var(--line); font-weight: 500; }
+.post li.ok .ic { color: var(--sign); }
+.post li.no { border-color: var(--ink); background: var(--ground); }
+.post li.no .ic { color: var(--ink); }
+.post li .src { display: block; font-weight: 400; color: var(--ink-2); font-size: 0.88rem; }
+
+/* Кнопки */
+.btn { font-family: var(--text); font-weight: 600; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 12px 20px; border-radius: var(--r); cursor: pointer; text-decoration: none; border: 2px solid transparent; color: var(--ink); background: none; }
+.btn:disabled { cursor: progress; opacity: 0.7; }
+.btn-primary { background: var(--signal); border-color: var(--signal); color: var(--ink); }
+.btn-primary:hover { background: var(--signal-hover); border-color: var(--signal-hover); color: var(--ink); }
+.btn-ghost { background: transparent; color: var(--paper); border-color: var(--paper); }
+.btn-ghost:hover { background: var(--sign-dark); color: var(--paper); }
+.btn-quiet { background: var(--paper); border-color: var(--control-edge); }
+.btn-quiet:hover { border-color: var(--ink); color: var(--ink); }
+.link-btn { font-family: var(--text); background: none; border: 0; padding: 10px 0; min-height: 44px; color: var(--sign); text-decoration: underline; text-underline-offset: 0.15em; cursor: pointer; font-size: 0.95rem; font-weight: 500; }
+.link-btn:hover { color: var(--sign-dark); }
+
+/* Линия маршрута сценария: остановки, «вы здесь» оранжевым */
+.line-stops { list-style: none; margin: 20px auto 0; padding: 0; max-width: 1180px; display: flex; flex-wrap: wrap; gap: 0; counter-reset: stop; }
+.line-stops li { flex: 1 1 140px; position: relative; padding: 0 12px 0 0; }
+.line-stops a, .line-stops span.stop { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding-right: 10px; background: var(--ground); text-decoration: none; color: var(--ink-2); font-weight: 500; }
+.line-stops li::before { content: ""; position: absolute; left: 11px; right: 0; top: 21px; height: 3px; background: var(--line); z-index: 0; }
+.line-stops li:last-child::before { display: none; }
+.dot { position: relative; z-index: 1; width: 25px; height: 25px; border-radius: 50%; border: 3px solid var(--control-edge); background: var(--paper); flex: none; }
+.line-stops li.done .dot { border-color: var(--sign); background: var(--sign); }
+.line-stops li.done::before { background: var(--sign); }
+.line-stops li.here .dot { border-color: var(--ink); background: var(--signal); }
+.line-stops li.here a, .line-stops li.here span.stop { color: var(--ink); font-weight: 700; }
+.stop-name { font-family: var(--text); font-weight: inherit; font-size: 0.95rem; }
+@media (max-width: 560px) { .line-stops li { flex-basis: 50%; } .line-stops li:nth-child(2)::before { display: none; } }
+
+/* Экран разбора */
+.page { max-width: 1180px; margin: 0 auto; padding: 24px 0 var(--gap-xl); }
+.page-head h1 { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem); margin: 18px 0 8px; }
+.page-head p { color: var(--ink-2); margin: 0 0 var(--gap-m); max-width: 75ch; }
+
+.paste { max-width: 760px; }
+.field-label { font-weight: 600; display: block; margin-bottom: 6px; }
+.hint { color: var(--ink-2); margin: 0 0 10px; font-size: 0.95rem; }
+textarea, input[type="text"], input[type="date"] { width: 100%; font: inherit; line-height: 1.5; color: var(--ink); background: var(--paper); border: 1px solid var(--control-edge); border-radius: var(--r); padding: 10px 12px; }
+textarea { resize: vertical; min-height: 170px; padding: 12px 14px; }
+input[type="date"] { min-height: 44px; max-width: 220px; }
+textarea::placeholder, input::placeholder { color: var(--ink-2); }
+.error-text { color: var(--signal-text); font-weight: 600; margin: 8px 0 0; }
+.paste .cta-row { margin-top: 16px; }
+.check { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; }
+.check input { width: 20px; height: 20px; accent-color: var(--sign); margin: 0; }
+
+.samples { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.sample { font: inherit; text-align: left; background: var(--paper); border: 1px solid var(--control-edge); border-radius: var(--r); padding: 8px 12px; cursor: pointer; min-height: 44px; color: var(--ink); }
+.sample:hover, .sample[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.sample b { display: block; font-weight: 600; font-size: 0.95rem; }
+.sample span { display: block; font-size: 0.85rem; color: var(--ink-2); }
+
+.loading-text { margin: 0 0 12px; }
+.progress { height: 4px; background: var(--line); max-width: 760px; border-radius: 2px; overflow: hidden; }
+.progress-bar { display: block; height: 100%; width: 0; background: var(--sign); border-radius: 2px; animation: fill 40s cubic-bezier(0.1, 0.6, 0.3, 1) forwards; }
+@keyframes fill { to { width: 92%; } }
+@media (prefers-reduced-motion: reduce) { .progress-bar { animation: none; width: 50%; } }
+
+.error-box { max-width: 760px; border: 2px solid var(--ink); border-radius: var(--r); padding: 18px 20px; background: var(--paper); }
+.error-title { font-family: var(--display); font-weight: 600; font-size: 1.3rem; margin: 0 0 6px; }
+.error-box p { margin: 0 0 8px; }
+.notice { max-width: 90ch; border-left: 0; border: 1px solid var(--control-edge); background: var(--paper); border-radius: var(--r); padding: 10px 14px; margin: 0 0 14px; font-size: 0.95rem; }
+
+.source-line.spaced { margin-top: 16px; }
+.source-line, .help-line { color: var(--ink-2); font-size: 0.95rem; margin: 0 0 14px; max-width: 90ch; }
+
+/* «Вы здесь» */
+.sign-here { background: var(--signal); color: var(--ink); display: flex; gap: 14px; padding: 18px 20px; margin-bottom: 18px; align-items: flex-start; }
+.ic-here { width: 1.6em; height: 1.6em; margin-top: 4px; }
+.here-label { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; margin: 0 0 2px; }
+.here-title { font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem); margin: 0 0 6px; }
+.here-sub { margin: 0; font-size: 0.97rem; max-width: 70ch; }
+
+/* Панели и билет письма */
+.desk { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: start; }
+.panels { display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media (min-width: 640px) { .panels { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 960px) { .desk { grid-template-columns: minmax(300px, 4fr) minmax(0, 7fr); gap: 28px; } .ticket { order: -1; position: sticky; top: 16px; } }
+
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px 8px; }
+.panel h3 { margin: 0 0 6px; font-size: 1.05rem; color: var(--sign); }
+.panel p { margin: 0 0 6px; font-size: 0.95rem; }
+.panel ol, .panel ul { margin: 0 0 6px; padding-left: 20px; font-size: 0.95rem; }
+.panel.is-active { border-color: var(--signal); box-shadow: inset 0 0 0 2px var(--signal); }
+.panel-gap { padding-bottom: 14px; }
+.gap { display: flex; align-items: center; gap: 6px; font-family: var(--display); font-weight: 600; font-size: 1.05rem; }
+.gap .ic { width: 1.2em; height: 1.2em; }
+
+.ticket { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 18px 18px 14px; }
+.ticket-title { font-size: 1rem; color: var(--ink-2); margin: 0 0 10px; }
+.ticket p { margin: 0; line-height: 1.6; white-space: pre-wrap; }
+mark.q { background: var(--signal-soft); color: inherit; cursor: pointer; padding: 0.05em 0.1em; border-radius: 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone; border-bottom: 2px solid transparent; transition: border-color 150ms; }
+mark.q:hover { border-bottom-color: var(--ink); }
+mark.q.is-active { background: var(--signal); border-bottom-color: var(--ink); }
+
+.duty { margin-top: var(--gap-l); }
+.duty h2 { font-size: 1.5rem; margin: 0 0 4px; }
+.duty .side-src { margin-bottom: 12px; }
+@media (min-width: 900px) { .duty .post { grid-template-columns: 1fr 1fr; } }
+
+/* Маршруты */
+.routes { margin-top: var(--gap-l); }
+.routes h2 { font-size: 1.5rem; margin: 0 0 12px; }
+.routes .block-title { margin-top: var(--gap-l); }
+.route-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
+.route-list .sign { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; }
+.route-list .sign .ic { margin-top: 2px; }
+.route-list p { margin: 0; font-size: 0.95rem; }
+.rt { font-size: 1.15rem; margin-bottom: 4px !important; }
+.sign-wait { background: var(--paper); color: var(--ink); border: 2px solid var(--sign); }
+.sign-wait .ic { color: var(--sign); }
+.sign-no { background: var(--paper); color: var(--ink); border: 2px solid var(--ink); }
+.route-list .sign-no .rt { text-decoration: line-through; text-decoration-thickness: 2px; }
+@media (min-width: 900px) { .route-list { grid-template-columns: repeat(2, 1fr); } .route-list .sign-no { grid-column: 1 / -1; } }
+/* Группы маршрутов: «Сейчас», «Если не помогло», «Также доступно», «Нельзя» (порядок и условия из /api/v1/routes) */
+.route-groups { display: grid; gap: 18px; }
+.routes .check + .route-groups { margin-top: 10px; }
+.group-title { font-size: 1.05rem; margin: 0 0 8px; color: var(--ink-2); }
+@media (min-width: 900px) { .route-list.route-list-now { grid-template-columns: 1fr; } }
+.route-list .route-alt { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); }
+.route-alt .ic { color: var(--sign); margin-top: 2px; }
+.route-alt .rt { font-size: 1.05rem; }
+.route-src { font-size: 0.85rem !important; color: var(--ink-2); margin-top: 4px !important; }
+.route-list li.sign:not(.sign-wait):not(.sign-no) .route-src { color: var(--paper); }
+.route-groups.rise .route-list > li { animation: rise 320ms ease-out both; }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .route-groups.rise .route-list > li { animation: none; } }
+
+/* Следующий шаг: одна строка наверху карточки */
+.next-step { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; background: var(--paper); border: 2px solid var(--ink); border-radius: var(--r); padding: 14px 18px; margin: 0 0 18px; }
+.next-step p { margin: 0; max-width: 70ch; }
+.next-label { font-family: var(--display); font-weight: 700; margin-right: 6px; }
+.next-when { white-space: nowrap; font-weight: 600; }
+.next-when.unknown { white-space: normal; font-weight: 400; color: var(--ink-2); }
+
+/* Что собрать: чек-лист пакета по пунктам запроса */
+.pack { margin-top: var(--gap-l); scroll-margin-top: 16px; }
+.pack h2 { font-size: 1.5rem; margin: 0 0 4px; }
+.pack h2 { scroll-margin-top: 16px; }
+.pack h2:focus { outline: none; }
+@media (min-width: 900px) { .pack-list { grid-template-columns: 1fr 1fr; } }
+.pack h2:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.pack-count { font-weight: 600; margin: 0 0 10px; }
+.pack-list { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; }
+.pack-list > li { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 10px 14px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; align-items: start; }
+.pack-list > li.is-active { border-color: var(--signal); box-shadow: inset 0 0 0 2px var(--signal); }
+.pack-list input[type="checkbox"] { width: 22px; height: 22px; margin: 11px 0 0; accent-color: var(--sign); }
+.pack-list label { display: block; padding: 8px 0 2px; cursor: pointer; font-weight: 600; min-height: 44px; }
+.pack-quote { margin: 0; font-size: 0.95rem; color: var(--ink-2); }
+.pack-quote q { quotes: "«" "»"; color: var(--ink); }
+.pack-item-body { min-width: 0; overflow-wrap: anywhere; }
+.followups { background: var(--ground); border: 1px dashed var(--control-edge); border-radius: var(--r); padding: 12px 16px; margin: 0 0 12px; }
+.followups h3 { font-size: 1.05rem; margin: 0 0 4px; }
+.followups ul { margin: 6px 0 0; padding-left: 20px; }
+.followups li { margin: 0 0 6px; }
+.followups .src { display: block; font-size: 0.85rem; color: var(--ink-2); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-top: 28px; }
+
+/* Сроки */
+.timers { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.timer { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 760px) { .timer { grid-template-columns: minmax(0, 5fr) minmax(200px, 3fr) minmax(150px, 2fr); align-items: start; } }
+.timer h3 { font-size: 1.05rem; margin: 0 0 4px; color: var(--sign); }
+.timer .norm { font-size: 0.88rem; color: var(--ink-2); margin: 0; }
+.timer .norm q { quotes: "«" "»"; }
+.due { font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1.1; }
+.due small { display: block; font-family: var(--text); font-weight: 400; font-size: 0.85rem; color: var(--ink-2); }
+.due.wait { font-size: 1rem; font-weight: 500; color: var(--ink-2); font-family: var(--text); }
+.who { font-size: 0.85rem; font-weight: 600; }
+.who.client { color: var(--signal-text); }
+
+/* Заявление */
+.formgrid { display: grid; grid-template-columns: 1fr; gap: 12px 16px; }
+@media (min-width: 700px) { .formgrid { grid-template-columns: 1fr 1fr; } }
+.formgrid label { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 4px; }
+.doc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.doc-list > li { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.doc-list p { margin: 0; }
+.doc-list .kind { font-size: 0.85rem; color: var(--ink-2); max-width: 70ch; }
+.doc-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.doc-note { flex-basis: 100%; }
+.doc-note:empty { margin-top: -8px; }
+.doc-note ul { margin: 0; padding-left: 20px; }
+.doc-note li { margin: 0 0 4px; }
+.doc-note.is-ok, .doc-note.is-warn, .doc-note.is-error { border-radius: var(--r); padding: 10px 14px; font-size: 0.95rem; }
+.doc-note.is-ok { color: var(--ink-2); padding: 4px 0; }
+.doc-note.is-ok ul { list-style: none; padding-left: 0; }
+.doc-note.is-warn { background: var(--ground); border: 2px solid var(--signal); }
+.doc-note.is-error { background: var(--ground); border: 2px solid var(--ink); }
+.doc-note.is-error li:first-child { color: var(--signal-text); font-weight: 600; }
+.doc-note-title { margin: 0 0 4px; font-weight: 600; }
+.formgrid .wide { grid-column: 1 / -1; }
+.formgrid textarea { min-height: 90px; }
+.from-letter { color: var(--signal-text); font-weight: 600; }
+
+/* Страж */
+.marked { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; white-space: pre-wrap; line-height: 1.6; margin: 0; font-family: var(--text); }
+/* Пометки различаются не только цветом: у запрещённого черта снизу и скрытая подпись для экранного диктора */
+mark.ok { background: var(--sign-soft); color: inherit; border-radius: 3px; padding: 0 0.1em; }
+mark.bad { background: var(--signal); color: var(--ink); border-radius: 3px; padding: 0 0.1em; box-shadow: inset 0 -3px 0 var(--ink); }
+mark.rev { background: var(--paper); color: inherit; border-radius: 3px; padding: 0 0.1em; outline: 2px dashed var(--ink); outline-offset: 0; }
+.review-list { margin-bottom: 8px; }
+.review-list li.no { border-style: dashed; }
+
+/* Подвал */
+.colophon { color: var(--ink-2); font-size: 0.9rem; background: var(--paper); border-top: 1px solid var(--line); padding: 20px 16px 40px; }
+.colophon p { margin: 0 auto 8px; max-width: 1180px; }
+
+/* Текст политики */
+.prose { max-width: 75ch; }
+.prose h2 { font-size: 1.3rem; margin: 24px 0 6px; }
+.prose p, .prose li { margin: 0 0 8px; }
+
+/* Лендинг: вертикальная линия остановок */
+.route-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 900px) { .route-grid { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 40px; } }
+.route-grid p { color: var(--ink-2); max-width: 46ch; }
+.vline { list-style: none; margin: 0; padding: 0; position: relative; }
+.vline li { position: relative; padding-bottom: 14px; }
+.vline li::before { content: ""; position: absolute; left: 11px; top: 26px; bottom: -4px; width: 3px; background: var(--sign); }
+.vline li:last-child::before { display: none; }
+.vstop { display: flex; gap: 14px; align-items: flex-start; text-decoration: none; color: var(--ink); min-height: 44px; }
+.vstop .dot { border-color: var(--sign); margin-top: 2px; }
+.vstop b { display: block; font-family: var(--display); font-weight: 600; font-size: 1.25rem; color: var(--sign); }
+.vstop:hover b { text-decoration: underline; }
+
+/* Лендинг: банк, крупная цифра со сноской */
+.bank-section { display: grid; grid-template-columns: 1fr; gap: 12px 40px; align-items: start; }
+@media (min-width: 900px) { .bank-section { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); } }
+.big-figure { font-family: var(--display); font-weight: 700; font-size: clamp(3rem, 2rem + 5vw, 6rem); line-height: 1; margin: 0; color: var(--ink); }
+.big-figure sup { font-size: 0.3em; }
+.bank-section p { max-width: 62ch; }
+.bounds { margin-top: 16px; max-width: 760px; }
+.footnote { color: var(--ink-2); font-size: 0.88rem; margin-top: 24px; max-width: 90ch; }
+code { font-size: 0.9em; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+
+/* Что банк обязан был сообщить: щиты «есть / частично / нет» */
+.duty-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media (min-width: 640px) { .duty-list { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 960px) { .duty-list { grid-template-columns: repeat(3, 1fr); } }
+.duty-list li { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; }
+.duty-list .rt { display: block; font-size: 1.02rem; margin: 0 !important; }
+.duty-word { display: block; font-size: 0.85rem; }
+.duty-list li.sign:not(.sign-wait):not(.sign-no) .duty-word { color: var(--paper); }
+/* В карточке клиента плашки «есть / нет» не похожи на кнопки маршрутов (жюри, 27.10): бумага, знак слева */
+.duty-plain li { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r); color: var(--ink); }
+.duty-plain li.yes .ic, .duty-plain li.part .ic { color: var(--sign); }
+.duty-plain li.no { background: var(--ground); border-style: dashed; border-color: var(--control-edge); }
+.duty-plain li.no .ic { color: var(--ink); }
+.duty-plain .duty-word { color: var(--ink-2); }
+.duty-plain .duty-word b { color: var(--ink); font-weight: 600; }
+
+.block-title { font-size: 1.5rem; margin: var(--gap-l) 0 12px; }
+.verdict-ok { display: flex; gap: 14px; padding: 18px 20px; margin-bottom: 18px; align-items: flex-start; }
+.verdict-wait { display: flex; gap: 14px; padding: 18px 20px; margin-bottom: 18px; align-items: flex-start; }
+.verdict-wait .here-title { text-decoration: none; }
+.forbidden-list { margin-bottom: 8px; }
+.forbidden-list li.no { border-color: var(--signal-text); }

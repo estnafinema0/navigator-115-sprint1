@@ -1,0 +1,168 @@
+{
+ "id": "C12",
+ "text_sha256": "249933390fe4b804a000d8444b257545a1ae837a7a46fe5f4f157a7b6b88230e",
+ "cache_key": "70846fac3039eafcdfe46c47",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "error": "ReadTimeout('timed out')"
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "unknown",
+   "confidence": 0.0,
+   "evidence": []
+  },
+  "measures": [],
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "fz161_restriction",
+   "confidence": 0.6,
+   "evidence": [
+    {
+     "quote": "161-ФЗ",
+     "start": 49,
+     "end": 55
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "card_block",
+    "evidence": [
+     {
+      "quote": "161-ФЗ",
+      "start": 49,
+      "end": 55
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "legal_basis": {
+   "level": "norm",
+   "items": [
+    {
+     "kind": "law",
+     "law": "161-ФЗ",
+     "article": "9",
+     "part": null,
+     "point": "9",
+     "subpoint": null,
+     "contract_clause": null,
+     "canonical": "161-ФЗ ст. 9 п. 9",
+     "evidence": [
+      {
+       "quote": "п.9 ст.9 №161-ФЗ",
+       "start": 39,
+       "end": 55
+      }
+     ]
+    },
+    {
+     "kind": "contract",
+     "law": null,
+     "article": null,
+     "part": null,
+     "point": null,
+     "subpoint": null,
+     "contract_clause": "п. 1.11",
+     "canonical": "договор: п. 1.11",
+     "evidence": [
+      {
+       "quote": "п.1.11 приложения 1 к Условиям банковского обслуживания ф",
+       "start": 73,
+       "end": 130
+      }
+     ]
+    }
+   ]
+  },
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "period": null,
+  "deadlines": [],
+  "response_channels": [
+   {
+    "type": "branch_office",
+    "raw": "в офис банка",
+    "evidence": [
+     {
+      "quote": "в офис банка",
+      "start": 198,
+      "end": 210
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": true,
+   "text": "Если не согласны с решением, обратитесь в офис банка [ссылка]…»",
+   "evidence": [
+    {
+     "quote": "Если не согласны с решением, обратитесь в офис банка [ссылка]…",
+     "start": 158,
+     "end": 220
+    }
+   ]
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 6,
+  "recomputed": []
+ }
+}

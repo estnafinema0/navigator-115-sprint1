@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Навигатор-115: маршрутный лист</title>
+<meta name="description" content="Направление C «Маршрутный лист»: вывески, допустимые и недопустимые пути обжалования.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#razbor">Перейти к разбору письма</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M3 12h16M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"/></symbol>
+  <symbol id="i-bar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M5.6 5.6l12.8 12.8" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></symbol>
+  <symbol id="i-here" viewBox="0 0 24 24"><path d="M12 3l9 18H3z" fill="currentColor"/></symbol>
+</svg>
+
+<header class="masthead">
+  <a class="wordmark" href="#top">Навигатор&#8209;115</a>
+  <nav aria-label="Разделы страницы">
+    <a href="#razbor">Разбор письма</a>
+    <a href="#granica">Границы сервиса</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="h1">
+    <div class="sign sign-hero">
+      <h1 id="h1">Счёт ограничили по 115&#8209;ФЗ? За минуту: что это за мера, какие пути открыты и куда жаловаться нельзя.</h1>
+      <p class="lead">Вставьте текст уведомления или запроса банка. Навигатор покажет меру, норму, ближайший срок и допустимые маршруты. Каждое поле стоит на цитате из письма.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#razbor">Разобрать письмо банка</a>
+        <button type="button" class="btn btn-ghost" id="hero-example">Пример: ограничение ДБО</button>
+      </div>
+    </div>
+    <div class="hero-side">
+      <p class="evidence">Путь обжалования вне банка назван в 2&nbsp;% из 45 публичных уведомлений банков; МВК при Банке России не упомянута ни разу.<sup><a href="#fn1" id="fnref1" aria-label="Сноска 1: источник цифр">1</a></sup></p>
+      <h2 class="side-title">МВК рассматривает только четыре вида решений</h2>
+      <p class="side-src">Методичка Банка России, с. 18. Остальные меры обжалуются другими путями: в самом банке, в Банке России, в суде.</p>
+      <ul class="post" aria-label="Что обжалуется в МВК, а что нет">
+        <li class="ok"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg><span>Отказ в операции (п.&nbsp;11 ст.&nbsp;7)</span></li>
+        <li class="ok"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg><span>Отказ в заключении договора (п.&nbsp;5.2 ст.&nbsp;7)</span></li>
+        <li class="ok"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg><span>Меры при высоком риске (п.&nbsp;5 ст.&nbsp;7.7)</span></li>
+        <li class="ok"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg><span>Отказ Банка России пересмотреть высокий риск</span></li>
+        <li class="no"><svg class="ic" aria-hidden="true"><use href="#i-bar"/></svg><span>Ограничение ДБО, блокировка карты, «жёлтый» риск, меры по 161&#8209;ФЗ: в МВК не обжалуются</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="razbor" class="razbor" aria-labelledby="h2">
+    <div class="razbor-head">
+      <h2 id="h2">Разбор запроса</h2>
+      <fieldset class="states">
+        <legend>Состояние экрана (переключатель для ревью)</legend>
+        <label><input type="radio" name="state" value="empty" checked> Пусто</label>
+        <label><input type="radio" name="state" value="loading"> Загрузка</label>
+        <label><input type="radio" name="state" value="error"> Ошибка</label>
+        <label><input type="radio" name="state" value="result"> Результат</label>
+      </fieldset>
+    </div>
+
+    <div class="state" data-state="empty">
+      <form class="paste" id="paste-form" novalidate>
+        <label for="letter-input" class="field-label">Текст уведомления или запроса банка</label>
+        <p class="hint" id="letter-hint">Сообщение из чата банка, SMS или письмо. ИНН, номера счетов и ФИО для разбора не нужны: удалите их, если они есть.</p>
+        <textarea id="letter-input" name="letter" rows="8" aria-describedby="letter-hint letter-error" placeholder="Вставьте текст сюда"></textarea>
+        <p class="error-text" id="letter-error" role="alert" hidden>Вставьте текст письма, чтобы его разобрать.</p>
+        <div class="cta-row">
+          <button type="submit" class="btn btn-primary">Разобрать</button>
+          <button type="button" class="btn btn-quiet" id="fill-example">Вставить пример из корпуса</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="state" data-state="loading" hidden>
+      <p class="loading-text" role="status">Читаем письмо банка: определяем меру и подбираем маршруты, которые для неё допустимы.</p>
+      <div class="progress" aria-hidden="true"><span class="progress-bar"></span></div>
+    </div>
+
+    <div class="state" data-state="error" hidden>
+      <div class="error-box" role="alert">
+        <p class="error-title">Не удалось разобрать текст</p>
+        <p>В тексте не нашлось ни меры, ни запроса документов: возможно, это не уведомление банка или скопирована только часть сообщения. Проверьте текст и попробуйте снова.</p>
+        <div class="cta-row">
+          <button type="button" class="btn btn-primary" id="retry">Повторить разбор</button>
+          <button type="button" class="btn btn-quiet" id="back-to-text">Вернуться к тексту</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="state" data-state="result" hidden>
+      <p class="source-line">Пример из корпуса Pulsar (пример 4): ограничение ДБО и блокировка карт, Модульбанк, 2022. ПДн удалены, многоточия: пропуски в источнике. Источник: <a href="https://club.klerk.ru/t/zapros-iz-banka-po-fz-115/723270" rel="noopener">club.klerk.ru</a>.</p>
+
+      <div class="sign sign-here">
+        <svg class="ic ic-here" aria-hidden="true"><use href="#i-here"/></svg>
+        <div>
+          <p class="here-label">Вы здесь</p>
+          <h3 class="here-title">Ограничение ДБО и блокировка карт, запрос документов</h3>
+          <p class="here-sub">Это мера банка по договору и внутренним правилам, а не одно из четырёх решений, которые рассматривает МВК.</p>
+        </div>
+      </div>
+
+      <p class="help-line">Нажмите на панель или на выделенный фрагмент письма: они связаны. Esc снимает выделение.</p>
+
+      <div class="desk">
+        <div class="panels" aria-label="Поля карточки">
+          <article class="panel" data-f="measure">
+            <h4>Мера</h4>
+            <p>Ограничен доступ к деньгам из личного кабинета (ДБО) и заблокированы карты. Счёт не закрыт, операции через отделение возможны.</p>
+            <button type="button" class="link-btn" data-show="measure">Показать в письме</button>
+          </article>
+          <article class="panel panel-gap" data-f="norm">
+            <h4>Норма</h4>
+            <p class="gap"><svg class="ic" aria-hidden="true"><use href="#i-bar"/></svg>Не указано банком</p>
+            <p>Ни статьи 115&#8209;ФЗ, ни пункта договора. По письму Банка России ИН&#8209;01&#8209;59/98 при ограничении ДБО банку необходимо назвать норму и порядок действий.</p>
+          </article>
+          <article class="panel" data-f="reason">
+            <h4>Причина</h4>
+            <p>Вопросы об источнике денег на счёте, налогах и переводах. Формулировка общая, признак не назван.</p>
+            <button type="button" class="link-btn" data-show="reason">Показать в письме</button>
+          </article>
+          <article class="panel" data-f="asked">
+            <h4>Что просят</h4>
+            <p>Выписки по расчётному, валютному и карточным счетам. Период не указан.</p>
+            <button type="button" class="link-btn" data-show="asked">Показать в письме</button>
+          </article>
+          <article class="panel panel-gap" data-f="deadline">
+            <h4>Ближайший срок</h4>
+            <p class="gap"><svg class="ic" aria-hidden="true"><use href="#i-bar"/></svg>Не указан банком</p>
+            <p>Законного срока ответа на запрос нет, его задаёт банк (Методичка ЦБ, с. 15). Уточните срок у банка через сохранённый канал связи.</p>
+          </article>
+          <article class="panel" data-f="after">
+            <h4>Что будет дальше</h4>
+            <p>Банк допускает, что после проверки предложит закрыть счёт. Это отдельный маршрут: 60 дней на вывод остатка (п.&nbsp;3 ст.&nbsp;859 ГК) и жалоба на заградительную комиссию.</p>
+            <button type="button" class="link-btn" data-show="after">Показать в письме</button>
+          </article>
+        </div>
+
+        <article class="ticket" aria-labelledby="ticket-title">
+          <h3 id="ticket-title" class="ticket-title">Сообщение банка</h3>
+          <p>«<mark tabindex="0" role="button" aria-pressed="false" data-f="measure">Мы ограничили доступ к деньгам из личного кабинета и заблокировали карты</mark>… <mark tabindex="0" role="button" aria-pressed="false" data-f="reason">У нас появились вопросы об источнике денег на вашем счете, налогах и переводах</mark>… Чтобы снять ограничения, <mark tabindex="0" role="button" aria-pressed="false" data-f="asked">проверим выписки с расчетного, валютного и карточных счетов</mark>… Если вдруг вопросы останутся, <mark tabindex="0" role="button" aria-pressed="false" data-f="after">возможно, предложим закрыть счет</mark>».</p>
+        </article>
+      </div>
+
+      <section class="routes" aria-labelledby="h-routes">
+        <h3 id="h-routes">Маршруты для этой меры</h3>
+        <ol class="route-list">
+          <li class="sign sign-ok"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg><div><p class="rt">Ответить на запрос</p><p>Выписки по всем счетам, которые назвал банк. Полный пакет с первого раза короче цикла дозапросов.</p></div></li>
+          <li class="sign sign-ok"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg><div><p class="rt">Запросить причины ограничения ДБО</p><p>Шаблон Банка России №&nbsp;1 со ссылкой на 5&#8209;МР: банк должен сообщить причины в объёме, достаточном для ответа.</p></div></li>
+          <li class="sign sign-ok"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg><div><p class="rt">Платить с бумажных платёжек в отделении</p><p>Ограничение ДБО не отказ в операции: налоги и зарплата проходят через офис (Методичка ЦБ, с. 16).</p></div></li>
+          <li class="sign sign-ok"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg><div><p class="rt">Жалоба в Банк России, затем суд</p><p>Интернет&#8209;приёмная Банка России; суд по общему сроку исковой давности. Экспорт дела юристу.</p></div></li>
+          <li class="sign sign-no"><svg class="ic" aria-hidden="true"><use href="#i-bar"/></svg><div><p class="rt">МВК при Банке России: недопустима</p><p>Ограничение ДБО не входит в четыре вида решений, которые рассматривает МВК (Методичка ЦБ, с. 18). Заявление вернут без рассмотрения, недели будут потеряны.</p></div></li>
+        </ol>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="copy-result">Скопировать маршрутный лист</button>
+        <a class="btn btn-quiet" href="https://www.cbr.ru/StaticHtml/File/155903/templates.zip" rel="noopener">Шаблоны заявлений Банка России (zip)</a>
+        <button type="button" class="btn btn-quiet" id="another">Разобрать другое письмо</button>
+        <p class="copy-feedback" role="status" aria-live="polite"></p>
+      </div>
+      <p class="next-step">Следующий указатель, чек&#8209;лист пакета по пунктам запроса: в разработке, спринт 1.</p>
+    </div>
+  </section>
+
+  <section id="granica" class="granica" aria-labelledby="h-granica">
+    <h2 id="h-granica">Границы сервиса</h2>
+    <p>Навигатор работает по открытым нормам и шаблонам Банка России и проверяет только текст, который вы вставили. Маршруты показывают, куда обращаться допустимо по закону; это не юридическая консультация и не гарантия результата. Подсказок, как обойти проверку, сервис не даёт.</p>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <p>Pulsar, команда конкурса «Академия Финтеха 2026». Направление дизайна C «Маршрутный лист», черновик для выбора капитаном.</p>
+  <p>Источники норм: <a href="https://www.cbr.ru/StaticHtml/File/155903/mrp.pdf" rel="noopener">Методичка Банка России «Что нужно знать предпринимателю об ограничениях операций по счету» (PDF)</a>, письма Банка России <a href="https://www.cbr.ru/Crosscut/LawActs/File/10079" rel="noopener">ИН&#8209;01&#8209;59/98</a> и <a href="https://cbr.ru/Crosscut/LawActs/File/12160" rel="noopener">ИН&#8209;03&#8209;59/11</a>.</p>
+  <p id="fn1" class="footnote"><sup>1</sup> Корпус Pulsar: предварительная выборка 45 публичных текстов уведомлений и запросов банков (отзывы, форумы, публикации юристов, 2007 по 2026), один кодировщик, не аудит банков. Файл research/corpus-requests.md, 10.2026. <a href="#fnref1" aria-label="Вернуться к тексту">↩</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

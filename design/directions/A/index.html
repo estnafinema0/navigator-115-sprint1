@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Навигатор-115: разметка письма банка</title>
+<meta name="description" content="Направление A «Разметка документа»: письмо банка как главный герой, поля карточки как пометки на полях.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#razbor">Перейти к разбору письма</a>
+
+<header class="masthead">
+  <a class="wordmark" href="#top">Навигатор&#8209;115</a>
+  <nav aria-label="Разделы страницы">
+    <a href="#razbor">Разбор письма</a>
+    <a href="#granica">Границы сервиса</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-text">
+      <h1 id="h1">Банк прислал запрос по 115&#8209;ФЗ. Разберём письмо по полям: что за мера, по какой норме, что именно просят и к какому сроку.</h1>
+      <p class="lead">Каждое поле карточки стоит на цитате из письма банка. Чего в письме нет, так и пишем: «не указано банком». Советов, как переписать назначение платежа, здесь нет и не будет.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#razbor">Разобрать письмо банка</a>
+        <button type="button" class="btn btn-quiet" id="hero-example">Посмотреть разбор реального запроса</button>
+      </div>
+      <p class="evidence">В 45 публичных уведомлениях и запросах банков норма закона названа в 16&nbsp;% текстов, срок в 22&nbsp;%, путь обжалования вне банка в 2&nbsp;%.<sup><a href="#fn1" id="fnref1" aria-label="Сноска 1: источник цифр">1</a></sup></p>
+    </div>
+    <aside class="hero-margin" aria-label="Что вы получите">
+      <ol class="margin-list">
+        <li><span class="n">1</span>Карточка полей, у каждого поля цитата из письма</li>
+        <li><span class="n">2</span>Что банк обязан был сообщить по письмам Банка России ИН&#8209;01&#8209;59/98 и ИН&#8209;03&#8209;59/11</li>
+        <li><span class="n">3</span>Ближайший срок: кто его поставил, банк или закон</li>
+        <li><span class="n">4</span>Допустимый маршрут обжалования, и почему МВК подходит не всем</li>
+      </ol>
+    </aside>
+  </section>
+
+  <section id="razbor" class="razbor" aria-labelledby="h2">
+    <div class="razbor-head">
+      <h2 id="h2">Разбор запроса</h2>
+      <fieldset class="states">
+        <legend>Состояние экрана (переключатель для ревью)</legend>
+        <label><input type="radio" name="state" value="empty" checked> Пусто</label>
+        <label><input type="radio" name="state" value="loading"> Загрузка</label>
+        <label><input type="radio" name="state" value="error"> Ошибка</label>
+        <label><input type="radio" name="state" value="result"> Результат</label>
+      </fieldset>
+    </div>
+
+    <div class="state" data-state="empty">
+      <form class="paste" id="paste-form" novalidate>
+        <label for="letter-input" class="field-label">Текст запроса или уведомления банка</label>
+        <p class="hint" id="letter-hint">Скопируйте сообщение из чата банка, SMS или письма. ИНН, номера счетов и ФИО для разбора не нужны: удалите их, если они есть.</p>
+        <textarea id="letter-input" name="letter" rows="9" aria-describedby="letter-hint letter-error" placeholder="Вставьте текст сюда"></textarea>
+        <p class="error-text" id="letter-error" role="alert" hidden>Вставьте текст письма, чтобы его разобрать.</p>
+        <div class="cta-row">
+          <button type="submit" class="btn btn-primary">Разобрать</button>
+          <button type="button" class="btn btn-quiet" id="fill-example">Вставить пример из корпуса</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="state" data-state="loading" hidden>
+      <p class="loading-text" role="status">Читаем письмо банка: ищем меру, норму, перечень запрошенного, срок и маршрут.</p>
+      <div class="progress" aria-hidden="true"><span class="progress-bar"></span></div>
+    </div>
+
+    <div class="state" data-state="error" hidden>
+      <div class="error-box" role="alert">
+        <p class="error-title">Не удалось разобрать текст</p>
+        <p>Похоже, это не уведомление банка или текст слишком короткий: в нём не нашлось ни меры, ни запроса документов. Проверьте, что скопировали сообщение целиком, и попробуйте снова.</p>
+        <div class="cta-row">
+          <button type="button" class="btn btn-primary" id="retry">Повторить разбор</button>
+          <button type="button" class="btn btn-quiet" id="back-to-text">Вернуться к тексту</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="state" data-state="result" hidden>
+      <p class="source-line">Пример из корпуса Pulsar (пример 2): запрос документов о происхождении средств, Т&#8209;Банк, чат, февраль 2026. ПДн удалены, многоточия: пропуски в источнике. Источник: <a href="https://vc.ru/id1377271/2033834-kak-otvetit-na-zapros-po-115-fz-ot-tinkoff" rel="noopener">vc.ru</a>.</p>
+      <p class="help-line">Нажмите на пометку справа или на выделенный фрагмент в письме: они связаны. Esc снимает выделение.</p>
+
+      <div class="desk">
+        <article class="sheet" aria-labelledby="sheet-title">
+          <h3 id="sheet-title" class="sheet-title">Сообщение банка в чате</h3>
+          <p>«<mark tabindex="0" role="button" aria-pressed="false" data-f="deadline">Пожалуйста, ответьте до 25.02.2026.<sup>4</sup></mark> <mark tabindex="0" role="button" aria-pressed="false" data-f="reason">Вы внесли на свой счет 5&nbsp;000&nbsp;000,00&nbsp;₽<sup>2</sup></mark> … <mark tabindex="0" role="button" aria-pressed="false" data-f="asked">Предоставьте информацию об источнике происхождения денежных средств, которые вы внесли на счет … пришлите подтверждающие документы (2&#8209;НДФЛ, 3&#8209;НДФЛ, справку о доходах, подтверждение продажи движимого или недвижимого имущества и другие)<sup>3</sup></mark>».</p>
+          <p>«<mark tabindex="0" role="button" aria-pressed="false" data-f="measure">Если вы не предоставите необходимую информацию, мы ограничим отдельные виды операций по вашему счету.<sup>1</sup></mark>»</p>
+        </article>
+
+        <aside class="margin" aria-label="Пометки на полях: поля карточки">
+          <article class="note" data-f="measure">
+            <h4><span class="n">1</span>Мера</h4>
+            <p>Запрос информации и документов. Ограничений пока нет: банк предупреждает, что ограничит отдельные операции, если не ответить.</p>
+            <button type="button" class="link-btn" data-show="measure">Показать в письме</button>
+          </article>
+          <article class="note note-gap" data-f="norm">
+            <h4><span class="n n-gap">§</span>Норма</h4>
+            <p class="gap">Не указано банком.</p>
+            <p>В тексте нет ни статьи 115&#8209;ФЗ, ни пункта договора. По письму Банка России ИН&#8209;01&#8209;59/98 банку необходимо назвать закон с конкретной нормой и (или) условие договора.</p>
+          </article>
+          <article class="note" data-f="reason">
+            <h4><span class="n">2</span>Причина</h4>
+            <p>Внесение 5&nbsp;000&nbsp;000,00&nbsp;₽ на счёт. Формулировка общая: вид подозрения не назван.</p>
+            <button type="button" class="link-btn" data-show="reason">Показать в письме</button>
+          </article>
+          <article class="note" data-f="asked">
+            <h4><span class="n">3</span>Что просят</h4>
+            <p>Источник средств по этому взносу и подтверждающие документы: 2&#8209;НДФЛ, 3&#8209;НДФЛ, справка о доходах, подтверждение продажи движимого или недвижимого имущества. Список открытый: «и другие».</p>
+            <button type="button" class="link-btn" data-show="asked">Показать в письме</button>
+          </article>
+          <article class="note" data-f="deadline">
+            <h4><span class="n">4</span>Ближайший срок</h4>
+            <p>До 25.02.2026. Срок поставил банк: законного срока ответа на запрос документов нет, банк задаёт его по договору и внутренним правилам (Методичка ЦБ, с. 15).</p>
+            <button type="button" class="link-btn" data-show="deadline">Показать в письме</button>
+          </article>
+          <article class="note note-route" data-f="route">
+            <h4><span class="n n-gap">№</span>Допустимый маршрут</h4>
+            <p>Ответить на запрос полным пакетом до срока. <strong>МВК недопустима:</strong> это запрос, а не решение. МВК при Банке России рассматривает только 4 вида решений: отказ в операции, отказ в договоре, меры п.&nbsp;5 ст.&nbsp;7.7 и отказ ЦБ пересмотреть высокий риск (Методичка ЦБ, с. 18).</p>
+            <p>Если после ответа банк откажет в операции, откроется путь: реабилитация в банке за 7 рабочих дней (п. 13.4 ст. 7) и затем МВК.</p>
+          </article>
+        </aside>
+      </div>
+
+      <section class="duty" aria-labelledby="h-duty">
+        <h3 id="h-duty">Что банк обязан был сообщить</h3>
+        <p class="duty-src">По письмам Банка России ИН&#8209;01&#8209;59/98 (26.08.2025) и ИН&#8209;03&#8209;59/11 (24.03.2026). Проверка по тексту сообщения, а не по всей переписке.</p>
+        <table class="duty-table">
+          <thead><tr><th scope="col">Элемент</th><th scope="col">В письме</th><th scope="col">Комментарий</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Вид меры</th><td>указано</td><td>запрос документов; ограничений пока нет</td></tr>
+            <tr class="row-gap"><th scope="row">Норма закона или пункт договора</th><td>нет</td><td>ни статьи 115&#8209;ФЗ, ни пункта договора</td></tr>
+            <tr><th scope="row">Причина</th><td>указано, общая</td><td>внесение 5&nbsp;000&nbsp;000,00&nbsp;₽</td></tr>
+            <tr><th scope="row">Что делать и в каком объёме</th><td>указано</td><td>перечень документов и срок</td></tr>
+            <tr><th scope="row">Порядок обжалования</th><td>нет</td><td>для запроса решения ещё нет; станет обязательным при отказе</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="copy-result">Скопировать разбор</button>
+        <a class="btn btn-quiet" href="https://www.cbr.ru/StaticHtml/File/155903/templates.zip" rel="noopener">Шаблоны заявлений Банка России (zip)</a>
+        <button type="button" class="btn btn-quiet" id="another">Разобрать другое письмо</button>
+        <p class="copy-feedback" role="status" aria-live="polite"></p>
+      </div>
+      <p class="next-step">Следующий шаг, чек&#8209;лист пакета по пунктам запроса: в разработке, спринт 1.</p>
+    </div>
+  </section>
+
+  <section id="granica" class="granica" aria-labelledby="h-granica">
+    <h2 id="h-granica">Границы сервиса</h2>
+    <p>Навигатор работает по открытым нормам и шаблонам Банка России и проверяет только текст, который вы вставили. Это не юридическая консультация и не гарантия результата: решение по вашему делу остаётся за вами и за банком. Пояснения собираются из ваших документов и фактов; подсказок, как обойти проверку, сервис не даёт.</p>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <p>Pulsar, команда конкурса «Академия Финтеха 2026». Направление дизайна A «Разметка документа», черновик для выбора капитаном.</p>
+  <p>Источники норм: <a href="https://www.cbr.ru/StaticHtml/File/155903/mrp.pdf" rel="noopener">Методичка Банка России «Что нужно знать предпринимателю об ограничениях операций по счету» (PDF)</a>, письма Банка России <a href="https://www.cbr.ru/Crosscut/LawActs/File/10079" rel="noopener">ИН&#8209;01&#8209;59/98</a> и <a href="https://cbr.ru/Crosscut/LawActs/File/12160" rel="noopener">ИН&#8209;03&#8209;59/11</a>.</p>
+  <p id="fn1" class="footnote"><sup>1</sup> Корпус Pulsar: предварительная выборка 45 публичных текстов уведомлений и запросов банков (отзывы, форумы, публикации юристов, 2007 по 2026), один кодировщик, не аудит банков. Файл research/corpus-requests.md, 10.2026. <a href="#fnref1" aria-label="Вернуться к тексту">↩</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

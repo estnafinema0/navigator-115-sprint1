@@ -1,0 +1,10 @@
+.venv
+.git
+context
+eval/cache
+data/real
+**/__pycache__
+*.egg-info
+web/node_modules
+web/.next
+web/out

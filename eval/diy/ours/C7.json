@@ -1,0 +1,193 @@
+{
+ "id": "C7",
+ "text_sha256": "cddccc1f079c0dfdce6367b1e9e288460fc0a97a773449ff5c567c4027392373",
+ "cache_key": "12e94f7b9dab1163fc963050",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 38.02,
+  "eval_count": 353,
+  "prompt_eval_count": 1031
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "У нас появились вопросы об источнике денег на вашем счете, налогах и переводах… Чтобы снять ограничения, проверим выписки с расчетного, валютного и карточных счетов… Если вдруг вопросы останутся, возможно, предложим закрыть счет"
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "remote_access_restriction",
+    "evidence": [
+     {
+      "quote": "Мы ограничили доступ к деньгам из личного кабинета и заблокировали карты"
+     }
+    ]
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "bank_statements_own",
+    "raw": "выписки с расчетного, валютного и карточных счетов",
+    "evidence": [
+     {
+      "quote": "проверим выписки с расчетного, валютного и карточных счетов"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [
+   {
+    "type": "contract_termination",
+    "raw": "возможно, предложим закрыть счет",
+    "evidence": [
+     {
+      "quote": "Если вдруг вопросы останутся, возможно, предложим закрыть счет"
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "none",
+   "routes": [
+    {
+     "type": "bank_review",
+     "evidence": []
+    },
+    {
+     "type": "cbr_161_exclusion",
+     "evidence": []
+    },
+    {
+     "type": "court",
+     "evidence": []
+    }
+   ],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "remote_access_restriction",
+   "confidence": 0.6,
+   "evidence": [
+    {
+     "quote": "ограничили доступ",
+     "start": 4,
+     "end": 21
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "remote_access_restriction",
+    "evidence": [
+     {
+      "quote": "Мы ограничили доступ к деньгам из личного кабинета и заблокировали карты",
+      "start": 1,
+      "end": 73
+     }
+    ]
+   },
+   {
+    "type": "card_block",
+    "evidence": [
+     {
+      "quote": "заблокировали карты",
+      "start": 54,
+      "end": 73
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "reason": {
+   "level": "general",
+   "text": "появились вопросы об источнике денег на вашем счете, налогах и переводах… Чтобы",
+   "evidence": [
+    {
+     "quote": "появились вопросы об источнике денег на вашем счете, налогах и переводах… Чтобы",
+     "start": 81,
+     "end": 160
+    }
+   ]
+  },
+  "requested_items": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [
+   {
+    "type": "contract_termination",
+    "raw": "возможно, предложим закрыть счет",
+    "evidence": [
+     {
+      "quote": "Если вдруг вопросы останутся, возможно, предложим закрыть счет",
+      "start": 241,
+      "end": 303
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 5,
+  "recomputed": []
+ }
+}

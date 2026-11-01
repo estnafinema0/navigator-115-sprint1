@@ -1,0 +1,189 @@
+{
+ "id": "C1",
+ "text_sha256": "04099a5995bc69ecf6c7d5a64d815c0513a45a3207ab92ea74e3d223d4f447d0",
+ "cache_key": "c30b46e77419e351fe9563e0",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 27.98,
+  "eval_count": 245,
+  "prompt_eval_count": 1029
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "«Документы, объясняющие источники поступления денежных средств»"
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "source_of_funds",
+    "raw": "Документы, объясняющие источники поступления денежных средств",
+    "evidence": [
+     {
+      "quote": "«Документы, объясняющие источники поступления денежных средств»"
+     }
+    ]
+   },
+   {
+    "type": "cash_usage_proof",
+    "raw": "Документы, подтверждающие целевое расходование денежных средств, снятых в наличной форме",
+    "evidence": [
+     {
+      "quote": "«Документы, подтверждающие целевое расходование денежных средств, снятых в наличной форме»"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "«Документы, объясняющие источники поступления денежных средств»",
+     "start": 98,
+     "end": 161
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "document_request",
+    "evidence": [
+     {
+      "quote": "просим предоставить",
+      "start": 76,
+      "end": 95
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "source_of_funds",
+    "raw": "Документы, объясняющие источники поступления денежных средств",
+    "evidence": [
+     {
+      "quote": "«Документы, объясняющие источники поступления денежных средств»",
+      "start": 98,
+      "end": 161
+     }
+    ]
+   },
+   {
+    "type": "cash_usage_proof",
+    "raw": "Документы, подтверждающие целевое расходование денежных средств, снятых в наличной форме",
+    "evidence": [
+     {
+      "quote": "«Документы, подтверждающие целевое расходование денежных средств, снятых в наличной форме»",
+      "start": 163,
+      "end": 253
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": true,
+   "text": "просим предоставить»: «Документы, объясняющие источники поступления денежных средств», «Документы, подтверждающие целевое расходование денежных средств, снятых",
+   "evidence": [
+    {
+     "quote": "просим предоставить»: «Документы, объясняющие источники поступления денежных средств», «Документы, подтверждающие целевое расходование денежных средств, снятых",
+     "start": 76,
+     "end": 235
+    }
+   ]
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "law_only",
+   "items": [
+    {
+     "kind": "law",
+     "law": "115-ФЗ",
+     "article": null,
+     "part": null,
+     "point": null,
+     "subpoint": null,
+     "contract_clause": null,
+     "canonical": "115-ФЗ",
+     "evidence": [
+      {
+       "quote": "Федерального закона от 07.08.2001 № 115-ФЗ",
+       "start": 32,
+       "end": 74
+      }
+     ]
+    }
+   ]
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 6,
+  "recomputed": []
+ }
+}

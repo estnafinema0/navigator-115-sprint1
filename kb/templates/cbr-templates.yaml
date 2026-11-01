@@ -1,0 +1,95 @@
+# Правила заполнения шаблонов Банка России (kb/sources/cbr/templates/, templates.zip от 21.10.2025).
+# Генератор (api/navigator/docgen.py) заменяет ТОЛЬКО пустые поля шаблона ("____", "__.__.____",
+# «___»_______ ____) и подсказки в скобках, для которых в деле есть факты. Остальное остаётся пустым —
+# заявитель заполняет сам. Структура DOCX (абзацы, таблицы) не меняется.
+#
+# Никогда не заполняется: доводы заявителя («в связи с тем, что ___»), пояснения, экономический смысл
+# операций (PROMPT.md, разд. 1.3). Для этого нет и не будет правил; тест проверяет, что поле пустое.
+#
+# pattern — регулярное выражение с именованной группой blank (что заменить). all: true — заменить все
+# вхождения (повторяющиеся реквизиты платёжки). fmt: date (ДД.ММ.ГГГГ) | date_quoted («ДД» месяца ГГГГ г.)
+
+version: "0.1.0"
+
+templates:
+  1:
+    file: cbr-template-01.docx
+    title: "Запрос причин ограничения ДБО (в банк)"
+    source: "Банк России, шаблон № 1 (templates.zip от 21.10.2025)"
+    scenarios: [remote_access_restriction]
+    fields:
+      - {key: bank_full_name, pattern: "В(?P<blank>_{5,})"}
+      - {key: bank_address, pattern: "Адрес: (?P<blank>_{5,})"}
+      - {key: company_name, pattern: "От (?P<blank>_{5,})"}
+      - {key: company_inn, pattern: "ИНН (?P<blank>_{5,})"}
+      - {key: company_kpp, pattern: "КПП (?P<blank>_{5,})"}
+      - {key: company_address, pattern: "Адрес: (?P<blank>_{5,})"}
+      - {key: company_phone, pattern: "Телефон:\\s*(?P<blank>_{5,})"}
+      - {key: company_short, pattern: "Компанией (?P<blank>\\(укажите наименование компании\\))"}
+      - {key: bank_short, pattern: "Банком (?P<blank>\\(укажите наименование банка\\))"}
+      - {key: contract_date, pattern: "(?P<blank>__\\.__\\.____) г\\. заключен", fmt: date}
+      - {key: contract_number, pattern: "договор банковского счета №(?P<blank>_{3,})"}
+      - {key: account_first, pattern: "- № (?P<blank>_{5,});"}
+      - {key: account_last, pattern: "- № (?P<blank>_{5,})\\."}
+      - {key: restriction_date, pattern: "Вместе с тем (?P<blank>__\\.__\\.____)г\\. Банк ограничил", fmt: date}
+
+  4:
+    file: cbr-template-04.docx
+    title: "Документы после отказа в операции по п. 11 ст. 7 115-ФЗ (в банк, п. 13.4)"
+    source: "Банк России, шаблон № 4 (templates.zip от 21.10.2025)"
+    scenarios: [operation_refusal]
+    fields:
+      - {key: bank_full_name, pattern: "В(?P<blank>_{5,})"}
+      - {key: bank_address, pattern: "Адрес: (?P<blank>_{5,})"}
+      - {key: company_name, pattern: "От (?P<blank>_{5,})"}
+      - {key: company_inn, pattern: "ИНН (?P<blank>_{5,})"}
+      - {key: company_kpp, pattern: "КПП (?P<blank>_{5,})"}
+      - {key: company_address, pattern: "Адрес: (?P<blank>_{5,})"}
+      - {key: company_phone, pattern: "Тел\\.:\\s*(?P<blank>_{5,})"}
+      - {key: company_short, pattern: "Компанией (?P<blank>\\(укажите наименование компании\\))"}
+      - {key: bank_short, pattern: "Банком (?P<blank>\\(укажите наименование банка\\))"}
+      - {key: contract_date, pattern: "(?P<blank>__\\.__\\.____) г\\. заключен", fmt: date}
+      - {key: contract_number, pattern: "договор банковского счета №(?P<blank>_{3,})"}
+      - {key: account_first, pattern: "- № (?P<blank>_{5,});"}
+      - {key: account_last, pattern: "- № (?P<blank>_{5,})\\."}
+      - {key: refusal_date, pattern: "Вместе с тем, (?P<blank>__\\.__\\.____)г\\.", fmt: date}
+      - {key: po_date, pattern: "поручению от (?P<blank>__\\.__\\.____)г\\.", fmt: date}
+      - {key: po_number, pattern: "№ (?P<blank>_{3,}) на сумму"}
+      - {key: po_amount, pattern: "на сумму (?P<blank>_{3,})"}
+      - {key: po_purpose, pattern: "назначением платежа «(?P<blank>_{3,})»"}
+      - {key: reasons_letter_date, pattern: "от (?P<blank>__\\.__\\.____)г\\. №_{3,} и руководствуясь", fmt: date}
+      - {key: reasons_letter_number, pattern: "г\\. №(?P<blank>_{3,}) и руководствуясь"}
+      - {key: attachments, pattern: "(?P<blank>\\(перечисляются все документы\\))"}
+
+  5:
+    file: cbr-template-05.docx
+    title: "Заявление в МВК об обжаловании отказа в совершении операции"
+    source: "Банк России, шаблон № 5 (templates.zip от 21.10.2025)"
+    scenarios: [operation_refusal]
+    requires_first_level: true
+    fields:
+      - {key: applicant_name, pattern: "от (?P<blank>_{5,})"}
+      - {key: applicant_address, pattern: "адрес: (?P<blank>_{5,})"}
+      - {key: applicant_phone, pattern: "телефон: (?P<blank>_{5,})"}
+      - {key: applicant_email, pattern: "адрес электронной почты: (?P<blank>_{3,})"}
+      - {key: first_appeal_date, pattern: "(?P<blank>«___»_______ ____) г\\. заявитель \\(указать полное наименование", fmt: date_quoted}
+      - {key: applicant_short, pattern: "заявитель (?P<blank>\\(указать полное наименование компании/ФИО ИП/я\\))"}
+      - {key: bank_details, pattern: "в Банк (?P<blank>_{5,} \\(полное наименование банка, регистрационный номер, БИК, ИНН Банка\\))"}
+      - {key: contract_number_date, pattern: "договора №(?P<blank>_{5,} «___»_________ ____ г\\. \\(указать номер и дату договора\\))"}
+      - {key: po_date, pattern: "поручени\\w+\\s+от (?P<blank>__\\.__\\.____)г\\.", fmt: date, all: true}
+      - {key: po_number, pattern: "№ (?P<blank>____) на сумму", all: true}
+      - {key: po_amount, pattern: "на сумму (?P<blank>_{3,})", all: true}
+      - {key: po_purpose, pattern: "назначением платежа «(?P<blank>_{3,})»", all: true}
+      - {key: refusal_date, pattern: "Вместе с тем, (?P<blank>__\\.__\\.____)г\\. Банк на основании", fmt: date}
+      - {key: reasons_letter_date, pattern: "Банк письмом от (?P<blank>__\\.__\\.____)г\\. сообщил", fmt: date}
+      - {key: bank_reasons, pattern: "являлось следующее:(?P<blank>_{3,}\\(изложить причины, которые Банк сообщил заявителю\\))"}
+      - {key: docs_submitted_date, pattern: "(?P<blank>«___»_______ ____) г\\. заявитель \\(указать наименование компании/ФИО ИП/я\\) представил", fmt: date_quoted}
+      - {key: applicant_short, pattern: "заявитель (?P<blank>\\(указать наименование компании/ФИО ИП/я\\)) представил"}
+      - {key: bank_answer_date, pattern: "(?P<blank>«___»_______ ____) г\\. Банк по результатам", fmt: date_quoted}
+      - {key: bank_answer_letter_date, pattern: "письмом от (?P<blank>__\\.__\\.____) г\\. № ____ сообщил о невозможности", fmt: date}
+      - {key: bank_answer_letter_number, pattern: "г\\. № (?P<blank>____) сообщил о невозможности"}
+      - {key: applicant_short, pattern: "Однако заявитель (?P<blank>\\(указать наименование компании/ФИО ИП/я\\))"}
+      - {key: refusal_date, pattern: "дата решения об отказе в совершении операции(?P<blank>_{5,})", fmt: date}
+      - {key: bank_short, pattern: "наименование \\(полное или сокращенное\\) банка (?P<blank>_{5,})"}
+    never_fill:
+      - "в связи с тем, что _"

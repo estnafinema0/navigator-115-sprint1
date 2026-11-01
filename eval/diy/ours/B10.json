@@ -1,0 +1,151 @@
+{
+ "id": "B10",
+ "text_sha256": "50898756d5e1e77ca2ebb1270dea1820e838e03eb6840994f6d4995f6d83a96a",
+ "cache_key": "6adcee1ee99a57a2f190b5f0",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 47.54,
+  "eval_count": 178,
+  "prompt_eval_count": 1034
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "По предоставленным документам не удалось подтвердить их легальность"
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "не удалось подтвердить легальность",
+    "evidence": [
+     {
+      "quote": "По предоставленным документам не удалось подтвердить их легальность"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "По предоставленным документам не удалось подтвердить их легальность",
+     "start": 148,
+     "end": 215
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "source_of_funds",
+    "raw": "не удалось подтвердить легальность",
+    "evidence": [
+     {
+      "quote": "По предоставленным документам не удалось подтвердить их легальность",
+      "start": 148,
+      "end": 215
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "contract_only",
+   "items": [
+    {
+     "kind": "contract",
+     "law": null,
+     "article": null,
+     "part": null,
+     "point": null,
+     "subpoint": null,
+     "contract_clause": "п. 19.3.4",
+     "canonical": "договор: п. 19.3.4",
+     "evidence": [
+      {
+       "quote": "пункты 19.3.4",
+       "start": 88,
+       "end": 101
+      }
+     ]
+    }
+   ]
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 3,
+  "recomputed": []
+ }
+}

@@ -1,0 +1,156 @@
+{
+ "id": "C3",
+ "text_sha256": "cefbaa21586782918bfd41f039346b689b2a2294a15fe981601cd589f44690c8",
+ "cache_key": "77f9e8b816e7756d5ed0c9f0",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 24.24,
+  "eval_count": 217,
+  "prompt_eval_count": 1011
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "«Согласно п. 14 ст. 7 Закона клиенты обязаны предоставлять… Банк просит Вас не позднее 10 рабочих дней с момента получения настоящего уведомления обратиться к сотруднику Банка… для получения Опросного листа»"
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "questionnaire",
+    "raw": "опросный лист",
+    "evidence": [
+     {
+      "quote": "для получения Опросного листа"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [
+    {
+     "type": "bank_review",
+     "evidence": []
+    }
+   ],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "«Согласно п. 14 ст. 7 Закона клиенты обязаны предоставлять… Банк просит Вас не позднее 10 рабочих дней с момента получения настоящего уведомления обратиться к сотруднику Банка… для получения Опросного листа»",
+     "start": 0,
+     "end": 207
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "questionnaire",
+    "raw": "опросный лист",
+    "evidence": [
+     {
+      "quote": "для получения Опросного листа",
+      "start": 177,
+      "end": 206
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [
+   {
+    "applies_to": "client_response",
+    "kind": "relative",
+    "date": null,
+    "inclusive": null,
+    "amount": 10,
+    "unit": "working_days",
+    "anchor": "receipt_of_notice",
+    "raw": "не позднее 10 рабочих дней с момента получения настоящего уведомления обратиться к сот",
+    "evidence": [
+     {
+      "quote": "не позднее 10 рабочих дней с момента получения настоящего уведомления обратиться к сот",
+      "start": 76,
+      "end": 162
+     }
+    ]
+   }
+  ],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 3,
+  "recomputed": []
+ }
+}

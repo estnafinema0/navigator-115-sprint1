@@ -1,0 +1,38 @@
+# make demo: api + db + ollama. Внешняя сеть нужна только для первой загрузки модели;
+# профиль offline (без выхода наружу) — спринт 2.
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      OLLAMA_URL: http://ollama:11434
+      NAVIGATOR_LLM: ${NAVIGATOR_LLM:-hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M}
+      DATABASE_URL: postgresql://navigator:navigator@db:5432/navigator
+    depends_on:
+      db: {condition: service_healthy}
+      ollama-init: {condition: service_completed_successfully}
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: navigator
+      POSTGRES_PASSWORD: navigator   # только для локального демо; в контуре — секреты банка
+      POSTGRES_DB: navigator
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U navigator"]
+      interval: 5s
+      retries: 10
+  ollama:
+    # Версия закреплена: 0.40.7, как у локального Ollama команды на 27.10 (`ollama -v`); latest не используем.
+    image: ollama/ollama:0.40.7
+    volumes: [ollama:/root/.ollama]
+    # API ходит в Ollama по внутренней сети compose; наружу порт только на 127.0.0.1 (для отладки).
+    ports: ["127.0.0.1:11434:11434"]
+  ollama-init:
+    image: ollama/ollama:0.40.7
+    depends_on: [ollama]
+    environment: {OLLAMA_HOST: "ollama:11434"}
+    entrypoint: ["/bin/sh", "-c", "sleep 3 && ollama pull ${NAVIGATOR_LLM:-hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M}"]
+volumes:
+  pgdata:
+  ollama:

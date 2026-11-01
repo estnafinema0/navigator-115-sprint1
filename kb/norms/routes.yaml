@@ -1,0 +1,135 @@
+# Маршрутизатор M5: сценарий → допустимые маршруты.
+# Источник правил — методичка ЦБ, Росфинмониторинга, ФТС и НСФР «Что нужно знать предпринимателю
+# об ограничениях операций по счету» (10.2025), kb/sources/ (id: cbr_mrp_guide), и нормы 115-ФЗ/161-ФЗ.
+# verified: true ставится только после сверки страницы и формулировки по файлу в kb/sources/ (поле quote
+# проверяет тест tests/test_kb_quotes.py). Страницы — номера страниц PDF (печатный номер на 1 меньше).
+# Правило продукта: маршрут, которого нет в allowed для сценария, не показывается никогда;
+# для МВК при недопустимости показывается объяснение (inadmissible_explanations).
+
+version: "0.2.0"
+edition_checked: "2026-10-21"
+
+routes:
+  respond_to_request:
+    title: "Ответить на запрос банка: представить документы и пояснения"
+    norm: "115-ФЗ ст. 7 п. 14"
+    note: "Законного срока ответа нет: срок задаёт банк (по договору и внутренним правилам)."
+    source: {doc: cbr_mrp_guide, file: cbr/cbr-mrp-guide_2025-10-23.txt, page: 15, verified: false}
+  bank_docs_after_refusal:
+    title: "Представить в банк документы об отсутствии оснований для отказа"
+    norm: "115-ФЗ ст. 7 п. 13.4"
+    template: {after_operation_refusal: 4, after_contract_refusal: 3}
+    timer: bank_review_7wd
+    note: "Число попыток не ограничено."
+    source: {doc: fz_115, file: laws/fz-115_ips-rdk151.txt, verified: true,
+             quote: "обязана рассмотреть представленные клиентом документы и (или) сведения и в срок не позднее семи рабочих дней со дня их представления"}
+  mvk:
+    title: "Обратиться в межведомственную комиссию (МВК) при Банке России"
+    norm: "115-ФЗ ст. 7 пп. 13.5–13.6; Положение Банка России 842-П"
+    template: {operation_refusal: 5, contract_refusal: 6, zsk_measures_7_7: 7, cbr_zsk_decision: 9}
+    timer: mvk_review_20wd
+    source: {doc: cbr_mrp_guide, file: cbr/cbr-mrp-guide_2025-10-23.txt, page: 18, verified: true,
+             quote: "МВК РАССМАТРИВАЕТ ЗАЯВЛЕНИЯ ОБ ОБЖАЛОВАНИИ: • решения банка об отказе от заключения договора банковского счета (вклада), принятого на основании пункта 5.2 статьи 7"}
+  request_reasons:
+    title: "Запросить у банка причины ограничения (шаблон Банка России)"
+    norm: "Методические рекомендации Банка России 5-МР"
+    template: {remote_access_restriction: 1, card_block: 2}
+    source: {doc: cbr_templates, file: cbr/templates/cbr-template-01.txt, verified: false}
+  paper_payments:
+    title: "Проводить платежи бумажными платёжными поручениями в отделении"
+    note: "При ограничении ДБО банк принимает распоряжения на бумаге; это не отказ в операции."
+    source: {doc: cbr_mrp_guide, file: cbr/cbr-mrp-guide_2025-10-23.txt, page: 16, verified: true,
+             quote: "Ограничение ДБО (интернет-банка) не является отказом в совершении операций, а представляет собой ограничение способа совершения операций"}
+  cbr_complaint:
+    title: "Подать жалобу в Банк России (интернет-приёмная)"
+    url: "https://www.cbr.ru/Reception/"
+    source: {doc: cbr_recommendations_page, verified: false}
+  cbr_zsk_review:
+    title: "Подать в Банк России заявление о пересмотре уровня риска (ЗСК)"
+    norm: "115-ФЗ ст. 7.8 п. 1.1; Указание Банка России 6853-У"
+    template: {zsk_high_cbr_only: 8}
+    timer: cbr_review_15wd
+    source: {doc: fz_115, file: laws/fz-115_ips-rdk151.txt, verified: true,
+             quote: "в срок не позднее пятнадцати рабочих дней со дня получения Центральным банком Российской Федерации заявления о пересмотре высокой степени (уровня) риска"}
+  cbr_161_exclusion:
+    title: "Подать заявление об исключении сведений из базы данных Банка России (161-ФЗ)"
+    norm: "161-ФЗ ст. 9 ч. 11.8; Указание Банка России 6748-У"
+    url: "http://www.cbr.ru/contactBR/161-FZ/"
+    timer: cbr_161_review_15wd
+    source: {doc: cbr_6748u, file: cbr/cbr-6748-U_2024-06-13.txt, verified: false}
+  confirm_transfer:
+    title: "Подтвердить перевод в банке"
+    norm: "161-ФЗ ст. 8"
+    timer: fz161_confirm_next_day
+    source: {doc: fz_161, file: laws/fz-161_ips-rdk61.txt, verified: true,
+             quote: "о возможности клиента подтвердить распоряжение не позднее одного дня, следующего за днем приостановления"}
+  withdraw_balance:
+    title: "Вывести остаток: сообщить банку реквизиты счёта в другом банке"
+    note: "Срок сверяется (ст. 859 ГК РФ)."
+    source: {doc: null, verified: false}
+  tax_authority:
+    title: "Обратиться в налоговый орган или к судебному приставу, который принял решение"
+    norm: "НК РФ ст. 76 (решение ФНС); 229-ФЗ (приставы)"
+    source: {doc: null, verified: false}
+  court:
+    title: "Обратиться в суд"
+    source: {doc: cbr_mrp_guide, verified: false}
+  lawyer:
+    title: "Обратиться к юристу"
+    note: "Навигатор не оказывает юридическую помощь."
+
+# Допустимые маршруты по сценариям. requires_first_level — маршрут доступен только после
+# первого уровня (банк или ЦБ не устранили основания). deadline_months — окно подачи.
+scenarios:
+  doc_request:
+    allowed: [respond_to_request, cbr_complaint, lawyer]
+  operation_refusal:
+    allowed: [bank_docs_after_refusal, mvk, cbr_complaint, court, lawyer]
+    conditions:
+      mvk: {requires_first_level: true}
+  remote_access_restriction:
+    allowed: [request_reasons, paper_payments, respond_to_request, cbr_complaint, court, lawyer]
+  contract_termination:
+    allowed: [withdraw_balance, cbr_complaint, court, lawyer]
+  contract_refusal:
+    allowed: [bank_docs_after_refusal, mvk, cbr_complaint, court, lawyer]
+    conditions:
+      mvk: {requires_first_level: true}
+  zsk_high_cbr_only:
+    allowed: [cbr_zsk_review, mvk, court, lawyer]
+    conditions:
+      mvk: {requires_first_level: true, deadline_months: 6}
+  zsk_measures_7_7:
+    allowed: [mvk, court, lawyer]
+    conditions:
+      mvk: {requires_first_level: false, deadline_months: 6}
+  zsk_medium:
+    allowed: [lawyer]
+  suspension_rfm_court:
+    allowed: [lawyer, court]
+  fz161_transfer_suspension:
+    allowed: [confirm_transfer]
+  fz161_restriction:
+    allowed: [cbr_161_exclusion, court, lawyer]
+  not_aml:
+    allowed: [tax_authority, lawyer]
+  other:
+    allowed: [lawyer]
+  unknown:
+    allowed: [lawyer]
+
+# МВК рассматривает только 4 вида решений (методичка ЦБ, с. 18 PDF — сверено 21.10.2026):
+# отказ в операции (п. 11 ст. 7), отказ в заключении договора (п. 5.2 ст. 7), меры п. 5 ст. 7.7,
+# отказ ЦБ пересмотреть высокий уровень риска. Остальные меры в этот перечень не входят; отдельного
+# запрета по каждой из них методичка не формулирует — объяснения ниже строятся от перечня.
+# Без первого уровня реабилитации заявления в МВК по существу не рассматриваются (там же, сноска 2).
+mvk_admissible_scenarios: [operation_refusal, contract_refusal, zsk_measures_7_7, zsk_high_cbr_only]
+inadmissible_explanations:
+  remote_access_restriction: "МВК рассматривает только 4 вида решений: отказ в операции, отказ в открытии счёта, меры п. 5 ст. 7.7 и решение Банка России о высоком риске. Ограничение интернет-банка к ним не относится. По разъяснению ЦБ, это не отказ в операции, а ограничение способа её совершения. Ваш путь: запросить причины, платить бумажными поручениями в отделении, жалоба в Банк России или суд."
+  contract_termination: "Расторжение договора не входит в 4 вида решений, которые рассматривает МВК. Ваш путь: вывести остаток, жалоба в Банк России или суд."
+  zsk_medium: "Средний («жёлтый») уровень риска не входит в 4 вида решений, которые рассматривает МВК."
+  fz161_restriction: "Меры по 161-ФЗ не входят в 4 вида решений, которые рассматривает МВК. Ваш путь: заявление об исключении сведений из базы данных Банка России."
+  fz161_transfer_suspension: "Меры по 161-ФЗ не входят в 4 вида решений, которые рассматривает МВК. Подтвердите перевод в банке."
+  doc_request: "Запрос документов не является решением банка, обжаловать в МВК нечего. Ответьте на запрос."
+  suspension_rfm_court: "Приостановление по решению Росфинмониторинга или суда не входит в 4 вида решений, которые рассматривает МВК. Обратитесь к юристу."
+  not_aml: "Это ограничение не по 115-ФЗ, оно не входит в 4 вида решений, которые рассматривает МВК."

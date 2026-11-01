@@ -1,0 +1,338 @@
+{
+ "id": "A1",
+ "text_sha256": "41e0d5c166f57faffc40fb6170c1b59c8943c0af4d82c536b934efd0f9b07be1",
+ "cache_key": "89ac68d4f85a33d2e87e0cc8",
+ "llm_source": "eval/cache/89ac68d4f85a33d2e87e0cc8.json",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 72.7,
+  "eval_count": 658,
+  "prompt_eval_count": 1092
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "operation_refusal",
+   "confidence": 0.99,
+   "evidence": [
+    {
+     "quote": "…по причине подозрения в легализации (отмывании) доходов, полученных преступным путем, Вам отказано в совершении операции на …RUB от 25.03.2024 на основании п.11 ст.7 № 115-ФЗ."
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "operation_refusal",
+    "evidence": [
+     {
+      "quote": "…по причине подозрения в легализации (отмывании) доходов, полученных преступным путем, Вам отказано в совершении операции на …RUB от 25.03.2024 на основании п.11 ст.7 № 115-ФЗ."
+     }
+    ]
+   },
+   {
+    "type": "document_request",
+    "evidence": [
+     {
+      "quote": "оформить в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями."
+     }
+    ]
+   },
+   {
+    "type": "remote_access_restriction",
+    "evidence": [
+     {
+      "quote": "действие услуги Сбербанк Онлайн/банковских карт заблокировано."
+     }
+    ]
+   },
+   {
+    "type": "contract_termination",
+    "evidence": []
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "обосновывающими операцию документами/пояснениями",
+    "evidence": [
+     {
+      "quote": "обосновывающими операцию документами/пояснениями."
+     }
+    ]
+   },
+   {
+    "type": "identity_document",
+    "raw": "документ, удостоверяющий личность",
+    "evidence": [
+     {
+      "quote": "обращаться в офис банка с документом, удостоверяющим личность"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": true,
+   "text": "оформить в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями",
+   "evidence": [
+    {
+     "quote": "оформить в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями."
+    }
+   ]
+  },
+  "consequences": [
+   {
+    "type": "operation_refusal",
+    "raw": "если не ответите — ограничим",
+    "evidence": [
+     {
+      "quote": "если Вы не согласны с отказом, оформите в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями."
+     }
+    ]
+   },
+   {
+    "type": "contract_termination",
+    "raw": "если не ответите — ограничим",
+    "evidence": [
+     {
+      "quote": "если Вы не согласны с отказом, оформите в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями."
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "none",
+   "routes": [
+    {
+     "type": "bank_review",
+     "evidence": [
+      {
+       "quote": "оформить в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями."
+      }
+     ]
+    },
+    {
+     "type": "court",
+     "evidence": []
+    }
+   ],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "operation_refusal",
+   "confidence": 0.99,
+   "evidence": [
+    {
+     "quote": "…по причине подозрения в легализации (отмывании) доходов, полученных преступным путем, Вам отказано в совершении операции на …RUB от 25.03.2024 на основании п.11 ст.7 № 115-ФЗ.",
+     "start": 206,
+     "end": 382
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "operation_refusal",
+    "evidence": [
+     {
+      "quote": "…по причине подозрения в легализации (отмывании) доходов, полученных преступным путем, Вам отказано в совершении операции на …RUB от 25.03.2024 на основании п.11 ст.7 № 115-ФЗ.",
+      "start": 206,
+      "end": 382
+     }
+    ]
+   },
+   {
+    "type": "document_request",
+    "evidence": [
+     {
+      "quote": "оформите в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями.",
+      "start": 414,
+      "end": 508
+     }
+    ]
+   },
+   {
+    "type": "remote_access_restriction",
+    "evidence": [
+     {
+      "quote": "действие услуги Сбербанк Онлайн/банковских карт заблокировано.",
+      "start": 46,
+      "end": 108
+     }
+    ]
+   },
+   {
+    "type": "card_block",
+    "evidence": [
+     {
+      "quote": "карт заблокировано",
+      "start": 89,
+      "end": 107
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "reason": {
+   "level": "general",
+   "text": "по причине сомнительного характера операций действие услуги Сбербанк Онлайн/банковских карт; по причине подозрения в легализации (отмывании) доходов",
+   "evidence": [
+    {
+     "quote": "по причине сомнительного характера операций действие услуги Сбербанк Онлайн/банковских карт",
+     "start": 2,
+     "end": 93
+    },
+    {
+     "quote": "по причине подозрения в легализации (отмывании) доходов",
+     "start": 207,
+     "end": 262
+    }
+   ]
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "обосновывающими операцию документами/пояснениями",
+    "evidence": [
+     {
+      "quote": "обосновывающими операцию документами/пояснениями.",
+      "start": 459,
+      "end": 508
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": true,
+   "text": "оформить в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями",
+   "evidence": [
+    {
+     "quote": "оформите в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями.",
+     "start": 414,
+     "end": 508
+    }
+   ]
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "internal_only",
+   "routes": [
+    {
+     "type": "bank_review",
+     "evidence": [
+      {
+       "quote": "оформите в офисе заявление на реабилитацию с обосновывающими операцию документами/пояснениями.",
+       "start": 414,
+       "end": 508
+      }
+     ]
+    },
+    {
+     "type": "bank_rehabilitation",
+     "evidence": [
+      {
+       "quote": "заявление на реабилитацию",
+       "start": 431,
+       "end": 456
+      }
+     ]
+    }
+   ],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "norm",
+   "items": [
+    {
+     "kind": "law",
+     "law": "115-ФЗ",
+     "article": "7",
+     "part": null,
+     "point": "11",
+     "subpoint": null,
+     "contract_clause": null,
+     "canonical": "115-ФЗ ст. 7 п. 11",
+     "evidence": [
+      {
+       "quote": "п.11 ст.7 № 115-ФЗ",
+       "start": 363,
+       "end": 381
+      }
+     ]
+    }
+   ]
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [
+   {
+    "type": "branch_office",
+    "raw": "в офис банка",
+    "evidence": [
+     {
+      "quote": "в офис банка",
+      "start": 152,
+      "end": 164
+     },
+     {
+      "quote": "в офисе",
+      "start": 423,
+      "end": 430
+     }
+    ]
+   }
+  ],
+  "operations": [
+   {
+    "date": "2024-03-25",
+    "amount": null,
+    "currency": "RUB",
+    "direction": null,
+    "payment_order_number": null,
+    "raw": "операции на …RUB от 25.03.2024",
+    "evidence": [
+     {
+      "quote": "операции на …RUB от 25.03.2024",
+      "start": 319,
+      "end": 349
+     }
+    ]
+   }
+  ],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 13,
+  "recomputed": []
+ }
+}

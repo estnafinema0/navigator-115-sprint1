@@ -1,0 +1,198 @@
+{
+  "doc_id": "B1",
+  "corpus_ref": "data/real/corpus.jsonl#B1",
+  "text_sha256": "4a8f056e096169a2694f912f9bf79895aa3d59adcdf29ab74a181d4f1dba2e24",
+  "text_type": "verbatim",
+  "annotator": "agent_draft_2026-10-20",
+  "status": "draft_needs_human_review",
+  "notes": [
+    "«до 25.02.2026» — включительно или нет, из текста не ясно: inclusive = null.",
+    "Закон в тексте не назван — legal_basis.level = none (в корпусе E2 = «нет»)."
+  ],
+  "extraction": {
+    "schema_version": "0.1.0",
+    "scenario": {
+      "value": "doc_request",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "quote": "Предоставьте информацию об источнике происхождения денежных средств",
+          "start": 77,
+          "end": 144
+        }
+      ]
+    },
+    "measures": [
+      {
+        "type": "document_request",
+        "evidence": [
+          {
+            "quote": "Предоставьте информацию об источнике происхождения денежных средств",
+            "start": 77,
+            "end": 144
+          }
+        ]
+      }
+    ],
+    "legal_basis": {
+      "level": "none",
+      "items": []
+    },
+    "reason": {
+      "level": "specific",
+      "text": "внесение на счёт 5 000 000,00 ₽",
+      "evidence": [
+        {
+          "quote": "Вы внесли на свой счет 5 000 000,00 ₽",
+          "start": 37,
+          "end": 74
+        }
+      ]
+    },
+    "requested_items": [
+      {
+        "type": "source_of_funds",
+        "raw": "информация об источнике происхождения денежных средств, внесённых на счёт",
+        "period": null,
+        "format": null,
+        "evidence": [
+          {
+            "quote": "Предоставьте информацию об источнике происхождения денежных средств, которые вы внесли на счет",
+            "start": 77,
+            "end": 171
+          }
+        ]
+      },
+      {
+        "type": "income_certificate",
+        "raw": "2-НДФЛ",
+        "period": null,
+        "format": null,
+        "evidence": [
+          {
+            "quote": "2-НДФЛ",
+            "start": 209,
+            "end": 215
+          }
+        ]
+      },
+      {
+        "type": "tax_return",
+        "raw": "3-НДФЛ",
+        "period": null,
+        "format": null,
+        "evidence": [
+          {
+            "quote": "3-НДФЛ",
+            "start": 217,
+            "end": 223
+          }
+        ]
+      },
+      {
+        "type": "income_certificate",
+        "raw": "справка о доходах",
+        "period": null,
+        "format": null,
+        "evidence": [
+          {
+            "quote": "справку о доходах",
+            "start": 225,
+            "end": 242
+          }
+        ]
+      },
+      {
+        "type": "property_sale_proof",
+        "raw": "подтверждение продажи движимого или недвижимого имущества",
+        "period": null,
+        "format": null,
+        "evidence": [
+          {
+            "quote": "подтверждение продажи движимого или недвижимого имущества",
+            "start": 244,
+            "end": 301
+          }
+        ]
+      }
+    ],
+    "period": null,
+    "deadlines": [
+      {
+        "applies_to": "client_response",
+        "kind": "date",
+        "date": "2026-02-25",
+        "inclusive": null,
+        "amount": null,
+        "unit": null,
+        "anchor": null,
+        "raw": "до 25.02.2026",
+        "evidence": [
+          {
+            "quote": "ответьте до 25.02.2026",
+            "start": 13,
+            "end": 35
+          }
+        ]
+      }
+    ],
+    "response_channels": [],
+    "next_steps": {
+      "stated": true,
+      "text": "сообщить источник происхождения средств и прислать подтверждающие документы",
+      "evidence": [
+        {
+          "quote": "Предоставьте информацию об источнике происхождения денежных средств",
+          "start": 77,
+          "end": 144
+        },
+        {
+          "quote": "пришлите подтверждающие документы",
+          "start": 174,
+          "end": 207
+        }
+      ]
+    },
+    "consequences": [
+      {
+        "type": "operations_limit",
+        "raw": "ограничение отдельных видов операций по счёту",
+        "evidence": [
+          {
+            "quote": "мы ограничим отдельные виды операций по вашему счету",
+            "start": 363,
+            "end": 415
+          }
+        ]
+      }
+    ],
+    "appeal": {
+      "level": "none",
+      "routes": [],
+      "explicit_denial": null
+    },
+    "operations": [
+      {
+        "date": null,
+        "amount": "5000000.00",
+        "currency": "RUB",
+        "direction": null,
+        "payment_order_number": null,
+        "raw": "внесение 5 000 000,00 ₽ на счёт",
+        "evidence": [
+          {
+            "quote": "Вы внесли на свой счет 5 000 000,00 ₽",
+            "start": 37,
+            "end": 74
+          }
+        ]
+      }
+    ],
+    "request_meta": {
+      "bank_name": null,
+      "date": null,
+      "number": null
+    },
+    "questions_to_user": []
+  }
+}

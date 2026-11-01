@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Навигатор-115</title>
+  <meta name="description" content="Навигатор-115: разбор запроса банка по 115-ФЗ/161-ФЗ с цитатами, законные сроки, маршрут обжалования, заявления по шаблонам Банка России и страж уведомлений для банка.">
+  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="app.css?v=1">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#/start" aria-label="Навигатор-115, на старт">
+        <span class="brand__mark" aria-hidden="true">115</span>
+        <span><b>Навигатор-115</b><small>запрос банка → карточка → сроки и маршрут → заявление</small></span>
+      </a>
+      <nav class="modes" aria-label="Режим">
+        <a href="#/start" class="mode" data-mode="client">Клиенту: ИП и микробизнес</a>
+        <a href="#/guard" class="mode" data-mode="bank">Для банка: страж уведомлений</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="demo-banner" role="note">
+    <div class="wrap"><b>Демо MVP.</b> Текст разбирают правила и локальная модель T-lite-it-2.1 на сервере команды (on-prem) — во внешние сервисы ничего не уходит.
+      Каждое поле — с цитатой из текста банка. Примеры: публичные тексты с удалёнными ПДн и синтетика. Проверка по тексту запроса, не гарантия и не юридическая консультация.</div>
+  </div>
+
+  <main class="wrap" id="main">
+    <ol class="stepper" id="stepper" aria-label="Шаги для клиента">
+      <li><a href="#/start" data-step="start"><span class="n">1</span><span class="t">Запрос</span></a></li>
+      <li><a href="#/card" data-step="card"><span class="n">2</span><span class="t">Карточка</span></a></li>
+      <li><a href="#/route" data-step="route"><span class="n">3</span><span class="t">Сроки и маршрут</span></a></li>
+      <li><a href="#/docs" data-step="docs"><span class="n">4</span><span class="t">Заявление</span></a></li>
+    </ol>
+
+    <section class="view" id="view-start" aria-labelledby="h-start">
+      <div class="grid-2">
+        <div class="card">
+          <h1 id="h-start">Вставьте текст запроса или уведомления банка</h1>
+          <p class="muted">Запрос документов, уведомление об ограничении или об отказе в операции — от любого банка. Или возьмите пример:</p>
+          <div class="samples" id="samples"></div>
+          <label class="field" for="req-text"><span>Текст запроса / уведомления</span></label>
+          <textarea id="req-text" placeholder="Скопируйте сюда текст из интернет-банка, письма или SMS. Уберите ФИО, ИНН и номера счетов."></textarea>
+          <div class="actions" style="margin-top:12px">
+            <button class="btn btn--primary" id="btn-parse" type="button">Разобрать запрос →</button>
+            <label class="small"><input type="checkbox" id="fast-mode"> быстро, только правила (без модели)</label>
+            <span class="small muted" id="parse-msg" role="status"></span>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="card card--flat">
+            <h3>Что сделает навигатор</h3>
+            <ol class="small" style="padding-left:18px;margin:0">
+              <li><b>Карточка</b>: какая это мера, норма, что запросили, срок, канал, обжалование — у каждого поля цитата из текста банка.</li>
+              <li><b>Сроки и маршрут</b>: законные сроки по производственному календарю и пути обжалования именно для вашей меры.</li>
+              <li><b>Заявление</b>: документ по шаблону Банка России, заполненный фактами вашего дела.</li>
+            </ol>
+          </div>
+          <div class="card card--flat small">
+            <h3>Граница сервиса</h3>
+            <p>Работаем только с тем, что банк уже сообщил. Не угадываем «настоящую причину», не советуем, как обойти контроль, не меняем назначение платежей и не сочиняем пояснения. Доводы в заявлении пишете вы.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-card" aria-label="Карточка запроса"></section>
+    <section class="view" id="view-route" aria-label="Сроки и маршрут"></section>
+    <section class="view" id="view-docs" aria-label="Заявление"></section>
+
+    <section class="view" id="view-guard" aria-labelledby="h-guard">
+      <div class="view-head">
+        <div>
+          <div class="eyebrow">Для банка · исходящие уведомления</div>
+          <h1 id="h-guard">Страж уведомлений</h1>
+          <p>Проверка текста перед отправкой клиенту: обязательные элементы по письмам Банка России ИН-01-59/98 и ИН-03-59/11 и запрещённое по п. 6 ст. 7 115-ФЗ. Только правила — результат объясним и воспроизводим.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="samples" id="guard-samples"></div>
+          <label class="field" for="guard-text"><span>Текст уведомления</span></label>
+          <textarea id="guard-text" placeholder="Вставьте черновик уведомления клиенту…" style="min-height:240px"></textarea>
+          <div class="actions" style="margin-top:12px">
+            <button class="btn btn--primary" id="btn-guard" type="button">Проверить уведомление</button>
+          </div>
+        </div>
+        <div class="card" id="guard-result"><p class="muted">Здесь появится светофор и список замечаний.</p></div>
+      </div>
+      <div class="card hidden" id="guard-marked-card">
+        <h3>Текст с разметкой</h3>
+        <p class="small muted">Зелёным — найденные обязательные элементы, красным — то, что раскрывать нельзя.</p>
+        <pre class="marked" id="guard-marked"></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>Pulsar · Академия Финтеха 2026 · MVP</span>
+      <span>Нормы — из первоисточников в kb/ с датой редакции</span>
+    </div>
+  </footer>
+  <script src="app.js?v=14"></script>
+</body>
+</html>

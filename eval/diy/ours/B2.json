@@ -1,0 +1,203 @@
+{
+ "id": "B2",
+ "text_sha256": "353307a4ab651e3f31c2e7340429bb16872ed801364e976360c574a0acdf05d3",
+ "cache_key": "2352514a8cd0dce4cd0d1f7e",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 93.29,
+  "eval_count": 378,
+  "prompt_eval_count": 1019
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "remote_access_restriction",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "Нам пришлось ограничить операции по вашей карте: снятие наличных, покупки и переводы. Решение принято по результатам проверки документов…"
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "operation_refusal",
+    "evidence": [
+     {
+      "quote": "…ограничение на проведение операций через Дистанционное обслуживание. К сожалению, у нас нет возможности пересмотреть это решение."
+     }
+    ]
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "Нам пришлось ограничить операции по вашей карте: снятие наличных, покупки и переводы. Решение принято по результатам проверки документов…",
+    "evidence": [
+     {
+      "quote": "Нам пришлось ограничить операции по вашей карте: снятие наличных, покупки и переводы. Решение принято по результатам проверки документов…"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [
+   {
+    "type": "operation_refusal",
+    "raw": "…ограничение на проведение операций через Дистанционное обслуживание. К сожалению, у нас нет возможности пересмотреть это решение.",
+    "evidence": [
+     {
+      "quote": "…ограничение на проведение операций через Дистанционное обслуживание. К сожалению, у нас нет возможности пересмотреть это решение."
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "none",
+   "routes": [
+    {
+     "type": "bank_review",
+     "evidence": [
+      {
+       "quote": "К сожалению, у нас нет возможности пересмотреть это решение."
+      }
+     ]
+    }
+   ],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "remote_access_restriction",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "Нам пришлось ограничить операции по вашей карте: снятие наличных, покупки и переводы. Решение принято по результатам проверки документов…",
+     "start": 1,
+     "end": 138
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "operation_refusal",
+    "evidence": [
+     {
+      "quote": "…ограничение на проведение операций через Дистанционное обслуживание. К сожалению, у нас нет возможности пересмотреть это решение.",
+      "start": 141,
+      "end": 271
+     }
+    ]
+   },
+   {
+    "type": "operations_limit",
+    "evidence": [
+     {
+      "quote": "ограничить операции",
+      "start": 14,
+      "end": 33
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [
+   {
+    "type": "operation_refusal",
+    "raw": "…ограничение на проведение операций через Дистанционное обслуживание. К сожалению, у нас нет возможности пересмотреть это решение.",
+    "evidence": [
+     {
+      "quote": "…ограничение на проведение операций через Дистанционное обслуживание. К сожалению, у нас нет возможности пересмотреть это решение.",
+      "start": 141,
+      "end": 271
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "internal_only",
+   "routes": [
+    {
+     "type": "bank_review",
+     "evidence": [
+      {
+       "quote": "К сожалению, у нас нет возможности пересмотреть это решение.",
+       "start": 211,
+       "end": 271
+      }
+     ]
+    }
+   ],
+   "explicit_denial": {
+    "value": "нет возможности пересмотреть это решение",
+    "evidence": [
+     {
+      "quote": "нет возможности пересмотреть это решение",
+      "start": 230,
+      "end": 270
+     }
+    ]
+   }
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 6,
+  "recomputed": []
+ }
+}

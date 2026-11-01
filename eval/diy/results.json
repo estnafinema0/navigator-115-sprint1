@@ -1,0 +1,4247 @@
+{
+ "summary": {
+  "n_texts": 20,
+  "ids": [
+   "A1",
+   "A6",
+   "A7",
+   "A10",
+   "A14",
+   "B1",
+   "B2",
+   "B3",
+   "B4",
+   "B7",
+   "B9",
+   "B10",
+   "B12",
+   "B13",
+   "C1",
+   "C3",
+   "C4",
+   "C7",
+   "C11",
+   "C12"
+  ],
+  "diy": {
+   "claims": 264,
+   "claims_unsupported": 215,
+   "claims_unsupported_soft": 212,
+   "claims_no_advice": 232,
+   "claims_no_advice_unsupported": 183,
+   "texts_with_table": 0,
+   "cells": 0,
+   "cells_unsupported": 0,
+   "cells_no_advice": 0,
+   "cells_no_advice_unsupported": 0,
+   "facts": {
+    "law": {
+     "total": 22,
+     "not_in_text": 16,
+     "texts": 16
+    },
+    "date": {
+     "total": 6,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "org": {
+     "total": 2,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "norm_law": {
+     "total": 4,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "sum": {
+     "total": 1,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "days": {
+     "total": 7,
+     "not_in_text": 1,
+     "texts": 1
+    },
+    "norm_contract": {
+     "total": 1,
+     "not_in_text": 0,
+     "texts": 0
+    }
+   },
+   "days_number_absent": 1,
+   "days_kind_added": 0,
+   "texts_with_invented_fact": 17,
+   "claims_with_repeats": 513,
+   "seconds_median": 65.45,
+   "seconds_max": 357.15,
+   "truncated": [
+    "A6",
+    "B2",
+    "C3"
+   ]
+  },
+  "ours": {
+   "fields": 110,
+   "fields_unsupported": 0,
+   "quotes": 112,
+   "quotes_ge4_words": 73,
+   "facts": {
+    "norm_law": {
+     "total": 3,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "law": {
+     "total": 6,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "date": {
+     "total": 5,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "org": {
+     "total": 1,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "sum": {
+     "total": 1,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "norm_contract": {
+     "total": 4,
+     "not_in_text": 0,
+     "texts": 0
+    },
+    "days": {
+     "total": 5,
+     "not_in_text": 0,
+     "texts": 0
+    }
+   },
+   "llm_raw_dropped_quotes": 0,
+   "llm_raw_dropped_fields": 14,
+   "texts_with_invented_fact": 0,
+   "llm_raw_facts": 7,
+   "llm_raw_facts_not_in_text": 7,
+   "llm_raw_texts_with_invented_fact": 5,
+   "llm_seconds_median": 38.02,
+   "llm_from_cache": 3,
+   "llm_errors": [
+    "B12",
+    "B13",
+    "C12"
+   ]
+  }
+ },
+ "rows": [
+  {
+   "id": "A1",
+   "bank": "Сбер",
+   "diy": {
+    "meta": {
+     "id": "A1",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 65.45,
+     "eval_count": 645,
+     "prompt_eval_count": 281,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "41e0d5c166f57faffc40fb6170c1b59c8943c0af4d82c536b934efd0f9b07be1",
+     "generated_at": "2026-10-26T18:37:19"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что из-за подозрительных операций доступ к Сбербанк Онлайн и банковским картам заблокирован, и для получения денег нужно прийти в офис с документом, удостоверяющим личность.",
+      "support": "с документом, удостоверяющим личность",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также, из-за подозрения в легализации доходов, полученных преступным путём, отказано в совершении операции на определённую сумму от 25.03.2024, и если человек не согласен, он должен подать заявление на реабилитацию с обосновывающими документами.",
+      "support": "доходов, полученных преступным путём",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это блокировка доступа к онлайн-сервисам и картам.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет выяснить, почему это произошло, и какие операции вызвали подозрение.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Он не уточняет конкретный период, но, вероятно, это операции, которые были совершены до блокировки.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции, упомянутые здесь, — это любые операции, которые могут быть подозрительными, но конкретные детали не указаны.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Прямых документов запрошено не было, но, возможно, банк хочет получить информацию о последних операциях.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы могут включать выписки по счетам, подтверждающие легальность операций.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Внутри компании информацию нужно запросить у отдела безопасности или риск-менеджмента.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Второе — это отказ в совершении операции на определённую сумму от 25.03.2024.",
+      "support": "в совершении операции на",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет выяснить, почему была совершена эта операция, и какие документы подтверждают её легальность.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период — это одна операция от 25.03.2024.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операция — это перевод на определённую сумму.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Прямых документов запрошено не было, но, возможно, банк хочет получить информацию о самой операции.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы могут включать договоры, чеки или другие подтверждающие документы.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Внутри компании информацию нужно запросить у отдела, отвечающего за операции или бухгалтерии.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Крайний срок — это, вероятно, когда нужно подать заявление на реабилитацию, но в запросе он не указан.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Третье — это необходимость подать заявление на реабилитацию с обосновывающими документами.",
+      "support": "заявление на реабилитацию с",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет выяснить, почему операция была признана подозрительной, и какие документы подтверждают её легальность.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период — это операция от 25.03.2024.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "В целом, запрос банка не очень конкретен, и некоторые моменты нужно уточнить.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Поэтому, возможно, стоит уточнить эти моменты у банка, чтобы получить более точную информацию.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 27,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2024-03-25",
+      "raw": "25.03.2024",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "measures[1]",
+      "supported": true
+     },
+     {
+      "path": "measures[2]",
+      "supported": true
+     },
+     {
+      "path": "measures[3]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "response_channels[0]",
+      "supported": true
+     },
+     {
+      "path": "operations[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     },
+     {
+      "path": "reason",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     },
+     {
+      "path": "appeal.routes[0]",
+      "supported": true
+     },
+     {
+      "path": "appeal.routes[1]",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "norm_law",
+      "key": "п:11|ст:7",
+      "atoms": [
+       "п:11",
+       "ст:7"
+      ],
+      "raw": "115-ФЗ ст. 7 п. 11",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ ст. 7 п. 11",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2024-03-25",
+      "raw": "операции на …RUB от 25.03.2024",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [
+     {
+      "cat": "org",
+      "key": "суд",
+      "raw": "court",
+      "in_text": false,
+      "why": ""
+     }
+    ],
+    "n_quotes": 15,
+    "n_quotes_ge4": 10,
+    "llm_seconds": 72.7,
+    "llm_source": "eval/cache/89ac68d4f85a33d2e87e0cc8.json",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [
+     "measures[3]=contract_termination",
+     "appeal.routes[1]=court"
+    ],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "A6",
+   "bank": "Газпромбанк",
+   "diy": {
+    "meta": {
+     "id": "A6",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 275.74,
+     "eval_count": 3000,
+     "prompt_eval_count": 194,
+     "done_reason": "length",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "dba92702d22549297c68ce3b125dd87fd86e527abecc6bedbfd23a0a91bdb11c",
+     "generated_at": "2026-10-26T18:41:54"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Запрос гласит: «От МВД России поступила информация, что Вы являетесь получателем денежных средств без согласия клиента и находитесь в базе данных МВД… Обращайтесь в интернет-приемную ЦБ РФ».",
+      "support": "от мвд россии поступила",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это больше похоже на предупреждение или рекомендацию обратиться в ЦБ, а не на официальный запрос по 115-ФЗ.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Так что, возможно, в этом запросе нет конкретных требований, которые нужно разобрать.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Нет, запрос действительно не содержит конкретных требований к предоставлению информации.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Он просто информирует о возможной проблеме и направляет в ЦБ.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Поэтому, возможно, в этом запросе нет пунктов, которые нужно разобрать.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 85,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "org",
+      "key": "ЦБ",
+      "raw": "ЦБ",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "appeal.routes[0]",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "org",
+      "key": "ЦБ",
+      "raw": "cbr_complaint",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 3,
+    "n_quotes_ge4": 1,
+    "llm_seconds": 265.0,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "A7",
+   "bank": "Газпромбанк (ответ ЦБ клиенту)",
+   "diy": {
+    "meta": {
+     "id": "A7",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 285.4,
+     "eval_count": 2701,
+     "prompt_eval_count": 212,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "59eafe44454d6b0a3b3ae586fcb3636a55581c9add720b50798daf245c8e2521",
+     "generated_at": "2026-10-26T18:58:51"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что клиент формально ответил отказом, но без указания причин, и ссылается на ЦБ и статью 27 закона № 161-ФЗ.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но это не совсем ясно, потому что 115-ФЗ — это закон о противодействии легализации доходов, полученных преступным путём, а 161-ФЗ — о противодействии отмыванию денег.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Возможно, банк перепутал законы или ссылается на другую норму.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в запросе нет конкретных требований, только общая информация.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Поэтому, возможно, банк хочет, чтобы мы проверили, были ли соблюдены процедуры по 115-ФЗ, и предоставили информацию о клиентах, операциях и документах.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но без конкретных пунктов трудно составить таблицу.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Пока что запрос не содержит конкретных требований, только общие сведения.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 67,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "norm_law",
+      "key": "ст:27",
+      "atoms": [
+       "ст:27"
+      ],
+      "raw": "статью 27",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "161-ФЗ",
+      "raw": "161-ФЗ",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "org",
+      "key": "ЦБ",
+      "raw": "ЦБ",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "norm_law",
+      "key": "ст:27|ч:8",
+      "atoms": [
+       "ст:27",
+       "ч:8"
+      ],
+      "raw": "161-ФЗ ст. 27 ч. 8",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "161-ФЗ",
+      "raw": "161-ФЗ ст. 27 ч. 8",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 3,
+    "n_quotes_ge4": 1,
+    "llm_seconds": 29.17,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "A10",
+   "bank": "Сбер",
+   "diy": {
+    "meta": {
+     "id": "A10",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 34.77,
+     "eval_count": 339,
+     "prompt_eval_count": 171,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "d8e1fafce29064bfeb768a6d3c22df89ee98c0927a8a8397a1e39a170959dd1f",
+     "generated_at": "2026-10-26T18:59:26"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "На первый взгляд, он выглядит как стандартное уведомление о блокировке канала обслуживания, но в контексте 115-ФЗ (Федеральный закон «О противодействии легализации доходов, полученных преступным путём, и финансированию терроризма») такие сообщения могут содержать скрытые требования к предоставлению информации.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если запрос просто информирует о блокировке канала обслуживания без дополнительных требований, то, вероятно, никаких требований к предоставлению информации нет, и, следовательно, никакой таблицы не нужно.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 2,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     }
+    ],
+    "facts": [],
+    "llm_raw_facts": [],
+    "n_quotes": 2,
+    "n_quotes_ge4": 0,
+    "llm_seconds": 28.46,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "A14",
+   "bank": "Яндекс Банк",
+   "diy": {
+    "meta": {
+     "id": "A14",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 44.65,
+     "eval_count": 431,
+     "prompt_eval_count": 218,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "19246a5551d68fc0422761fddc1b26793346bf6a3784cda4b7b4face3d27665e",
+     "generated_at": "2026-10-26T19:00:10"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Запрос говорит о предоставлении подробных пояснений по каждой операции — как входящей, так и исходящей — за весь период с момента открытия счёта.",
+      "support": "период с момента открытия",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Эти пояснения должны быть написаны собственноручно и предоставлены в виде фотографий, а не сканированных копий.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это важно, потому что банк, вероятно, хочет убедиться, что документы не подделаны и действительно написаны рукой клиента.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это подробные пояснения по каждой операции.",
+      "support": "подробные пояснения по каждой",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет знать, что за операции проводились, и почему.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период — с момента открытия счёта, что означает, что нужно предоставить информацию за весь период использования счёта.",
+      "support": "период с момента открытия",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции, упомянутые, — это все входящие и исходящие операции, но конкретные детали не указаны.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Прямые документы, запрошенные, — это пояснения, написанные собственноручно и предоставленные в виде фотографий.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы, которые могут подтвердить операцию, — это любые документы, которые могут подтвердить легальность и цель операции, такие как контракты, счета, чеки и т.д.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Информация должна быть запрошена у клиента, который является владельцем счёта.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это может быть много информации, особенно если на счёте было много операций.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также важно, чтобы пояснения были написаны собственноручно, что может быть проблемой, если клиент не может писать или если он использует технологии для написания.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также важно, чтобы крайний срок был указан, чтобы мы могли правильно организовать сбор информации.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "В целом, запрос довольно общий, и его нужно уточнить, чтобы обеспечить, что мы предоставим всю необходимую информацию в нужном формате и в срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 14,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     },
+     {
+      "path": "period",
+      "supported": true
+     }
+    ],
+    "facts": [],
+    "llm_raw_facts": [],
+    "n_quotes": 4,
+    "n_quotes_ge4": 4,
+    "llm_seconds": 74.3,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "B1",
+   "bank": "Т-Банк",
+   "diy": {
+    "meta": {
+     "id": "B1",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 55.06,
+     "eval_count": 448,
+     "prompt_eval_count": 272,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "4a8f056e096169a2694f912f9bf79895aa3d59adcdf29ab74a181d4f1dba2e24",
+     "generated_at": "2026-10-26T19:01:05"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что клиент внес 5 миллионов рублей, и теперь банк хочет знать, откуда эти деньги взялись.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это важно для проверки легальности средств, как требует закон.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Далее, банк просит предоставить документы, подтверждающие доход: 2-НДФЛ, 3-НДФЛ, справку о доходах, подтверждение продажи имущества и другие.",
+      "support": "2-ндфл, 3-ндфл, справку о",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это стандартные документы, которые подтверждают законный источник дохода.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но важно, чтобы клиент предоставил именно те документы, которые соответствуют его ситуации.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Теперь о периоде.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк не указал конкретный период, но поскольку речь идёт о внесении 5 миллионов, логично предположить, что речь идёт о доходе за последний год или за период, в котором был получен этот доход.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в запросе это не уточнено, поэтому нужно уточнить у банка.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Что касается операций, упомянуты только внесение 5 миллионов на счёт.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Никаких других операций не указано, так что фокус на этом одном событии.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Документы, которые запрашиваются прямо: 2-НДФЛ, 3-НДФЛ, справка о доходах, подтверждение продажи имущества и другие.",
+      "support": "о доходах, подтверждение продажи",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы, которые могут подтвердить операцию: если клиент получил доход от продажи имущества, могут понадобиться договор купли-продажи, акт передачи, выписка из ЕГРН и т.д.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Если доход от бизнеса — налоговая декларация, выписка из банка и т.д.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Внутри компании информацию нужно запросить у бухгалтера или финансового отдела, так как они отвечают за документы о доходах и налоговые декларации.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Крайний срок — 25 февраля 2026 года.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это важно, так как клиент должен предоставить документы до этой даты, чтобы избежать ограничений на операции по счёту.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "В целом, запрос стандартный и понятный.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если клиент предоставит недостающие документы, банк не будет ограничивать операции по счёту.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 19,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2026-02-25",
+      "raw": "25 февраля 2026",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "sum",
+      "key": "5000000.00",
+      "raw": "5 миллионов рублей",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[1]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[2]",
+      "supported": true
+     },
+     {
+      "path": "deadlines[0]",
+      "supported": true
+     },
+     {
+      "path": "consequences[0]",
+      "supported": true
+     },
+     {
+      "path": "operations[0]",
+      "supported": true
+     },
+     {
+      "path": "reason",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "date",
+      "key": "2026-02-25",
+      "raw": "до 25.02.2026",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "sum",
+      "key": "5000000.00",
+      "raw": "внесли на свой счет 5 000 000,00 ₽",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [
+     {
+      "cat": "org",
+      "key": "суд",
+      "raw": "court",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "org",
+      "key": "ЦБ",
+      "raw": "cbr_161_exclusion",
+      "in_text": false,
+      "why": ""
+     }
+    ],
+    "n_quotes": 10,
+    "n_quotes_ge4": 8,
+    "llm_seconds": 51.44,
+    "llm_source": "eval/cache/826d6fed5f825c4a82195950.json",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [
+     "appeal.routes[0]=bank_review",
+     "appeal.routes[1]=court",
+     "appeal.routes[2]=cbr_161_exclusion",
+     "appeal.routes[3]=cbr_161_exclusion"
+    ],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "B2",
+   "bank": "Т-Банк",
+   "diy": {
+    "meta": {
+     "id": "B2",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 330.46,
+     "eval_count": 3000,
+     "prompt_eval_count": 208,
+     "done_reason": "length",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "353307a4ab651e3f31c2e7340429bb16872ed801364e976360c574a0acdf05d3",
+     "generated_at": "2026-10-26T19:06:36"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что они ограничили операции по карте — снятие наличных, покупки и переводы — и это решение было принято после проверки документов.",
+      "support": "снятие наличных, покупки и",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но они не могут его пересмотреть.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это значит, что они запрашивают информацию, чтобы подтвердить легальность этих операций.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это снятие наличных.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет знать, сколько и когда были сняты деньги, и какие документы подтверждают эти операции.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет знать, какие покупки были сделаны, когда и на какую сумму, и какие документы подтверждают эти операции.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет знать, кому и на какую сумму были сделаны переводы, когда и какие документы подтверждают эти операции.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Четвёртое — дистанционное обслуживание.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет знать, как используется дистанционное обслуживание, и какие документы подтверждают это.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Пятое — проверка документов.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет знать, какие документы были проверены и какие результаты были получены.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Шестое — невозможность пересмотреть решение.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет знать, почему они не могут пересмотреть решение.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 13,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "measures[1]",
+      "supported": true
+     },
+     {
+      "path": "consequences[0]",
+      "supported": true
+     },
+     {
+      "path": "appeal.routes[0]",
+      "supported": true
+     },
+     {
+      "path": "appeal.explicit_denial",
+      "supported": true
+     }
+    ],
+    "facts": [],
+    "llm_raw_facts": [],
+    "n_quotes": 6,
+    "n_quotes_ge4": 5,
+    "llm_seconds": 93.29,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "B3",
+   "bank": "Точка",
+   "diy": {
+    "meta": {
+     "id": "B3",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 33.41,
+     "eval_count": 315,
+     "prompt_eval_count": 235,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "e88a118d2f6a1f7c4106655f188e0aeb345c4f9ec3b6b2de01aa9501b71d0eb8",
+     "generated_at": "2026-10-26T19:07:09"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что нужно ответить, чтобы снять ограничения по счёту, и что до окончания проверки платежи будут заблокированы.",
+      "support": "чтобы снять ограничения по",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Затем он просит прислать фото или сканы документов или пояснения к ним.",
+      "support": "документов или пояснения к",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если документы не пришлют, банк сообщит о возможности дальнейшего сотрудничества.",
+      "support": "о возможности дальнейшего сотрудничества",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это снятие ограничений по счёту.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в запросе не указано, какие именно документы нужны для этого.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Второе — это необходимость предоставить документы до окончания проверки.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но период проверки не указан.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Третье — это конкретные документы, которые нужно прислать: фото или сканы или пояснения.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Четвёртое — это последствия, если документы не пришлют: сообщение о возможности дальнейшего сотрудничества.",
+      "support": "о возможности дальнейшего сотрудничества",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Он хочет подтвердить легальность операций и право на счёт.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период — до окончания проверки, но он не указан.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Документы, которые запрошены прямо — фото или сканы или пояснения.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Кто внутри компании должен запросить информацию — не указано.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Формулировка неоднозначна, потому что не указаны конкретные документы, период проверки и последствия.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 14,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "measures[1]",
+      "supported": true
+     },
+     {
+      "path": "measures[2]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[1]",
+      "supported": true
+     },
+     {
+      "path": "consequences[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "norm_contract",
+      "key": "п:9.2.24",
+      "atoms": [
+       "п:9.2.24"
+      ],
+      "raw": "договор: п. 9.2.24",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [
+     {
+      "cat": "org",
+      "key": "суд",
+      "raw": "court",
+      "in_text": false,
+      "why": ""
+     }
+    ],
+    "n_quotes": 9,
+    "n_quotes_ge4": 7,
+    "llm_seconds": 36.93,
+    "llm_source": "eval/cache/eee711920ceea24a9b584442.json",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [
+     "appeal.routes[0]=bank_review",
+     "appeal.routes[1]=court"
+    ],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "B4",
+   "bank": "Точка",
+   "diy": {
+    "meta": {
+     "id": "B4",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 111.39,
+     "eval_count": 277,
+     "prompt_eval_count": 223,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "29452ce36b1c093e3e46ad7fc4f5445d7c1ca03cd7f37a42a22e7f73a875e60f",
+     "generated_at": "2026-10-26T19:09:01"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что «Точка больше не может сотрудничать с вами», но затем ссылается на статьи закона, которые, по его мнению, не применимы.",
+      "support": "точка больше не может",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это звучит как отказ от применения определённых процедур, но не как запрос информации.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в запросе нет конкретных вопросов или данных, которые нужно предоставить.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Вместо этого — это юридическая формулировка, объясняющая, почему банк не будет использовать определённые процедуры, предусмотренные законом.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это не запрос информации, а скорее отказ от применения определённых положений закона.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это не запрос, а юридическое обоснование.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в запросе этого нет.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 7,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "norm_contract",
+      "key": "п:5.2",
+      "atoms": [
+       "п:5.2"
+      ],
+      "raw": "договор: п. 5.2",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 3,
+    "n_quotes_ge4": 2,
+    "llm_seconds": 30.18,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "B7",
+   "bank": "Сбер",
+   "diy": {
+    "meta": {
+     "id": "B7",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 44.34,
+     "eval_count": 431,
+     "prompt_eval_count": 230,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "28d8b77098e3f382c1b0a742701f36ee1191411d4b4ca55b20aeceea4a895bb0",
+     "generated_at": "2026-10-26T19:09:45"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Запрос гласит: «Пожалуйста, до 21.07.2026 включительно отправьте в банк документы и пояснения по операциям с 08.06.2026 по 10.07.2026.",
+      "support": "пожалуйста, до 21.07.2026 включительно",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если мы не получим ответ, можем заблокировать ваши карты и ограничить доступ к СберБанк Онлайн.»",
+      "support": "если мы не получим",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это запрос документов и пояснений по операциям за определённый период.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период указан как с 08.06.2026 по 10.07.2026.",
+      "support": "с 08.06.2026 по 10.07.2026",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции, упомянутые в запросе, — это все операции за этот период.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Документы, запрошенные прямо, — это документы и пояснения по этим операциям.",
+      "support": "документы и пояснения по",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Внутри компании информацию нужно запросить у финансового отдела или бухгалтерии, так как они обычно отвечают за такие запросы.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Крайний срок — 21.07.2026.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Второе — это угроза блокировки карт и ограничения доступа к СберБанк Онлайн, если ответ не будет получен.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это не является прямым запросом документов, а скорее предупреждением о последствиях неисполнения запроса.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 10,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2026-07-21",
+      "raw": "21.07.2026",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2026-06-08",
+      "raw": "08.06.2026",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2026-07-10",
+      "raw": "10.07.2026",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "deadlines[0]",
+      "supported": true
+     },
+     {
+      "path": "consequences[0]",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     },
+     {
+      "path": "period",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "date",
+      "key": "2026-07-21",
+      "raw": "до 21.07.2026 включительно",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2026-06-08",
+      "raw": "с 08.06.2026 по 10.07.2026",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2026-07-10",
+      "raw": "с 08.06.2026 по 10.07.2026",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [
+     {
+      "cat": "org",
+      "key": "суд",
+      "raw": "court",
+      "in_text": false,
+      "why": ""
+     }
+    ],
+    "n_quotes": 7,
+    "n_quotes_ge4": 5,
+    "llm_seconds": 83.91,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [
+     "appeal.routes[0]=bank_review",
+     "appeal.routes[1]=court"
+    ],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "B9",
+   "bank": "Альфа-Банк",
+   "diy": {
+    "meta": {
+     "id": "B9",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 93.87,
+     "eval_count": 885,
+     "prompt_eval_count": 234,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "7f21e7a36dfbc9cc298cc23f2679fff1bf7254a40cbeac32635ddeaf74453892",
+     "generated_at": "2026-10-26T19:11:19"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что счёт заблокирован по 115-ФЗ от 07.08.2001, что, вероятно, относится к закону о противодействии отмыванию денег.",
+      "support": "счёт заблокирован по 115-фз",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Затем он просит документы, которые обосновывают операции с контрагентами за последние 3 месяца, и письменное пояснение экономического смысла этих операций.",
+      "support": "операции с контрагентами за",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также указано, что запрос обрабатывается в течение 3 рабочих дней, и ограничения будут сняты только при предоставлении документов и положительном ответе.",
+      "support": "в течение 3 рабочих",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это документы, обосновывающие операции с контрагентами за последние 3 месяца.",
+      "support": "операции с контрагентами за",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет проверить, что все операции законны и имеют экономический смысл.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Он хочет увидеть документы, такие как договоры, акты, накладные и т.д., которые подтверждают эти операции.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также он хочет письменное пояснение, почему эти операции были совершены, то есть их экономический смысл.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Второе — это письменное пояснение экономического смысла операций.",
+      "support": "письменное пояснение экономического смысла",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет понять, зачем были совершены эти операции, и что они не являются подозрительными.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Он хочет, чтобы это пояснение было написано на бумаге, чтобы он мог его проверить.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Третье — это крайний срок, который составляет 3 рабочих дня.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это означает, что банк ожидает, что мы предоставим документы и пояснение в течение 3 рабочих дней с момента получения запроса.",
+      "support": "в течение 3 рабочих",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Четвёртое — это то, что ограничения будут сняты только при предоставлении документов и положительном ответе.",
+      "support": "только при предоставлении документов",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это означает, что если мы предоставим документы и пояснение, которые банк сочтёт достаточными, ограничения будут сняты.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если нет, то счёт останется заблокированным.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Для первого требования, банк хочет выяснить, что операции с контрагентами за последние 3 месяца законны и имеют экономический смысл.",
+      "support": "операции с контрагентами за",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "За период нужны сведения — последние 3 месяца.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Упомянуты операции — все операции с контрагентами.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Запрошены документы — документы, обосновывающие операции, такие как договоры, акты, накладные и т.д.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы, которые могут подтвердить операцию — это пояснение экономического смысла.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "У кого внутри компании запросить информацию — у бухгалтерии или финансового отдела.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Крайний срок — 3 рабочих дня.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Для второго требования, банк хочет выяснить, что операции имеют экономический смысл и не являются подозрительными.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Запрошены документы — письменное пояснение экономического смысла.",
+      "support": "письменное пояснение экономического смысла",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы, которые могут подтвердить операцию — это документы, обосновывающие операции.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Для третьего требования, банк хочет выяснить, что мы предоставим документы и пояснение в течение 3 рабочих дней.",
+      "support": "в течение 3 рабочих",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Запрошены документы — документы, обосновывающие операции и письменное пояснение экономического смысла.",
+      "support": "письменное пояснение экономического смысла",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Для четвёртого требования, банк хочет выяснить, что мы предоставим документы и пояснение, которые он сочтёт достаточными, чтобы снять ограничения.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если у вас есть какие-либо вопросы или вам нужна дополнительная информация, дайте знать!",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 44,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "date",
+      "key": "2001-08-07",
+      "raw": "07.08.2001",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "3:working",
+      "n": 3,
+      "days_kind": "working",
+      "raw": "3 рабочих дней",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[1]",
+      "supported": true
+     },
+     {
+      "path": "deadlines[0]",
+      "supported": true
+     },
+     {
+      "path": "consequences[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     },
+     {
+      "path": "period",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "3:working",
+      "n": 3,
+      "days_kind": "working",
+      "raw": "в течение 3 рабочих дней",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 9,
+    "n_quotes_ge4": 6,
+    "llm_seconds": 86.7,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "B10",
+   "bank": "Альфа-Банк",
+   "diy": {
+    "meta": {
+     "id": "B10",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 70.06,
+     "eval_count": 680,
+     "prompt_eval_count": 223,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "50898756d5e1e77ca2ebb1270dea1820e838e03eb6840994f6d4995f6d83a96a",
+     "generated_at": "2026-10-26T19:12:29"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "В запросе говорится о ранее наложенных ограничениях на основании пунктов договора комплексного банковского обслуживания, а также о письме, в котором не удалось подтвердить легальность предоставленных документов.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Моя задача — разбить это на отдельные требования, как указано в инструкции.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первая часть — о ранее наложенных ограничениях на основании конкретных пунктов договора.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Вторая часть — письмо, в котором не удалось подтвердить легальность документов.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Для первой части, банк хочет выяснить, были ли ранее наложены ограничения на основании указанных пунктов договора.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период — ранее, что означает, что это относится к прошлому, но конкретный период не указан.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции, упомянутые в этой части, — это операции, на которые были наложены ограничения.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Прямые документы, запрошенные здесь, — это сам факт наложения ограничений и ссылки на пункты договора.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы, которые могут подтвердить это, — это копии решений о наложении ограничений, выписки из договора, подтверждающие наличие этих пунктов, и любые другие документы, подтверждающие применение этих пунктов.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Внутри компании информацию нужно запросить у юридического отдела или службы compliance, так как это касается юридических аспектов договора.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет выяснить, какие документы были предоставлены и почему их легальность не была подтверждена.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период — снова ранее, без указания конкретного времени.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции, упомянутые здесь, — это операции, связанные с предоставлением документов, которые не были признаны легальными.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Прямые документы, запрошенные здесь, — это само письмо и список документов, которые были предоставлены.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы, которые могут подтвердить это, — это копии предоставленных документов, письмо с отказом в подтверждении легальности и любые другие документы, связанные с этим процессом.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Внутри компании информацию нужно запросить у отдела, отвечающего за взаимодействие с банком, или у службы compliance, так как это касается легальности документов.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Убедимся, что мы не придумываем документы, которых нет в запросе, и не делаем выводов о нарушении закона.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Всё должно быть основано на фактической информации из запроса.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Готово, таблица готова.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Убедимся, что все поля заполнены, и что мы не упустили ничего важного.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если есть какие-то неоднозначности, мы их отметили.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Теперь запрос обработан в соответствии с инструкцией.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 23,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "norm_contract",
+      "key": "п:19.3.4",
+      "atoms": [
+       "п:19.3.4"
+      ],
+      "raw": "договор: п. 19.3.4",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 3,
+    "n_quotes_ge4": 2,
+    "llm_seconds": 47.54,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "B12",
+   "bank": "Озон Банк",
+   "diy": {
+    "meta": {
+     "id": "B12",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 25.19,
+     "eval_count": 206,
+     "prompt_eval_count": 207,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "17a4a2d6492d8ad3a19988efa1ae14a12baff4321e48d99f71f3b79f17543056",
+     "generated_at": "2026-10-26T19:12:54"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Запрос говорит о приостановке операций из-за подозрительных действий, и банку нужны документы, подтверждающие операции за последние 15 дней.",
+      "support": "документы, подтверждающие операции за",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Для каждого пункта нужно указать, что банк хочет выяснить, за какой период нужны сведения, какие операции упомянуты, какие документы запрошены прямо, какие документы могут дополнительно подтвердить операцию, у кого внутри компании запросить информацию и крайний срок, если он указан.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Формулировка в запросе довольно краткая, поэтому нужно быть внимательным к деталям.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Убедимся, что мы не добавляем ничего, что не указано в запросе, и не делаем выводов о нарушении закона.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также, если формулировка неоднозначна, нужно отметить это.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 5,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "15:unspecified",
+      "n": 15,
+      "days_kind": "unspecified",
+      "raw": "15 дней",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "measures[1]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "response_channels[0]",
+      "supported": true
+     },
+     {
+      "path": "reason",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     },
+     {
+      "path": "period",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "days",
+      "key": "15:unspecified",
+      "n": 15,
+      "days_kind": "unspecified",
+      "raw": "за последние 15 дней",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 8,
+    "n_quotes_ge4": 3,
+    "llm_seconds": null,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": "ReadTimeout('timed out')"
+   }
+  },
+  {
+   "id": "B13",
+   "bank": "Озон Банк",
+   "diy": {
+    "meta": {
+     "id": "B13",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 61.94,
+     "eval_count": 410,
+     "prompt_eval_count": 242,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "e4c8334f6ea95f0dd9fdaa5095405c74874ad3b84086ed287fdbf90bc6ef8ce4",
+     "generated_at": "2026-10-26T19:13:56"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что счёт заблокирован по 115-ФЗ, и они передали информацию в профильный отдел, ожидая ответа до 3 рабочих дней.",
+      "support": "передали информацию в профильный",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также они хотят реквизиты другого банка через 7 дней после закрытия бизнес-карты, чтобы перевести остаток, и причина расторжения — коммерческая тайна.",
+      "support": null,
+      "supported": false,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — блокировка счёта по 115-ФЗ.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет выяснить, почему счёт заблокирован, и, возможно, какие операции привели к этому.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период — не указан, но, вероятно, последние операции.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции — не указаны, но, возможно, подозрительные.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Документы — не запрошены напрямую, но могут потребоваться выписки или справки.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Внутри компании — нужно уточнить у профильного отдела.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Срок — 3 рабочих дня.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Второе — расторжение договора банковского счёта.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет реквизиты другого банка для перевода остатка через 7 дней после закрытия бизнес-карты.",
+      "support": null,
+      "supported": false,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции — закрытие бизнес-карты и перевод остатка.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Документы — реквизиты другого банка.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Срок — 7 дней после закрытия бизнес-карты.",
+      "support": null,
+      "supported": false,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Третье — причина расторжения — коммерческая тайна.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет узнать причину, но это конфиденциальная информация.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Документы — не запрошены.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 19,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "3:working",
+      "n": 3,
+      "days_kind": "working",
+      "raw": "3 рабочих дней",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "7:unspecified",
+      "n": 7,
+      "days_kind": "unspecified",
+      "raw": "7 дней",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "measures[1]",
+      "supported": true
+     },
+     {
+      "path": "measures[2]",
+      "supported": true
+     },
+     {
+      "path": "deadlines[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "3:working",
+      "n": 3,
+      "days_kind": "working",
+      "raw": "до 3 рабочих дней",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 7,
+    "n_quotes_ge4": 3,
+    "llm_seconds": null,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": "ReadTimeout('timed out')"
+   }
+  },
+  {
+   "id": "C1",
+   "bank": "банк не назван",
+   "diy": {
+    "meta": {
+     "id": "C1",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 49.63,
+     "eval_count": 382,
+     "prompt_eval_count": 218,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "04099a5995bc69ecf6c7d5a64d815c0513a45a3207ab92ea74e3d223d4f447d0",
+     "generated_at": "2026-10-26T19:14:46"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "У нас есть два основных пункта: документы, объясняющие источники поступления денежных средств, и документы, подтверждающие целевое расходование наличных средств.",
+      "support": "документы, объясняющие источники поступления",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Для первого пункта, банк хочет знать, откуда пришли деньги.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Он не уточняет конкретный период, но, учитывая контекст 115-ФЗ, это, скорее всего, последние 3 года.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции, упомянутые здесь, — это поступления денежных средств.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Прямые документы — это документы, объясняющие источники.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы могут включать контракты, акты, выписки и т.д.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Информация должна быть предоставлена из бухгалтерии или финансового отдела.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Крайний срок не указан, но обычно это 5 рабочих дней.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Второй пункт касается целевого расходования наличных средств.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет убедиться, что деньги были потрачены по назначению.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Период — последние 3 года.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции — снятие наличных и их целевое использование.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Прямые документы — документы, подтверждающие целевое расходование.",
+      "support": "документы, подтверждающие целевое расходование",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы могут быть те же, что и выше.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Крайний срок снова не указан, но обычно это 5 рабочих дней.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Формулировки кажутся ясными, но, возможно, стоит уточнить у банка, что именно они имеют в виду под \"источниками поступления\" и \"целевым расходованием\".",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также важно убедиться, что все документы актуальны и соответствуют требованиям 115-ФЗ.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если какие-то документы отсутствуют, это может быть проблемой, но в запросе они не указаны, так что, возможно, это не требуется.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 19,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "5:working",
+      "n": 5,
+      "days_kind": "working",
+      "raw": "5 рабочих дней",
+      "in_text": false,
+      "why": "числа дней нет в тексте"
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "requested_items[1]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 6,
+    "n_quotes_ge4": 5,
+    "llm_seconds": 27.98,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "C3",
+   "bank": "Балтийский Банк",
+   "diy": {
+    "meta": {
+     "id": "C3",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 357.15,
+     "eval_count": 3000,
+     "prompt_eval_count": 200,
+     "done_reason": "length",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "cefbaa21586782918bfd41f039346b689b2a2294a15fe981601cd589f44690c8",
+     "generated_at": "2026-10-26T19:20:43"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "В запросе говорится, что согласно п. 14 ст. 7 Закона клиенты обязаны предоставлять информацию, и банк просит нас не позднее 10 рабочих дней с момента получения уведомления обратиться к сотруднику банка для получения Опросного листа.",
+      "support": "согласно п. 14 ст",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это обязанность клиента предоставлять информацию согласно п. 14 ст. 7 Закона.",
+      "support": "согласно п. 14 ст",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в запросе не указано, какая именно информация нужна, за какой период, какие операции упомянуты, какие документы запрошены прямо, какие документы могут дополнительно подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "В запросе указано, что крайний срок — 10 рабочих дней с момента получения уведомления.",
+      "support": "10 рабочих дней с",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в запросе не указано, какая именно информация нужна, за какой период, какие операции упомянуты, какие документы запрошены прямо, какие документы могут дополнительно подтвердить операцию, у кого внутри компании запросить информацию.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "В запросе указано, что банк просит нас обратиться к сотруднику банка для получения Опросного листа.",
+      "support": "обратиться к сотруднику банка",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в запросе не указано, какая именно информация нужна, за какой период, какие операции упомянуты, какие документы запрошены",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 89,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "norm_law",
+      "key": "п:14|ст:7",
+      "atoms": [
+       "п:14",
+       "ст:7"
+      ],
+      "raw": "п. 14 ст. 7",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "10:working",
+      "n": 10,
+      "days_kind": "working",
+      "raw": "10 рабочих дней",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "deadlines[0]",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "days",
+      "key": "10:working",
+      "n": 10,
+      "days_kind": "working",
+      "raw": "не позднее 10 рабочих дней с момента получения настоящего уведомления обратиться к сот",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 3,
+    "n_quotes_ge4": 3,
+    "llm_seconds": 24.24,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [
+     "appeal.routes[0]=bank_review"
+    ],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "C4",
+   "bank": "банк скрыт",
+   "diy": {
+    "meta": {
+     "id": "C4",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 58.95,
+     "eval_count": 423,
+     "prompt_eval_count": 203,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "fa9a8ff40f2679756e80cfc26a74449d16719d4fa36c4535ed6ba92b22c26232",
+     "generated_at": "2026-10-26T19:21:42"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "В запросе говорится, что согласно п. 14 ст. 7 Закона клиенты обязаны предоставлять информацию о выгодоприобретателях и бенефициарных владельцах.",
+      "support": "согласно п. 14 ст",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк просит предоставить сведения не позднее 10 рабочих дней.",
+      "support": "не позднее 10 рабочих",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это обязанность клиента предоставлять информацию о выгодоприобретателях и бенефициарных владельцах.",
+      "support": "выгодоприобретателях и бенефициарных владельцах",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это прямо указано в п. 14 ст. 7 Закона.",
+      "support": "п. 14 ст. 7",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет выяснить, кто эти лица, их данные и, возможно, их связи с компанией.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Следующее — это период, за который нужны сведения.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Без периода невозможно определить, за какой временной интервал запрашиваются данные.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Операции, упомянутые в запросе, — это, вероятно, финансовые операции, связанные с выгодоприобретателями и бенефициарными владельцами.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Но в тексте они не перечислены явно, поэтому их тоже нужно уточнить.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Документы, запрошенные прямо, — это информация о выгодоприобретателях и бенефициарных владельцах.",
+      "support": "выгодоприобретателях и бенефициарных владельцах",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Конкретные документы не указаны, только тип информации.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Дополнительные документы, которые могут подтвердить операцию, — это, возможно, документы, подтверждающие право собственности, договоры или другие юридические документы, но они не упомянуты в запросе.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Поэтому их тоже нужно уточнить.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Внутри компании информацию нужно запросить у юридического отдела или службы compliance, так как они отвечают за соблюдение законодательства и сбор информации о бенефициарных владельцах.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Крайний срок — 10 рабочих дней, как указано в запросе.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это важно соблюдать, чтобы избежать штрафов или других последствий.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Подытоживая, запрос банка требует информации о выгодоприобретателях и бенефициарных владельцах за неопределённый период, без уточнения операций и необходимых документов.",
+      "support": "выгодоприобретателях и бенефициарных владельцах",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 17,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "norm_law",
+      "key": "п:14|ст:7",
+      "atoms": [
+       "п:14",
+       "ст:7"
+      ],
+      "raw": "п. 14 ст. 7",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "days",
+      "key": "10:working",
+      "n": 10,
+      "days_kind": "working",
+      "raw": "10 рабочих дней",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "requested_items[0]",
+      "supported": true
+     },
+     {
+      "path": "deadlines[0]",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "days",
+      "key": "10:working",
+      "n": 10,
+      "days_kind": "working",
+      "raw": "не позднее 10 рабочих дней",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 3,
+    "n_quotes_ge4": 3,
+    "llm_seconds": 23.62,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "C7",
+   "bank": "Модульбанк",
+   "diy": {
+    "meta": {
+     "id": "C7",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 127.07,
+     "eval_count": 647,
+     "prompt_eval_count": 220,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "cddccc1f079c0dfdce6367b1e9e288460fc0a97a773449ff5c567c4027392373",
+     "generated_at": "2026-10-26T19:23:49"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что ограничил доступ к деньгам и заблокировал карты, потому что у них есть вопросы об источнике денег на счёте, налогах и переводах.",
+      "support": "доступ к деньгам и",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Чтобы снять эти ограничения, они хотят проверить выписки с разных счетов — расчетного, валютного и карточных.",
+      "support": "расчетного, валютного и карточных",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если вопросы останутся, возможно, предложат закрыть счёт.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — источник денег на счёте.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет знать, откуда пришли деньги, за какой период, какие операции упомянуты, какие документы запрошены, какие могут подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Они хотят проверить, были ли уплачены налоги, за какой период, какие операции упомянуты, какие документы запрошены, какие могут подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Банк хочет узнать, были ли переводы, за какой период, какие операции упомянуты, какие документы запрошены, какие могут подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Четвёртое — выписки с разных счетов.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Они хотят получить выписки, за какой период, какие операции упомянуты, какие документы запрошены, какие могут подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Пятое — если вопросы останутся, возможно, предложат закрыть счёт.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это не конкретное требование, а угроза, если не будут предоставлены нужные документы.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Крайний срок не указан, но, возможно, это нужно уточнить у банка.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Для источника денег на счёте, банк хочет знать, откуда пришли деньги, за какой период, какие операции упомянуты, какие документы запрошены, какие могут подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Для налогов, они хотят проверить, были ли уплачены налоги, за какой период, какие операции упомянуты, какие документы запрошены, какие могут подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Для переводов, банк хочет узнать, были ли переводы, за какой период, какие операции упомянуты, какие документы запрошены, какие могут подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Для выписок с разных счетов, они хотят получить выписки, за какой период, какие операции упомянуты, какие документы запрошены, какие могут подтвердить операцию, у кого внутри компании запросить информацию и крайний срок.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": true
+     },
+     {
+      "kind": "sentence",
+      "text": "Для угрозы закрытия счёта, это не конкретное требование, а угроза, если не будут предоставлены нужные документы.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Убедился, что для каждого пункта указаны все необходимые данные.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Не придумывал документы, которых нет в запросе.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Не делал выводов о нарушении закона.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 21,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "measures[1]",
+      "supported": true
+     },
+     {
+      "path": "consequences[0]",
+      "supported": true
+     },
+     {
+      "path": "reason",
+      "supported": true
+     }
+    ],
+    "facts": [],
+    "llm_raw_facts": [
+     {
+      "cat": "org",
+      "key": "ЦБ",
+      "raw": "cbr_161_exclusion",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "org",
+      "key": "суд",
+      "raw": "court",
+      "in_text": false,
+      "why": ""
+     }
+    ],
+    "n_quotes": 5,
+    "n_quotes_ge4": 3,
+    "llm_seconds": 38.02,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [
+     "appeal.routes[0]=bank_review",
+     "appeal.routes[1]=cbr_161_exclusion",
+     "appeal.routes[2]=court"
+    ],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "C11",
+   "bank": "банк не назван",
+   "diy": {
+    "meta": {
+     "id": "C11",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 55.64,
+     "eval_count": 249,
+     "prompt_eval_count": 196,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "a489ee79cf5391248518072595a13a7628a1fabbd7698e6c436a2de73d849b04",
+     "generated_at": "2026-10-26T19:24:44"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "Он говорит, что остатки на счёте либо отсутствуют, либо незначительны по сравнению с обычными операциями клиента.",
+      "support": "либо незначительны по сравнению",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Это, вероятно, означает, что банк хочет проверить, соответствует ли текущее состояние счёта обычным объёмам операций клиента.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это проверка остатков на счёте и их соотношение с обычными операциями.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Второе — рекомендация банка поддерживать определённые остатки.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Также важно не делать выводов о нарушении закона и не придумывать документы, которых нет в запросе.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Убедимся, что всё точно и соответствует запросу банка.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 6,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [],
+    "facts": [],
+    "llm_raw_facts": [],
+    "n_quotes": 0,
+    "n_quotes_ge4": 0,
+    "llm_seconds": 22.22,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": null
+   }
+  },
+  {
+   "id": "C12",
+   "bank": "Сбер",
+   "diy": {
+    "meta": {
+     "id": "C12",
+     "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+     "options": {
+      "temperature": 0,
+      "seed": 42,
+      "num_ctx": 8192,
+      "num_predict": 3000
+     },
+     "think": false,
+     "format": null,
+     "seconds": 102.19,
+     "eval_count": 429,
+     "prompt_eval_count": 219,
+     "done_reason": "stop",
+     "prompt_sha256": "731a55c2dc4b9a40d203bf65cce1b2f515795b44f773e5616568c264d0e219b9",
+     "text_sha256": "249933390fe4b804a000d8444b257545a1ae837a7a46fe5f4f157a7b6b88230e",
+     "generated_at": "2026-10-26T19:26:27"
+    },
+    "has_table": false,
+    "claims": [
+     {
+      "kind": "sentence",
+      "text": "В запросе говорится, что карты заблокированы на основании пункта 9 статьи 9 №161-ФЗ и пункта 1.11 приложения 1 к Условиям банковского обслуживания физических лиц ПАО Сбербанк.",
+      "support": "карты заблокированы на основании",
+      "supported": true,
+      "supported_soft": true,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если клиент не согласен с решением, он может обратиться в офис банка по ссылке.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Первое — это блокировка карт на основании двух пунктов закона и условий обслуживания.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Второе — возможность обжалования решения в офисе банка.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Он скорее информирует клиента о блокировке и предоставляет способ обжалования.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "list_item",
+      "text": "Обратиться в офис банка по ссылке, указанной в запросе, для обжалования решения о блокировке карт.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "list_item",
+      "text": "Подготовить необходимые документы и информацию, как запросит банк.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "list_item",
+      "text": "Соблюдать крайний срок, если он указан в запросе или будет предоставлен банком.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "list_item",
+      "text": "Обратиться в офис банка по ссылке, указанной в запросе.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     },
+     {
+      "kind": "sentence",
+      "text": "Если у клиента есть дополнительные вопросы или он нуждается в помощи с подготовкой документов, он может обратиться к юристу или финансовому консультанту.",
+      "support": null,
+      "supported": false,
+      "supported_soft": false,
+      "advice": false
+     }
+    ],
+    "claims_with_repeats": 12,
+    "cells": [],
+    "facts": [
+     {
+      "cat": "norm_law",
+      "key": "п:9|ст:9",
+      "atoms": [
+       "п:9",
+       "ст:9"
+      ],
+      "raw": "пункта 9 статьи 9",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "norm_contract",
+      "key": "п:1.11",
+      "atoms": [
+       "п:1.11"
+      ],
+      "raw": "пункта 1.11",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "115-ФЗ",
+      "raw": "115-ФЗ",
+      "in_text": false,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "161-ФЗ",
+      "raw": "161-ФЗ",
+      "in_text": true,
+      "why": ""
+     }
+    ]
+   },
+   "ours": {
+    "fields": [
+     {
+      "path": "scenario",
+      "supported": true
+     },
+     {
+      "path": "measures[0]",
+      "supported": true
+     },
+     {
+      "path": "response_channels[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[0]",
+      "supported": true
+     },
+     {
+      "path": "legal_basis.items[1]",
+      "supported": true
+     },
+     {
+      "path": "next_steps",
+      "supported": true
+     }
+    ],
+    "facts": [
+     {
+      "cat": "norm_law",
+      "key": "п:9|ст:9",
+      "atoms": [
+       "п:9",
+       "ст:9"
+      ],
+      "raw": "161-ФЗ ст. 9 п. 9",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "law",
+      "key": "161-ФЗ",
+      "raw": "161-ФЗ ст. 9 п. 9",
+      "in_text": true,
+      "why": ""
+     },
+     {
+      "cat": "norm_contract",
+      "key": "п:1.11",
+      "atoms": [
+       "п:1.11"
+      ],
+      "raw": "договор: п. 1.11",
+      "in_text": true,
+      "why": ""
+     }
+    ],
+    "llm_raw_facts": [],
+    "n_quotes": 6,
+    "n_quotes_ge4": 2,
+    "llm_seconds": null,
+    "llm_source": "new call (run_diy.py)",
+    "llm_raw_dropped_quotes": [],
+    "llm_raw_dropped_fields": [],
+    "llm_raw_schema_errors": [],
+    "llm_error": "ReadTimeout('timed out')"
+   }
+  }
+ ]
+}

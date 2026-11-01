@@ -1,0 +1,136 @@
+{
+ "id": "A6",
+ "text_sha256": "dba92702d22549297c68ce3b125dd87fd86e527abecc6bedbfd23a0a91bdb11c",
+ "cache_key": "e1f570c3172a7f7d37943f1a",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 265.0,
+  "eval_count": 152,
+  "prompt_eval_count": 1005
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "not_aml",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "«От МВД России поступила информация, что Вы являетесь получателем денежных средств без согласия клиента и находитесь в базе данных МВД…»"
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "fz161_restriction",
+   "confidence": 0.6,
+   "evidence": [
+    {
+     "quote": "без согласия клиента",
+     "start": 83,
+     "end": 103
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "card_block",
+    "evidence": [
+     {
+      "quote": "без согласия клиента",
+      "start": 83,
+      "end": 103
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "external",
+   "routes": [
+    {
+     "type": "cbr_complaint",
+     "evidence": [
+      {
+       "quote": "Обращайтесь в интернет-приемную ЦБ РФ",
+       "start": 136,
+       "end": 173
+      }
+     ]
+    }
+   ],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 3,
+  "recomputed": [
+   "appeal.level: none -> external"
+  ]
+ }
+}

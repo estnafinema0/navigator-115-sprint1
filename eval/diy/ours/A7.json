@@ -1,0 +1,137 @@
+{
+ "id": "A7",
+ "text_sha256": "59eafe44454d6b0a3b3ae586fcb3636a55581c9add720b50798daf245c8e2521",
+ "cache_key": "55903dcc2ebb77695e8ed553",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 29.17,
+  "eval_count": 114,
+  "prompt_eval_count": 1023
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "unknown",
+   "confidence": 0.95,
+   "evidence": []
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "fz161_restriction",
+   "confidence": 0.6,
+   "evidence": [
+    {
+     "quote": "161-ФЗ",
+     "start": 188,
+     "end": 194
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "card_block",
+    "evidence": [
+     {
+      "quote": "161-ФЗ",
+      "start": 188,
+      "end": 194
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "norm",
+   "items": [
+    {
+     "kind": "law",
+     "law": "161-ФЗ",
+     "article": "27",
+     "part": "8",
+     "point": null,
+     "subpoint": null,
+     "contract_clause": null,
+     "canonical": "161-ФЗ ст. 27 ч. 8",
+     "evidence": [
+      {
+       "quote": "частью 8 статьи 27 Федерального закона от 27.06.2011 № 161-ФЗ",
+       "start": 133,
+       "end": 194
+      }
+     ]
+    }
+   ]
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 3,
+  "recomputed": []
+ }
+}

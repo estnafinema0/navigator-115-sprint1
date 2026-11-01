@@ -1,0 +1,212 @@
+{
+ "id": "B7",
+ "text_sha256": "28d8b77098e3f382c1b0a742701f36ee1191411d4b4ca55b20aeceea4a895bb0",
+ "cache_key": "5499892dd0208fc18f08f021",
+ "llm_source": "new call (run_diy.py)",
+ "llm_meta": {
+  "model": "hf.co/t-tech/T-lite-it-2.1-GGUF:Q4_K_M",
+  "slim": true,
+  "seconds": 83.91,
+  "eval_count": 340,
+  "prompt_eval_count": 1041
+ },
+ "llm_raw": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "пожалуйста, до 21.07.2026 включительно отправьте в банк документы и пояснения по операциям с 08.06.2026 по 10.07.2026"
+    }
+   ]
+  },
+  "measures": [],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "документы и пояснения по операциям с 08.06.2026 по 10.07.2026",
+    "evidence": [
+     {
+      "quote": "документы и пояснения по операциям с 08.06.2026 по 10.07.2026"
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": false,
+   "text": null,
+   "evidence": []
+  },
+  "consequences": [
+   {
+    "type": "remote_access_restriction",
+    "raw": "можем заблокировать ваши карты и ограничить доступ к СберБанк Онлайн",
+    "evidence": [
+     {
+      "quote": "можем заблокировать ваши карты и ограничить доступ к СберБанк Онлайн"
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "none",
+   "routes": [
+    {
+     "type": "bank_review",
+     "evidence": []
+    },
+    {
+     "type": "court",
+     "evidence": []
+    }
+   ],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": null,
+  "deadlines": [],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "final": {
+  "schema_version": "0.1.0",
+  "scenario": {
+   "value": "doc_request",
+   "confidence": 0.95,
+   "evidence": [
+    {
+     "quote": "пожалуйста, до 21.07.2026 включительно отправьте в банк документы и пояснения по операциям с 08.06.2026 по 10.07.2026",
+     "start": 2,
+     "end": 119
+    }
+   ]
+  },
+  "measures": [
+   {
+    "type": "document_request",
+    "evidence": [
+     {
+      "quote": "отправьте в банк",
+      "start": 41,
+      "end": 57
+     }
+    ],
+    "confidence": 0.7
+   }
+  ],
+  "reason": {
+   "level": "none",
+   "text": null,
+   "evidence": []
+  },
+  "requested_items": [
+   {
+    "type": "explanation_operations",
+    "raw": "документы и пояснения по операциям с 08.06.2026 по 10.07.2026",
+    "evidence": [
+     {
+      "quote": "документы и пояснения по операциям с 08.06.2026 по 10.07.2026",
+      "start": 58,
+      "end": 119
+     }
+    ]
+   }
+  ],
+  "next_steps": {
+   "stated": true,
+   "text": "отправьте в банк документы и пояснения по операциям с 08",
+   "evidence": [
+    {
+     "quote": "отправьте в банк документы и пояснения по операциям с 08",
+     "start": 41,
+     "end": 97
+    }
+   ]
+  },
+  "consequences": [
+   {
+    "type": "remote_access_restriction",
+    "raw": "можем заблокировать ваши карты и ограничить доступ к СберБанк Онлайн",
+    "evidence": [
+     {
+      "quote": "можем заблокировать ваши карты и ограничить доступ к СберБанк Онлайн",
+      "start": 147,
+      "end": 215
+     }
+    ]
+   }
+  ],
+  "appeal": {
+   "level": "none",
+   "routes": [],
+   "explicit_denial": null
+  },
+  "legal_basis": {
+   "level": "none",
+   "items": []
+  },
+  "period": {
+   "from": "2026-06-08",
+   "to": "2026-07-10",
+   "relative": null,
+   "raw": "с 08.06.2026 по 10.07.2026",
+   "evidence": [
+    {
+     "quote": "с 08.06.2026 по 10.07.2026",
+     "start": 93,
+     "end": 119
+    }
+   ]
+  },
+  "deadlines": [
+   {
+    "applies_to": "client_response",
+    "kind": "date",
+    "date": "2026-07-21",
+    "inclusive": true,
+    "amount": null,
+    "unit": null,
+    "anchor": null,
+    "raw": "до 21.07.2026 включительно",
+    "evidence": [
+     {
+      "quote": "до 21.07.2026 включительно",
+      "start": 14,
+      "end": 40
+     }
+    ]
+   }
+  ],
+  "response_channels": [],
+  "operations": [],
+  "request_meta": {
+   "bank_name": null,
+   "date": null,
+   "number": null
+  },
+  "questions_to_user": []
+ },
+ "validation": {
+  "schema_errors": [],
+  "dropped_quotes": [],
+  "snapped_quotes": [],
+  "dropped_fields": [],
+  "filled_fields": 7,
+  "recomputed": []
+ }
+}

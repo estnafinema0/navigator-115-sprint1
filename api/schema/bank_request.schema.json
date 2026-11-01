@@ -1,0 +1,844 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/estnafinema0/navigator-115/api/schema/bank_request.schema.json",
+  "title": "BankRequest",
+  "description": "Результат разбора одного текста запроса или уведомления банка (M1). Схема — контракт между правилами, LLM и валидатором. Принципы: (1) каждое заполненное поле опирается на дословную цитату из исходного текста (evidence); поле без цитаты валидатор обнуляет и показывает как «не указано банком»; (2) схема описывает только то, что написано в тексте; сроки по закону, маршруты обжалования и даты считают детерминированные модули (M4, M5) по базе норм kb/, а не LLM; (3) схема совместима с grammar-constrained decoding (Ollama format / vLLM json_schema): без if/then и oneOf; инварианты, которые JSON Schema не выражает, проверяет api/navigator/validator.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scenario",
+    "measures",
+    "legal_basis",
+    "reason",
+    "requested_items",
+    "period",
+    "deadlines",
+    "response_channels",
+    "next_steps",
+    "consequences",
+    "appeal",
+    "operations",
+    "request_meta"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "scenario": {
+      "description": "Триаж: главный сценарий входа (client-journey.md, разд. 1). Если в тексте несколько мер, выбирается самая тяжёлая по порядку: zsk_measures_7_7 > suspension_rfm_court > contract_termination > operation_refusal > contract_refusal > remote_access_restriction > doc_request. Все меры перечисляются в measures.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence",
+        "evidence"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/Scenario"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        }
+      }
+    },
+    "measures": {
+      "description": "Все меры, о которых сообщает текст (E1 — факт и вид меры). Мера-угроза («если не ответите — ограничим») сюда не входит, она в consequences.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Measure"
+      }
+    },
+    "legal_basis": {
+      "description": "E2 — правовое основание так, как его назвал банк. level валидатор пересчитывает по items: есть статья/пункт закона → norm; назван только закон → law_only; только пункт договора/правил → contract_only; ничего → none.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "items"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "norm",
+            "law_only",
+            "contract_only",
+            "none"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LegalRef"
+          }
+        }
+      }
+    },
+    "reason": {
+      "description": "E3 — причина, как её назвал банк. specific — конкретная (операция, признак: «вы внесли 5 000 000 ₽»); general — общая («подозрительные операции», «сомнительный характер»); none — причины нет или «коммерческая тайна».",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "text",
+        "evidence"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "specific",
+            "general",
+            "none"
+          ]
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        }
+      }
+    },
+    "requested_items": {
+      "description": "Перечень запрошенного (документы, сведения, пояснения) — по пунктам самого запроса. Пустой массив = банк ничего не перечислил.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RequestedItem"
+      }
+    },
+    "period": {
+      "description": "Период операций, за который запрошены документы (если назван на уровне всего запроса).",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Period"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "deadlines": {
+      "description": "Сроки, названные в тексте: срок ответа клиента (client_response) и/или срок рассмотрения банком (bank_review). Сроки по закону сюда не пишутся — их даёт M4.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Deadline"
+      }
+    },
+    "response_channels": {
+      "description": "E6 / E4 — куда и как отвечать банку или связаться с ним.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Channel"
+      }
+    },
+    "next_steps": {
+      "description": "E4 — объяснено ли, что делать для снятия меры («оформите заявление на реабилитацию», «пришлите документы»).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stated",
+        "text",
+        "evidence"
+      ],
+      "properties": {
+        "stated": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        }
+      }
+    },
+    "consequences": {
+      "description": "Чем банк грозит, если клиент не ответит или не согласится.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Consequence"
+      }
+    },
+    "appeal": {
+      "description": "E5 — порядок обжалования, как его назвал банк. level валидатор пересчитывает по routes: есть МВК/ЦБ/суд → external; только реабилитация или пересмотр в самом банке → internal_only; ничего → none. «Решение пересмотру не подлежит» фиксируется как explicit_denial.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "routes",
+        "explicit_denial"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "external",
+            "internal_only",
+            "none"
+          ]
+        },
+        "routes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AppealRoute"
+          }
+        },
+        "explicit_denial": {
+          "description": "Банк прямо написал, что решение не пересматривается или что п. 13.4 не применим.",
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TextWithEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "operations": {
+      "description": "Операции, на которые ссылается текст (нужны для шаблонов ЦБ №4 и №5: дата, сумма, номер п/п).",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Operation"
+      }
+    },
+    "request_meta": {
+      "description": "Реквизиты самого запроса/уведомления, если они есть в тексте. Банк, выбранный пользователем при загрузке, хранится вне этой схемы (метаданные дела).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bank_name",
+        "date",
+        "number"
+      ],
+      "properties": {
+        "bank_name": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TextWithEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "date": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DateWithEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "number": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TextWithEvidence"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "questions_to_user": {
+      "description": "Вопросы пользователю при низкой уверенности (HITL). Формулировки — только из шаблонов M2.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "Scenario": {
+      "description": "12 сценариев входа из context/research/v2/client-journey.md (разд. 1) + other + unknown.",
+      "type": "string",
+      "enum": [
+        "doc_request",
+        "operation_refusal",
+        "remote_access_restriction",
+        "contract_termination",
+        "contract_refusal",
+        "zsk_high_cbr_only",
+        "zsk_measures_7_7",
+        "zsk_medium",
+        "suspension_rfm_court",
+        "fz161_transfer_suspension",
+        "fz161_restriction",
+        "not_aml",
+        "other",
+        "unknown"
+      ]
+    },
+    "MeasureType": {
+      "type": "string",
+      "enum": [
+        "document_request",
+        "operation_refusal",
+        "operation_suspension",
+        "operations_limit",
+        "remote_access_restriction",
+        "card_block",
+        "contract_termination",
+        "contract_refusal",
+        "risk_level",
+        "funds_freeze",
+        "other"
+      ]
+    },
+    "DocType": {
+      "description": "Нормализованные типы запрошенного (для micro-F1 по перечню документов; сравнение по множеству типов в тексте). operation_supporting_docs — общая формулировка «документы, обосновывающие операцию» без уточнения вида.",
+      "type": "string",
+      "enum": [
+        "explanation_operations",
+        "explanation_business",
+        "source_of_funds",
+        "income_certificate",
+        "tax_return",
+        "tax_payment_proof",
+        "accounting_statements",
+        "bank_statements_other_banks",
+        "bank_statements_own",
+        "operation_supporting_docs",
+        "contracts",
+        "primary_docs",
+        "payment_orders",
+        "cash_usage_proof",
+        "staff_docs",
+        "premises_docs",
+        "photos_premises",
+        "marketplace_docs",
+        "procurement_logistics",
+        "questionnaire",
+        "beneficiary_info",
+        "property_sale_proof",
+        "receipts",
+        "kudir",
+        "advertising_docs",
+        "identity_document",
+        "other"
+      ]
+    },
+    "Confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "Evidence": {
+      "description": "Дословная цитата из исходного текста. start/end — индексы символов (Python str, NFC) в исходном тексте, end не включается; LLM может их не указывать — валидатор найдёт цитату в тексте и проставит. Цитата, которой нет в тексте, отбрасывается.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quote"
+      ],
+      "properties": {
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "EvidenceList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      }
+    },
+    "TextWithEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "DateWithEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "format": "date"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "Measure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "evidence"
+      ],
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/MeasureType"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "LegalRef": {
+      "description": "Одна ссылка на основание. canonical — нормализованная запись для exact match: «115-ФЗ ст. 7 п. 11», «161-ФЗ ст. 9 ч. 9», «115-ФЗ», «договор: УКБО п. 4.5».",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "canonical",
+        "evidence"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "law",
+            "contract",
+            "regulation"
+          ]
+        },
+        "law": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "115-ФЗ",
+            "161-ФЗ",
+            "НК РФ",
+            "ГК РФ",
+            "229-ФЗ",
+            "other",
+            null
+          ]
+        },
+        "article": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "part": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "point": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "subpoint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contract_clause": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "canonical": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "Period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw",
+        "evidence"
+      ],
+      "properties": {
+        "from": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "relative": {
+          "description": "Относительный период: «за последние 3 месяца» → {amount: 3, unit: months}; «с момента открытия счёта» → unit: since_account_opening.",
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "amount",
+                "unit"
+              ],
+              "properties": {
+                "amount": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1
+                },
+                "unit": {
+                  "type": "string",
+                  "enum": [
+                    "days",
+                    "months",
+                    "years",
+                    "since_account_opening"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "raw": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        }
+      }
+    },
+    "RequestedItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "raw",
+        "evidence"
+      ],
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/DocType"
+        },
+        "raw": {
+          "description": "Пункт запроса дословно или близко к тексту.",
+          "type": "string"
+        },
+        "period": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Period"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "format": {
+          "description": "Требования к форме: «фото, сканы не допускаются», «собственноручно», «xlsx».",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "Deadline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applies_to",
+        "kind",
+        "raw",
+        "evidence"
+      ],
+      "properties": {
+        "applies_to": {
+          "type": "string",
+          "enum": [
+            "client_response",
+            "bank_review",
+            "other"
+          ]
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "date",
+            "relative"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "inclusive": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "amount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "working_days",
+            "calendar_days",
+            "days_unspecified",
+            "hours",
+            null
+          ]
+        },
+        "anchor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "receipt_of_notice",
+            "notice_date",
+            "submission",
+            "unspecified",
+            null
+          ]
+        },
+        "raw": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "Channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "raw",
+        "evidence"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "chat",
+            "online_banking_upload",
+            "email",
+            "branch_office",
+            "phone",
+            "post",
+            "personal_manager",
+            "other"
+          ]
+        },
+        "raw": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "Consequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "raw",
+        "evidence"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "operations_limit",
+            "remote_access_restriction",
+            "card_block",
+            "operation_refusal",
+            "contract_termination",
+            "risk_level",
+            "other"
+          ]
+        },
+        "raw": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "AppealRoute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "evidence"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "mvk",
+            "cbr_complaint",
+            "cbr_161_exclusion",
+            "court",
+            "bank_rehabilitation",
+            "bank_review",
+            "other"
+          ]
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    },
+    "Operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw",
+        "evidence"
+      ],
+      "properties": {
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "amount": {
+          "description": "Сумма в виде строки, как в тексте после нормализации («5000000.00»), или null.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "direction": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "incoming",
+            "outgoing",
+            "cash_deposit",
+            "cash_withdrawal",
+            "unknown",
+            null
+          ]
+        },
+        "payment_order_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "raw": {
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceList"
+        },
+        "confidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      }
+    }
+  }
+}

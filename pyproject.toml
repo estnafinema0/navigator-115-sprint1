@@ -1,0 +1,42 @@
+[project]
+name = "navigator-115"
+version = "0.1.0"
+description = "Навигатор-115: снятие ограничений по 115-ФЗ и 161-ФЗ без лишнего стресса"
+requires-python = ">=3.11"
+license = { text = "Права принадлежат участникам команды Pulsar; открытая лицензия не выдана (решение за капитаном)" }
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+  "pydantic>=2.11",
+  "jsonschema>=4.23",
+  "pyyaml>=6",
+  "httpx>=0.27",
+  "python-docx>=1.1",
+  "openpyxl>=3.1",
+  "rapidfuzz>=3.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.pytest.ini_options]
+pythonpath = ["api"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["context", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["api"]
+include = ["navigator*"]

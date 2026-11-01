@@ -1,0 +1,1011 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="zoom:lang" content="ru" />
+    <meta name="zoom:last-modified" content="Mon, 09 Feb 2026 06:07:43 GMT" />
+<title>Перечень нерабочих праздничных дней и перенесенных выходных дней | Банк России</title>
+
+
+
+    <meta property="og:image" content="/common/images/share-1.jpg" />
+
+    
+
+
+            <link rel="stylesheet" type="text/css" href="/common/libs/jquery-ui/jquery-ui.min.css?v=v478607061" media="all">
+
+            <!--[if IE 9]><link rel="stylesheet" type="text/css" href="/common/style/main-ie9.css?v=v1337212920" media="all"><![endif]-->
+
+            <!--[if gt IE 9]><!--><link rel="stylesheet" type="text/css" href="/common/style/main.min.css?v=v1337212920" media="all"><!--<![endif]-->
+
+
+        <script type="text/javascript" src="/common/libs/jquery-3.7.1.min.js?v=v735956814"></script>
+
+
+
+        <script type="text/javascript" src="/common/libs/jquery-ui/jquery-ui.min.js?v=v478607061"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery.inputmask.min.js?v=v478607061"></script>
+
+
+        <script type="text/javascript" src="/common/scripts/vendor.js?v=v4270970564"></script>
+
+        <script type="text/javascript" src="/common/libs/jquery.floatThead.min.js?v=v478607061"></script>
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="/common/libs/popper.js?v=v478607061"></script>
+
+        <script type="text/javascript" src="/common/libs/tippy.js?v=v478607061"></script>
+
+        <script type="text/javascript" src="/common/scripts/main.min.js?v=v1337212920"></script>
+
+
+        <script type="text/javascript" src="/common/libs/localization-ru.js?v=v712023859"></script>
+        <script type="text/javascript" src="/js/jquery.ui.autocomplete-ru.js?v=v1043438991"></script>
+
+        <script type="text/javascript" src="/js/jquery.cookie.min.js?v=v4260771145"></script>
+
+        <script type="text/javascript" src="/js/site.js?v=v2848633841"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            var $menu = $('[data-menu]'),
+                $menuItemBtn = $menu.find('[data-menu-item-btn]'),
+                $menuShow = $('[data-menu-show]'),
+                $menuClose = $('[data-menu-close]');
+            var config = $menu.data('config');
+
+            $menuShow.on('click.cms_loadwholesite mouseenter.cms_loadwholesite', function (event) {
+                loadWholeSite();
+            });
+
+            var xhr = null;
+            function loadWholeSite() {
+                if (xhr === null) {
+                    $('.menu_wrap .networks-circle').html($('.networks-circle.footer_networks').html());
+                    $('.menu_wrap .header_search').html($('.header .offsetMenu .header_search').html());
+
+                    $('[data-cms-wholesite-placeholder]').addClass('with-centered-loader').empty();
+                    xhr = $.ajax(config.url, {
+                        dataType: "html",
+                        method: "get",
+                        success: function (html) {
+                            $('[data-cms-wholesite-placeholder]').replaceWith(html);
+
+                            $menu.find('.menu_tab[data-tabs-tab]').each(function () {
+                                var tab = $(this).data('tabs-tab');
+                                $(this).toggle($menu.find('[data-tabs-content="' + tab + '"]').length != 0);
+                            });
+
+                            $menu.trigger('new-html');
+
+                            for (var i in config.catalogPath) {
+                                $menu.find('li[data-catalog-id="' + config.catalogPath[i] + '"]')
+                                    .addClass("_active");
+                                $menu.find('li[data-catalog-id="' + config.catalogPath[i] + '"]')
+                                    .closest('[data-tabs-content]')
+                                    .trigger('open-anchor');
+                            }
+
+                            $menuShow.off('click.cms_loadwholesite mouseenter.cms_loadwholesite');
+                        },
+                        error: function () {
+                            $('[data-cms-wholesite-placeholder]').removeClass('with-centered-loader')
+                                .append('<div class="menu_content offset-md-1">' +
+                                    '<span class="group-error field-validation-error">Не удалось загрузить карту сайта. <a href="#">Попробуйте еще раз.</a></span>' +
+                                    '</div>')
+                                .find('a')
+                                .on('click', function () { loadWholeSite(); });
+                        },
+                        complete: function () {
+                            xhr = null;
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+
+
+<script>
+    if (window.localStorage) {
+        if (localStorage.getItem('vision-impaired'))
+            document.getElementsByTagName('html')[0].className += ' vision-impaired';
+    }
+</script>
+<script>
+    document.documentElement.style.setProperty('--scrollbar-width', '17px');
+    setTimeout(function () {
+        
+        var div = document.createElement('div');
+
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+
+        
+        div.style.visibility = 'hidden';
+
+        document.body.appendChild(div);
+        var scrollWidth = Math.max(div.offsetWidth - div.clientWidth, 0.15); 
+        document.body.removeChild(div);
+        
+        document.documentElement.style.setProperty('--scrollbar-width', scrollWidth + 'px');
+    }, 0);
+</script>
+
+
+
+
+    
+</head>
+<body class="page-v3 page-v3-inside">
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(5774506, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/5774506" style="position:absolute; left:-9999px;" alt="" /></div></noscript>    
+<!-- /Yandex.Metrika counter -->
+        
+    
+
+    <div class="header-print">
+    <div class="offsetMenu">
+        <div class="header-print_inner">
+            <img class="header-print_logo" alt="cbr" src="/common/images/logo.svg">
+            <ul class="header-print_contacts">
+<li>107016, Москва, ул. Неглинная, д.&nbsp;12, к. В, Банк России</li>
+<li><nobr class="phone">8 800 300-30-00</nobr></li>
+<li>www.cbr.ru</li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+    <header class="header" id="header">
+        <div class="top-line" data-top-line="">
+            <div class="header_burger-big"></div>
+            <div class="offsetMenu">
+                <div class="col-md-23 header_margin-left">
+                    <div class="top-line_inner header_inner">
+                        
+
+<div class="row">
+    <div class="col-xl-4 col-md-6">
+        <div class="header_left pr-0">
+                <div class="header_menu" data-menu-show=""></div>
+            <a class="header_logo" href="/"></a>
+                <a class="header_search_btn d-flex d-md-none" href="#" data-search-form-show="" aria-label="Поиск по сайту"><div class="header_search_icon"></div></a>
+            <a class="d-flex d-md-none" href="#" data-tooltip="" data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide"><div class="header_visual-impaired_item"></div></a>
+        </div>
+    </div>
+    <div class="col-xl-17 col-md-13 offset-md-1 header_block">
+        <div class="d-none d-md-block">
+            <div class="header_right">
+                <div class="networks header_link header_networks"><a class="header_appeal-link" href="/contactBR/" data-tooltip="" data-tooltip-content="Обратиться в Банк России" data-tooltip-class="mobile-hide"></a></div>
+                <div class="networks header_networks header_visual-impaired header_visual-impaired_inner"><a href="#" data-tooltip="" data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide" aria-label="Версия для слабовидящих"><div class="header_visual-impaired_item"></div></a></div>
+                <div class="header_lang header_lang_inner header_networks">
+    <a href="/Localization/SwitchLanguage?url=%2Fother%2Fholidays%2F&amp;from=ru-RU&amp;to=en-CB"><!--noindex-->EN<!--/noindex--></a>
+</div>
+                    <div class="header_networks header_search header_search_inner">
+                        <a class="header_search_btn" href="#" data-search-form-show="" aria-label="Поиск по сайту"><div class="header_search_icon"></div><span aria-hidden="true">Поиск по сайту</span></a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offsetMenu">
+            <div class="col-md-23 offset-md-1 header_margin-left">
+                <div class="header_inner">
+                    
+<div class="row">
+    <div class="col-xl-5 col-md-6">
+        <div class="header_left pr-0">
+            <div class="header_menu" data-menu-show=""></div>
+            <a class="header_logo" href="/"></a>
+            <a class="header_search_btn d-flex d-md-none" href="#" data-search-form-show="" aria-label="Поиск по сайту">
+                <div class="header_search_icon"></div>
+            </a>
+            <a class="d-flex d-md-none" href="#" data-tooltip data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide">
+                <div class="header_visual-impaired_item"></div>
+            </a>
+        </div>
+    </div>
+    <div class="col-xl-17 col-md-13 offset-md-1 header_block justify-content-end">
+        <div class="d-none d-md-block">
+            <div class="header_right">
+                <div class="networks header_link header_networks"><a class="header_appeal-link" href="/contactBR/" data-tooltip="" data-tooltip-content="Обратиться в Банк России" data-tooltip-class="mobile-hide"></a></div>
+                <div class="networks header_networks header_visual-impaired header_visual-impaired_inner">
+                    <a href="#" data-tooltip data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide" aria-label="Версия для слабовидящих">
+                        <div class="header_visual-impaired_item"></div>
+                    </a>
+                </div>
+                <div class="header_lang header_lang_inner header_networks">
+    <a href="/Localization/SwitchLanguage?url=%2Fother%2Fholidays%2F&amp;from=ru-RU&amp;to=en-CB"><!--noindex-->EN<!--/noindex--></a>
+</div>
+                <div class="header_networks header_search header_search_inner">
+                    <a class="header_search_btn" href="#" data-search-form-show="" aria-label="Поиск по сайту">
+                        <div class="header_search_icon"></div><span aria-hidden="true">Поиск по сайту</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <form action="/search/" method="get" class="search-form" data-search-form=""
+      data-api-url="/Content/SearchSuggest/Suggest"
+      data-api-top-url="">
+    <div class="offsetMenu">
+        <div class="col-md-23 offset-md-1">
+            <div class="search-form_inner">
+                <div class="search-form_title">Что вы хотите найти?<img class="search-form_title-close" src="/common/images/icons/menu-close-dark-grey.svg"></div>
+                <div class="search-form_content">
+                    <div class="search-form_block">
+                        <div class="search-form_icon"></div>
+                        <div class="search-form_field">
+                            <input name="text" type="text" autocomplete="off" placeholder="Начните писать" data-search-form-input="" />
+                        </div>
+                    </div>
+                    <div class="search-form_clear" data-search-form-clear-btn=""><img src="/common/images/icons/menu-close-gray.svg"></div>
+                    <div class="search-form_btn">
+                        <button class="b-btn _blue" data-search-form-btn="">Искать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<div class="menu_wrap" data-menu="" data-config="{&quot;catalogPath&quot;:[15532],&quot;url&quot;:&quot;/Catalog/SiteMap/GetWholeSiteHtml?blockId=59191&quot;}">
+    <div class="offsetMenu">
+        <div class="header_menu _close menu_close d-none d-md-block" data-menu-close=""></div>
+        <div class="header_inner top-line_inner d-block d-md-none">
+            <div class="row">
+                <div class="col-xl-5 col-md-9">
+                    <div class="header_left pr-0">
+                        <div class="header_menu _close" role="button" tabindex="0" aria-label="Закрыть меню" data-menu-close=""></div>
+                        <a class="header_logo" href="/"></a>
+                        <a class="header_search_btn" href="#" data-search-form-show="data-search-form-show" aria-label="Поиск по сайту"><div class="header_search_icon"></div></a>
+                        <a href="#" data-tooltip="data-tooltip" data-tooltip-content="Версия для слабовидящих" data-tooltip-class="mobile-hide"><div class="header_visual-impaired_item"></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu row" data-tabs="data-tabs">
+            <div class="menu_quick col-md-7">
+                <div role="tablist" class="menu_quick_tabs">
+    <a role="tab" id="menu_tab_Activity" aria-controls="menu_content_Activity" aria-selected="true" class="menu_tab _active" href="#" data-tabs-tab="Activity">Деятельность</a>
+    <a role="tab" id="menu_tab_FinancialMarkets" aria-controls="menu_content_FinancialMarkets" aria-selected="false" class="menu_tab" href="#" data-tabs-tab="FinancialMarkets">Финансовые рынки</a>
+    <a role="tab" id="menu_tab_Documents" aria-controls="menu_content_Documents" aria-selected="false" class="menu_tab" href="#" data-tabs-tab="Documents">Документы и данные</a>
+    <a role="tab" id="menu_tab_AboutBank" aria-controls="menu_content_AboutBank" aria-selected="false" class="menu_tab" href="#" data-tabs-tab="AboutBank">О Банке России</a>
+    <a role="tab" id="menu_tab_Services" aria-controls="menu_content_Services" aria-selected="false" class="menu_tab" href="#" data-tabs-tab="Services">Сервисы</a>
+</div>
+<div class="menu_quick_links">
+    <div class="inner_links"><a href="/support_measures/" title="Меры зашиты финансового рынка" style="color:red">Меры защиты финансового рынка</a>
+  </div>
+<div class="phones"><a class="menu_phone_val" href="tel:+74993003000">
+<div class="plus">+</div>7 499 300-30-00</a><a class="menu_phone_val" href="tel:88003003000">8 800 300-30-00</a><a class="menu_phone_val" href="tel:300">300</a><span>Бесплатно для звонков с мобильных телефонов</span></div>
+<div class="inner_links">
+  <a href="/news/" title="Новости">Новости</a>
+  <a href="/rbr/" title="Решения Банка России">Решения Банка России</a>
+  <a href="/contacts/" title="Контактная информация">Контактная информация</a>
+  <a href="/sitemap" title="Карта сайта">Карта сайта</a>
+  <a href="/about/" title="О сайте">О сайте</a>
+  </div>
+<div class="networks-circle">
+  <a class="networks-circle_item _vk" href="https://vk.com/cbr_official" title="ВКонтакте"></a>
+  <a class="networks-circle_item _yt" href="https://www.youtube.com/user/BankofRussia" title="Youtube"></a>
+  <a class="networks-circle_item _tg" href="https://telegram.me/centralbank_russia" title="Telegram"></a>
+  <a class="networks-circle_item _ydzen" href="https://zen.yandex.ru/id/622372d6a565892091994ea9" title="Яндекс Дзен"></a>
+  <a class="networks-circle_item _ok" href="https://ok.ru/group/68858679787580" title="Одноклассники"></a>
+  <a class="networks-circle_item _rt" href="https://rutube.ru/channel/23873201/" title="RUTUBE"></a>
+  <a class="networks-circle_item _max" href="https://max.ru/cbr_official" title="Макс"></a>
+</div>
+</div>
+            </div>
+            <div class="d-md-none link-above">
+                <div class="header_right">
+                    <div class="header_link"><a href="/contactBR/">Обратиться в&nbsp;Банк России</a></div>
+                    <div class="header_lang">
+            <div class="header_lang_item _active"><span><!--noindex-->RU<!--/noindex--></span></div>
+            <div class="header_lang_item"><a href="/Localization/SwitchLanguage?url=%2Fother%2Fholidays%2F&amp;from=ru-RU&amp;to=en-CB"><!--noindex-->EN<!--/noindex--></a></div>
+</div>
+                </div>
+<div class="header_right"><div class="header_link"><a href="/about_br/">О Банке России</a></div></div>
+<div class="header_right"><div class="header_link"><a href="/finorg/">Проверить участника финансового рынка</a></div></div>
+<div class="header_right"><div class="header_link"><a href="/beware/">Осторожно: мошенники!</a></div></div>            </div>
+            <div class="menu_content_container col-md" data-cms-wholesite-placeholder="">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <main id="content">
+        <div class="offsetMenu ">
+            <div class="container-fluid">
+                <div class="col-md-23 offset-md-1">
+                    
+                    <!--index-->
+<h1><span class="referenceable">Перечень нерабочих праздничных дней и перенесенных выходных дней</span>
+</h1>
+                                                                                                                        
+
+
+
+
+<div id="tab" class="tabs_wrap " data-tabs="">
+    <div role="tablist" class="tabs">
+
+    <a role="tab" id="tab_tab_y2026" aria-controls="tab_content_y2026" aria-selected="true" 
+       class="tab _active" href="#y2026" data-text="в 2026 году"
+       
+
+  data-tabs-tab="y2026"   >
+        в 2026 году
+    </a>
+    <a role="tab" id="tab_tab_y2025" aria-controls="tab_content_y2025" aria-selected="false" 
+       class="tab" href="#y2025" data-text="в 2025 году"
+       
+
+  data-tabs-tab="y2025"   >
+        в 2025 году
+    </a>
+    <a role="tab" id="tab_tab_y2024" aria-controls="tab_content_y2024" aria-selected="false" 
+       class="tab" href="#y2024" data-text="в 2024 году"
+       
+
+  data-tabs-tab="y2024"   >
+        в 2024 году
+    </a>
+    <a role="tab" id="tab_tab_t7" aria-controls="tab_content_t7" aria-selected="false" 
+       class="tab" href="#t7" data-text="в 2023 году"
+       
+
+  data-tabs-tab="t7"   >
+        в 2023 году
+    </a>
+    <a role="tab" id="tab_tab_t6" aria-controls="tab_content_t6" aria-selected="false" 
+       class="tab" href="#t6" data-text="в 2022 году"
+       
+
+  data-tabs-tab="t6"   >
+        в 2022 году
+    </a>
+    <a role="tab" id="tab_tab_t5" aria-controls="tab_content_t5" aria-selected="false" 
+       class="tab" href="#t5" data-text="в 2021 году"
+       
+
+  data-tabs-tab="t5"   >
+        в 2021 году
+    </a>
+                    <div class="tab tab_rest " data-tabs-rest="">
+                <button class="tab_rest_title" data-tabs-rest-title="" aria-expanded="false">Ещё</button>
+                <div class="tab_rest_items">
+    <a role="tab" id="tab_tab_t1" aria-controls="tab_content_t1" aria-selected="false" 
+       class="tab" href="#t1" data-text="в 2020 году"
+       
+
+  data-tabs-tab="t1"   >
+        в 2020 году
+    </a>
+    <a role="tab" id="tab_tab_t4" aria-controls="tab_content_t4" aria-selected="false" 
+       class="tab" href="#t4" data-text="Архив"
+       
+
+  data-tabs-tab="t4"   >
+        Архив
+    </a>
+                </div>
+            </div>
+    </div>
+
+                    <div role="tabpanel" id="tab_content_y2026" aria-labelledby="tab_tab_y2026" data-tabs-content="y2026">
+                        <p>1, 2, 3, 4, 5, 6, 8&nbsp;января &ndash; Новогодние каникулы;</p>
+<p>7&nbsp;января &ndash; Рождество Христово</p>
+<p>23&nbsp;февраля &ndash; День защитника Отечества;</p>
+<p>8&nbsp;марта &ndash; Международный женский день;</p>
+<p>1&nbsp;мая &ndash; Праздник Весны и&nbsp;Труда;</p>
+<p>9&nbsp;мая &ndash; День Победы;</p>
+<p>12&nbsp;июня &ndash; День России;</p>
+<p>4&nbsp;ноября &ndash; День народного единства</p>
+<h3>Перечень дополнительных выходных дней в&nbsp;2026&nbsp;году:</h3>
+<p>9&nbsp;января &ndash; пятница;</p>
+<p>9&nbsp;марта &ndash; понедельник;</p>
+<p>11&nbsp;мая &ndash; понедельник;</p>
+<p>31&nbsp;декабря &ndash; четверг.</p>
+<p>Информация о&nbsp;проведении торгов и&nbsp;осуществлении расчетов на&nbsp;внутреннем финансовом рынке Российской Федерации в&nbsp;праздничные дни&nbsp;2026 года будет сообщена дополнительно.</p>
+                    </div>
+                    <div role="tabpanel" id="tab_content_y2025" aria-labelledby="tab_tab_y2025" data-tabs-content="y2025" class="hide">
+                        <p>1, 2, 3, 4, 5, 6&nbsp;и&nbsp;8&nbsp;января&nbsp;&mdash; Новогодние каникулы;</p>
+<p>7&nbsp;января&nbsp;&mdash; Рождество Христово;</p>
+<p>23&nbsp;февраля&nbsp;&mdash; День защитника Отечества;</p>
+<p>8&nbsp;марта&nbsp;&mdash; Международный женский день;</p>
+<p>1&nbsp;мая&nbsp;&mdash; Праздник Весны и&nbsp;Труда;</p>
+<p>9&nbsp;мая&nbsp;&mdash; День Победы;</p>
+<p>12&nbsp;июня&nbsp;&mdash; День России;</p>
+<p>4&nbsp;ноября&nbsp;&mdash; День народного единства.</p>
+<h3>Перечень дополнительных выходных дней в&nbsp;2025&nbsp;году:</h3>
+<p>2&nbsp;мая&nbsp;&mdash; пятница;</p>
+<p>8&nbsp;мая&nbsp;&mdash; четверг;</p>
+<p>13&nbsp;июня&nbsp;&mdash; пятница;</p>
+<p>3&nbsp;ноября&nbsp;&mdash; понедельник;</p>
+<p>31&nbsp;декабря&nbsp;&mdash; среда.</p>
+<h3>Перечень дополнительных рабочих дней в&nbsp;2025&nbsp;году:</h3>
+<p>1&nbsp;ноября&nbsp;&mdash; суббота.</p>
+<p>Информация о&nbsp;проведении торгов и&nbsp;осуществлении расчётов на&nbsp;внутреннем финансовом рынке Российской Федерации в&nbsp;праздничные дни&nbsp;2025 года будет сообщена дополнительно.</p>
+                    </div>
+                    <div role="tabpanel" id="tab_content_y2024" aria-labelledby="tab_tab_y2024" data-tabs-content="y2024" class="hide">
+                        <p>1, 2, 3, 4, 5, 6&nbsp;и&nbsp;8&nbsp;января&nbsp;&mdash; Новогодние каникулы;</p>
+<p>7&nbsp;января&nbsp;&mdash; Рождество Христово;</p>
+<p>23&nbsp;февраля&nbsp;&mdash; День защитника Отечества;</p>
+<p>8&nbsp;марта&nbsp;&mdash; Международный женский день;</p>
+<p>1&nbsp;мая&nbsp;&mdash; Праздник Весны и&nbsp;Труда;</p>
+<p>9&nbsp;мая&nbsp;&mdash; День Победы;</p>
+<p>12&nbsp;июня&nbsp;&mdash; День России;</p>
+<p>4&nbsp;ноября&nbsp;&mdash; День народного единства.</p>
+<h3>Перечень дополнительных выходных дней в&nbsp;2024&nbsp;году:</h3>
+<p>29, 30&nbsp;апреля&nbsp;&mdash; понедельник, вторник;</p>
+<p>10&nbsp;мая&nbsp;&mdash; пятница;</p>
+<p>30, 31&nbsp;декабря&nbsp;&mdash; понедельник, вторник.</p>
+<h3>Перечень дополнительных рабочих дней в&nbsp;2024&nbsp;году:</h3>
+<p>27&nbsp;апреля&nbsp;&mdash; суббота;</p>
+<p>2&nbsp;ноября&nbsp;&mdash; суббота;</p>
+<p>28&nbsp;декабря&nbsp;&mdash; суббота.</p>
+<p>Информация о&nbsp;проведении торгов и&nbsp;осуществлении расчётов на&nbsp;внутреннем финансовом рынке Российской Федерации в&nbsp;праздничные дни&nbsp;2024 года будет сообщена дополнительно.</p>
+                    </div>
+                    <div role="tabpanel" id="tab_content_t7" aria-labelledby="tab_tab_t7" data-tabs-content="t7" class="hide">
+                        <p>1, 2, 3, 4, 5, 6&nbsp;и&nbsp;8&nbsp;января&nbsp;&mdash; Новогодние каникулы;</p>
+<p>7&nbsp;января&nbsp;&mdash; Рождество Христово;</p>
+<p>23&nbsp;февраля&nbsp;&mdash; День защитника Отечества;</p>
+<p>8&nbsp;марта&nbsp;&mdash; Международный женский день;</p>
+<p>1&nbsp;мая&nbsp;&mdash; Праздник Весны и&nbsp;Труда;</p>
+<p>9&nbsp;мая&nbsp;&mdash; День Победы;</p>
+<p>12&nbsp;июня&nbsp;&mdash; День России;</p>
+<p>4&nbsp;ноября&nbsp;&mdash; День народного единства.</p>
+<h3>Перечень дополнительных выходных дней в&nbsp;2023&nbsp;году:</h3>
+<p><span lang="ru">24 февраля</span>&nbsp;&mdash; <span lang="ru">пятница</span>;</p>
+<p><span lang="ru">8</span>&nbsp;мая&nbsp;&mdash; <span lang="ru">понедельник</span>;</p>
+<p><span lang="ru">6 ноября</span>&nbsp;&mdash; <span lang="ru">понедельник</span>.</p>
+<p>
+<p>Информация о&nbsp;проведении торгов и&nbsp;осуществлении расч<span lang="ru">ё</span>тов на&nbsp;внутреннем финансовом рынке Российской Федерации в&nbsp;праздничные дни&nbsp;202<span lang="ru">3</span> года будет сообщена дополнительно.</p>
+                    </div>
+                    <div role="tabpanel" id="tab_content_t6" aria-labelledby="tab_tab_t6" data-tabs-content="t6" class="hide">
+                        <p>1, 2, 3, 4, 5, 6&nbsp;и&nbsp;8&nbsp;января&nbsp;&mdash; Новогодние каникулы;</p>
+<p>7&nbsp;января&nbsp;&mdash; Рождество Христово;</p>
+<p>23&nbsp;февраля&nbsp;&mdash; День защитника Отечества;</p>
+<p>8&nbsp;марта&nbsp;&mdash; Международный женский день;</p>
+<p>1&nbsp;мая&nbsp;&mdash; Праздник Весны и&nbsp;Труда;</p>
+<p>2&nbsp;мая&nbsp;&mdash; выходной;</p>
+<p>9&nbsp;мая&nbsp;&mdash; День Победы;</p>
+<p>12&nbsp;июня&nbsp;&mdash; День России;</p>
+<p>13&nbsp;июня&nbsp;&mdash; выходной день;</p>
+<p>4&nbsp;ноября&nbsp;&mdash; День народного единства.</p>
+<h3>Перечень дополнительных выходных дней в&nbsp;2022&nbsp;году:</h3>
+<p>7&nbsp;марта&nbsp;&mdash; понедельник;</p>
+<p>3&nbsp;мая&nbsp;&mdash; вторник;</p>
+<p>10&nbsp;мая&nbsp;&mdash; вторник.</p>
+<h3>Перечень дополнительных рабочих дней в&nbsp;2022&nbsp;году:</h3>
+<p>5&nbsp;марта&nbsp;&mdash; суббота.</p>
+<p></p>
+<p>Информация о&nbsp;проведении торгов и&nbsp;осуществлении расчетов на&nbsp;внутреннем финансовом рынке Российской Федерации в&nbsp;праздничные дни&nbsp;2022 года будет сообщена дополнительно.</p>
+                    </div>
+                    <div role="tabpanel" id="tab_content_t5" aria-labelledby="tab_tab_t5" data-tabs-content="t5" class="hide">
+                        <p>1, 2, 3, 4, 5, 6&nbsp;и&nbsp;8&nbsp;января&nbsp;&mdash; Новогодние каникулы;</p>
+<p>7&nbsp;января&nbsp;&mdash; Рождество Христово;</p>
+<p>23&nbsp;февраля&nbsp;&mdash; День защитника Отечества;</p>
+<p>8&nbsp;марта&nbsp;&mdash; Международный женский день;</p>
+<p>1&nbsp;мая&nbsp;&mdash; Праздник Весны и&nbsp;Труда;</p>
+<p>3&nbsp;мая&nbsp;&mdash; выходной день;</p>
+<p>9&nbsp;мая&nbsp;&mdash; День Победы;</p>
+<p>10&nbsp;мая&nbsp;&mdash; выходной день;</p>
+<p>12&nbsp;июня&nbsp;&mdash; День России;</p>
+<p>14&nbsp;июня&nbsp;&mdash; выходной день;</p>
+<p>4&nbsp;ноября&nbsp;&mdash; День народного единства.</p>
+<h3>Перечень дополнительных выходных дней в&nbsp;2021&nbsp;году:</h3>
+<p>22&nbsp;февраля&nbsp;&mdash; понедельник;</p>
+<p>5&nbsp;ноября &mdash;&nbsp;пятница;&nbsp;</p>
+<p>31&nbsp;декабря&nbsp;&mdash; пятница.</p>
+<h3>Перечень дополнительных&nbsp;рабочих дней в&nbsp;2021&nbsp;году:</h3>
+<p>20&nbsp;февраля&nbsp;&mdash; суббота.</p>
+<p>Информация о&nbsp;проведении торгов и&nbsp;осуществлении расчётов на&nbsp;внутреннем финансовом рынке Российской Федерации в&nbsp;праздничные дни&nbsp;2021 года будет сообщена дополнительно.</p>
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/press/pr/?file=19032021_161501PR2021-03-19T16_13_26.htm" id="a_119538link">                        <span class="document-regular_name_visible">Информация об операциях Банка России с 7 по 11 мая и с 11 по 15 июня 2021 года</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_format icon-pdf"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File//59420/20201214_in_01_19-172.PDF" id="a_116152link">                        <span class="document-regular_name_visible">Информационное письмо об особенностях операций Банка России на внутреннем финансовом рынке в Российской Федерации в периоды с 30 декабря 2020 года по 11 января 2021 года, а также с 20 по 24 февраля и с 3 по 8 ноября 2021 года </span>
+</a>
+                                    </div>
+                        <div class="document-regular_comment">
+от 14.12.2020 № ИН-01-19/172        </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                    </div>
+                    <div role="tabpanel" id="tab_content_t1" aria-labelledby="tab_tab_t1" data-tabs-content="t1" class="hide">
+                        <p>1, 2, 3, 4, 5, 6&nbsp;и&nbsp;8&nbsp;января&nbsp;&mdash; Новогодние каникулы;</p>
+<p>7&nbsp;января&nbsp;&mdash; Рождество Христово;</p>
+<p>23&nbsp;февраля&nbsp;&mdash; День защитника Отечества;</p>
+<p>24&nbsp;февраля&nbsp;&mdash; выходной день;</p>
+<p>8&nbsp;марта&nbsp;&mdash; Международный женский день;</p>
+<p>9&nbsp;марта&nbsp;&mdash; выходной день;</p>
+<p>1&nbsp;мая&nbsp;&mdash; Праздник Весны и&nbsp;Труда;</p>
+<p>9&nbsp;мая&nbsp;&mdash; День Победы;</p>
+<p>11&nbsp;мая&nbsp;&mdash; выходной день;</p>
+<p>12&nbsp;июня&nbsp;&mdash; День России;</p>
+<p>4&nbsp;ноября&nbsp;&mdash; День народного единства.</p>
+<h3>Перечень дополнительных выходных дней в&nbsp;2020&nbsp;году:</h3>
+<p>4&nbsp;мая&nbsp;&mdash; понедельник;</p>
+<p>5&nbsp;мая&nbsp;&mdash; вторник.</p>
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_format icon-pdf"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File//59420/20201214_in_01_19-172.PDF">                        <span class="document-regular_name_visible">Информационное письмо об особенностях операций Банка России на внутреннем финансовом рынке в Российской Федерации в периоды с 30 декабря 2020 года по 11 января 2021 года, а также с 20 по 24 февраля и с 3 по 8 ноября 2021 года </span>
+</a>
+                                    </div>
+                        <div class="document-regular_comment">
+от 14.12.2020 № ИН-01-19/172        </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_format icon-pdf"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/Content/Document/File/107427/20191219_in-01-19_95.pdf" id="a_107427file" target="_blank">                        <span class="document-regular_name_visible">Информационное письмо об организации условий для проведения торгов на внутреннем финансовом рынке в Российской Федерации в конце декабря 2019 года, 3, 6 и 8 января, а также 5 мая 2020 года</span>
+</a>
+                                    </div>
+                        <div class="document-regular_comment">
+от 19.12.2019 № ИН-01-19/95        </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                    </div>
+                    <div role="tabpanel" id="tab_content_t4" aria-labelledby="tab_tab_t4" data-tabs-content="t4" class="hide">
+                        
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/other/holidays/holidays_2019/" id="a_118599page">                        <span class="document-regular_name_visible">в 2019 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/other/holidays/holidays_2018/" id="a_118598page">                        <span class="document-regular_name_visible">в 2018 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File/17579/holidays_2017.htm" id="a_107433link">                        <span class="document-regular_name_visible">в 2017 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File/17579/holidays_2016.htm" id="a_107434link">                        <span class="document-regular_name_visible">в 2016 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File/17579/holidays_2015.htm" id="a_107436link">                        <span class="document-regular_name_visible">в 2015 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File/17579/holidays_2014.htm" id="a_107437link">                        <span class="document-regular_name_visible">в 2014 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File/17579/holidays_2013.htm" id="a_107438link">                        <span class="document-regular_name_visible">в 2013 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File/17579/holidays_2012.htm" id="a_107439link">                        <span class="document-regular_name_visible">в 2012 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File/17579/holidays_2011.htm" id="a_107440link">                        <span class="document-regular_name_visible">в 2011 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="document-regular">
+    <div class="document-regular_inner">
+        <div class="document-regular_top">
+                <div class="document-regular_left_icon"></div>
+                    </div>
+        <div class="body-2 document-regular_main">
+            <div class="document-regular_texts">
+                <div class="document-regular_name" data-toggle="">
+<a class="referenceable" href="/StaticHtml/File/17579/holidays_2010.htm" id="a_107441link">                        <span class="document-regular_name_visible">в 2010 году</span>
+</a>
+                                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                    </div>
+</div>
+
+
+                    
+                    <!--/index-->
+
+    <div class="page-info">
+        <!--noindex-->
+        
+
+
+<div class="page-info_helpful"
+     data-page-feedback=""
+     data-feedback-url="/Content/PageInfo/RegisterFeedback">
+    <!--noindex-->
+    <div class="helpful" data-helpful="">
+        Страница была полезной?
+        <div class="helpful_btns">
+            <button class="helpful_btn _yes" data-helpful-btn="yes"><i class="helpful_icon"></i><span>Да</span></button>
+            <button class="helpful_btn _no" data-helpful-btn="no"><i class="helpful_icon"></i><span>Нет</span></button>
+        </div>
+    </div>
+    <!--/noindex-->
+</div>
+
+            <div class="page-info_last-update">Последнее обновление страницы: 09.02.2026</div>
+        <!--/noindex-->
+    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer" id="footer">
+    <div class="offsetMenu footer_margin-left">
+        <div class="footer_main">
+            <div class="col-md-23 col-xl-22 offset-md-1 offset-xl-2 footer-size">
+                <div class="footer_top">
+                    <a class="footer_logo" href="/"></a>
+                    <div class="footer_up gotoUp">
+                        <div class="footer_up_title">Наверх</div>
+                        <div class="footer_up_icon"></div>
+                    </div>
+                </div>
+                
+<div class="footer_contacts">
+<div class="footer_address">107016, Москва, ул. Неглинная, д.&nbsp;12, к. В, Банк
+России</div>
+<div class="footer_phones">
+<div class="footer_phone"><a class="footer_phone_val" href="tel:300">300</a><span>(круглосуточно, бесплатно для&nbsp;звонков с&nbsp;мобильных телефонов)</span></div>
+<div class="footer_phone"><a class="footer_phone_val" href="tel:88003003000">8&nbsp;800 300-30-00</a><span>(круглосуточно, бесплатно для&nbsp;звонков из&nbsp;регионов России)</span></div>
+<div class="footer_phone"><a class="footer_phone_val" href="tel:+74993003000">+7&nbsp;499 300-30-00</a><span>(круглосуточно, в&nbsp;соответствии с&nbsp;тарифами вашего оператора)</span></div>
+
+</div>
+</div>
+<div class="footer_main_block">
+<div class="footer_left-menu">
+<div class="footer_left-menu_item"><a href="/lk_uio/">Личный кабинет участника информационного обмена</a></div>
+<div class="footer_left-menu_item"><a href="/about_br/irp/">Отношения с&nbsp;инвесторами</a></div>
+<div class="footer_left-menu_item"><a href="/rbr/list_inside/">Перечень инсайдерской информации Банка России</a></div>
+<div class="footer_left-menu_item"><a href="/analytics/na_vr/">Официальное опубликование нормативных актов Банка России</a></div>
+<div class="footer_left-menu_item"><a href="/project_na/">Проекты нормативных актов Банка России</a></div>
+<div class="footer_left-menu_item"><a href="/other/holidays/">Перечень нерабочих праздничных дней и&nbsp;перенесенных выходных дней</a></div>
+</div>
+<div class="networks-circle footer_networks">
+<a class="networks-circle_item _vk" href="https://vk.com/cbr_official"></a>
+<a class="networks-circle_item _yt" href="https://www.youtube.com/user/BankofRussia"></a>
+<a class="networks-circle_item _tg" href="https://telegram.me/centralbank_russia" title="Telegram"></a>
+<a class="networks-circle_item _ydzen" href="https://dzen.ru/cbr" title="Яндекс Дзен"></a>
+<a class="networks-circle_item _ok" href="https://ok.ru/group/68858679787580" title="Одноклассники"></a>
+<a class="networks-circle_item _rt" href="https://rutube.ru/channel/23873201/" title="RUTUBE"></a>
+<a class="networks-circle_item _max" href="https://max.ru/cbr_official" title="Макс"></a>
+</div>
+</div>
+<div class="footer_menu">
+<div class="footer_menu_items">
+<div class="footer_menu_item"><a href="/about/">О&nbsp;сайте</a></div>
+<div class="footer_menu_item"><a href="/contacts/">Контакты</a></div>
+<div class="footer_menu_item"><a href="/about_br/anticor/">Противодействие коррупции</a></div>
+<div class="footer_menu_item"><a href="/development/">Технические ресурсы</a></div>
+</div>
+<a class="footer_menu_item _visually-impaired" href="#" title="Версия для слабовидящих">
+	<div class="footer_visually-impaired-icon"></div>
+	<div><span class="visually-impaired-on">Версия для&nbsp;слабовидящих</span><span class="visually-impaired-off">Обычная версия</span></div>
+</a>
+</div>
+
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="col-md-23 col-xl-23 offset-md-1 offset-xl-2 row footer_bottom-container">
+                <div class="footer_bottom_text col-md-11 col-xl-11">&#169; Банк России, 2000–2026.</div>
+<div class="footer_bottom_aic col-md-12 col-xl-11">Дизайн сайта — <a href="https://aic.ru" target="_blank"><img src="/common/images/icons/aic-logo.svg" /></a></div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+
+        <div class="popup-cookies" data-popup-cookies>
+            <div class="popup-cookies_title">
+                На сайте Банка России используются файлы cookie
+            </div>
+            <div class="popup-cookies_subtitle">
+                Оставаясь на <a href="/">www.cbr.ru</a>, вы принимаете
+                <a href='/user_agreement/'>пользовательское соглашение</a>
+            </div>
+            <button class="btn _medium _blue " data-popup-cookies-btn>
+                Подтвердить
+            </button>
+        </div>
+
+    
+<!--[if IE 9]><script>$('body').addClass('ie9')</script><![endif]-->
+<script src="/Modules/Content/Scripts/PageInfo.js?v=v3116962712" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            Content_PageInfo.init($('[data-page-feedback]'));
+        });
+    </script>
+
+
+
+</body>
+</html>
